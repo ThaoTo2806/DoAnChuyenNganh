@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:QuanLyMaWinApp.ViewModels"
+             x:Class="QuanLyMaWinApp.Views.LoginView"
+             Title="LoginView">
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid VerticalOptions="Center" HorizontalOptions="Center">
+        <Frame BackgroundColor="Gray" 
+               Opacity="0.5" 
+               CornerRadius="10" 
+               Padding="10"
+               VerticalOptions="Center" 
+               HorizontalOptions="Center"
+               HasShadow="True">
+            <VerticalStackLayout Padding="8" Spacing="10"
+                                 VerticalOptions="Center"
+                                 HorizontalOptions="Center"
+                                 WidthRequest="300">
+                <!-- Tiêu đề -->
+                <Label Text="SIGN IN"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center" />
+
+                <!-- Mô tả -->
+                <Label Text="Hello there, Sign in and start managing your Admin Template"
+                       FontSize="14"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       TextColor="Gray" />
+
+                <!-- Nhập tài khoản -->
+                <Entry Text="{Binding TaiKhoan}" Placeholder="Account"
+                       HorizontalOptions="FillAndExpand" />
+
+                <!-- Nhập mật khẩu -->
+                <Entry Text="{Binding MatKhau}" Placeholder="Password"
+                       IsPassword="True"
+                       HorizontalOptions="FillAndExpand" />
+
+                <!-- Checkbox Nhớ tài khoản và Liên kết Quên mật khẩu -->
+                <HorizontalStackLayout Spacing="5"
+                                       HorizontalOptions="FillAndExpand">
+                    <CheckBox IsChecked="{Binding GhiNhoToi}"
+                              HorizontalOptions="Start" />
+                    <Label Text="Remember Me"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Start" />
+                    <Button Text="Forgot Password?"
+                            HorizontalOptions="End"
+                            BackgroundColor="Transparent"
+                            TextColor="Blue"/>
+                </HorizontalStackLayout>
+
+                <!-- Nút Gửi -->
+                <Button Text="SUBMIT"
+                        BackgroundColor="Blue"
+                        TextColor="White"
+                        Command="{Binding OnSubmitCommand}"
+                        HorizontalOptions="FillAndExpand" />
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
+</ContentPage>

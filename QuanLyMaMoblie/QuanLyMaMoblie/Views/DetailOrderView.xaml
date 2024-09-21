@@ -1,0 +1,146 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:QuanLyMaMoblie.ViewModels"
+             x:Class="QuanLyMaMoblie.Views.DetailOrderView"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.BindingContext>
+        <vm:DetailOrderViewModel />
+    </ContentPage.BindingContext>
+
+    <AbsoluteLayout>
+        <!-- Background Image -->
+        <Image Source="background2.png" Aspect="AspectFill" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" />
+
+        <Grid x:Name="FullGrid" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Header Grid -->
+            <Grid x:Name="HeaderGrid" Grid.Row="0" HeightRequest="66" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                <Image Source="back1.png" WidthRequest="32" HeightRequest="32" VerticalOptions="Center" HorizontalOptions="Start" Margin="10,2,10,0">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding NoteCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Text="Detail of Order" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="Large" TextColor="White"/>
+            </Grid>
+
+            <!-- Content Grid -->
+            <Grid x:Name="ContentGrid" Grid.Row="1" BackgroundColor="White" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout Padding="20">
+                    <!-- Order Information -->
+                    <Frame BorderColor="Gray" CornerRadius="10" Padding="10">
+                        <StackLayout>
+                            <!-- General Order Information -->
+                            <Label Text="Order Information" FontSize="Medium" FontAttributes="Bold" Margin="0,5,0,10" />
+                            <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
+                                <Label Text="Full Name:" FontSize="Small" VerticalOptions="Center"  TextColor="Gray"/>
+                                <Label Text="{Binding Order.UserName}" FontSize="Small" VerticalOptions="Center" Margin="10,0,0,0"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
+                                <Label Text="Phone:" FontSize="Small" VerticalOptions="Center" TextColor="Gray"/>
+                                <Label Text="{Binding Order.Phone}" FontSize="Small" VerticalOptions="Center" Margin="10,0,0,0"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
+                                <Label Text="Address:" FontSize="Small" VerticalOptions="Center" TextColor="Gray"/>
+                                <Label Text="{Binding Order.DeliveryAddress}" FontSize="Small" VerticalOptions="Center" Margin="10,0,0,0"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
+                                <Label Text="Delivery Time:" FontSize="Small" VerticalOptions="Center" TextColor="Gray"/>
+                                <Label Text="{Binding Order.OrderDate, StringFormat='{0:MM/dd/yyyy}'}" FontSize="Small" Margin="10,0,0,0"/>
+                                <Label Text="  -  " FontSize="Small" TextColor="Gray"/>
+                                <Label Text="{Binding Order.DeliveryDate, StringFormat='{0:MM/dd/yyyy}'}" FontSize="Small"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
+                                <Label Text="Activation Code:" FontSize="Small" VerticalOptions="Center" TextColor="Gray"/>
+                                <Label Text="{Binding Order.ActiCode}" FontSize="Small" VerticalOptions="Center" Margin="10,0,0,0" TextColor="red"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
+                                <Label Text="Period:" FontSize="Small" VerticalOptions="Center" TextColor="Gray"/>
+                                <Label Text="{Binding Order.DinhKy}" FontSize="Small" VerticalOptions="Center" Margin="10,0,0,0"/>
+                                <Label Text=" year" FontSize="Small" VerticalOptions="Center"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
+                                <Label Text="Price of code:" FontSize="Small" VerticalOptions="Center" TextColor="Gray"/>
+                                <Label Text="$" FontSize="Small" VerticalOptions="Center" Margin="10,0,0,0" />
+                                <Label Text="{Binding Order.ActivationPrice, StringFormat='{0:F2}'}" FontSize="Small" VerticalOptions="Center" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
+                                <Label Text="Creation Date:" FontSize="Small" VerticalOptions="Center"  TextColor="Gray"/>
+                                <Label Text="Expiry Date:" FontSize="Small" VerticalOptions="Center" Margin="140,0,0,0"  TextColor="Gray"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
+                                <Label Text="{Binding Order.NgayKhoiTao, StringFormat='{0:MM/dd/yyyy}'}" FontSize="Small" VerticalOptions="Center" Margin="10,0,0,0" TextColor="blue"/>
+                                <Label Text="{Binding Order.NgayHetHan, StringFormat='{0:MM/dd/yyyy}'}" FontSize="Small" VerticalOptions="Center" Margin="153,0,0,0" TextColor="blue"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
+                                <Label Text="Total Quantity:" FontSize="Small" VerticalOptions="Center" TextColor="Gray"/>
+                                <Label Text="{Binding Order.TotalQuantity}" FontSize="Small" VerticalOptions="Center" Margin="10,0,0,0"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
+                                <Label Text="Total Price:" FontSize="Small" VerticalOptions="Center" TextColor="Gray"/>
+                                <Label Text="$" FontSize="Small" VerticalOptions="Center" Margin="10,0,0,0"/>
+                                <Label Text="{Binding Order.TotalPrice, StringFormat='{0:F2}'}" FontSize="Small" VerticalOptions="Center" Margin="0"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
+                                <!-- Frames with Binding -->
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Status:" FontSize="Small" VerticalOptions="Center" TextColor="Gray"/>
+                                    <!-- TT Frame -->
+                                    <Frame x:Name="TTFrame" BackgroundColor="{Binding FrameColor1}" HeightRequest="25" WidthRequest="60" Margin="10,0,10,0" Padding="0" Opacity="0.5">
+                                        <Label x:Name="TTLabel" Text="{Binding Order.PaymentStatus}" FontSize="Small" TextColor="{Binding FrameColor2}" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+                                    </Frame>
+                                    <!-- DH Frame -->
+                                    <Frame x:Name="DHFrame" BackgroundColor="{Binding FrameColor3}" HeightRequest="25" WidthRequest="100" Padding="0" Opacity="0.5">
+                                        <Label x:Name="DHLabel" Text="{Binding Order.OrderStatus}" FontSize="Small" TextColor="{Binding FrameColor4}" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+                                    </Frame>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+
+                    <!-- Product List -->
+                    <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="0,10,0,0">
+                        <StackLayout>
+                            <Label Text="Product List" FontSize="Medium" FontAttributes="Bold" Margin="0,0,0,10"/>
+                            <CollectionView ItemsSource="{Binding Products}">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Frame BorderColor="Gray" CornerRadius="5" Margin="0,0,0,10" Padding="10">
+                                            <StackLayout Orientation="Horizontal">
+                                                <Image Source="{Binding ProductImage}" WidthRequest="80" HeightRequest="80" Aspect="AspectFill"/>
+                                                <StackLayout Margin="10,0,0,0">
+                                                    <Label Text="{Binding ProductName}" FontSize="Medium"/>
+                                                    <StackLayout Orientation="Horizontal" Margin="0">
+                                                        <Label Text="Quantity: " FontSize="Small"/>
+                                                        <Label Text="{Binding Quantity}" FontSize="Small" TextColor="Gray"/>
+                                                    </StackLayout>
+                                                    <StackLayout Orientation="Horizontal" Margin="0">
+                                                    <Label Text="Price: " FontSize="Small"/>
+                                                        <Label Text="{Binding ProductPrice, StringFormat='{0:F2}'}" FontSize="Small" TextColor="Gray"/>
+                                                    </StackLayout>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </Frame>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </Grid>
+
+            <!-- Footer Grid -->
+            <Grid Grid.Row="2" BackgroundColor="White" HeightRequest="50">
+                <!-- Additional footer content can be added here if needed -->
+            </Grid>
+        </Grid>
+    </AbsoluteLayout>
+</ContentPage>

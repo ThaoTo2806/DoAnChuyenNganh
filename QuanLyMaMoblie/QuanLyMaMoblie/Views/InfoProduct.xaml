@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:QuanLyMaMoblie.ViewModels"
+             x:Class="QuanLyMaMoblie.Views.InfoProduct"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.BindingContext>
+        <vm:InfoProductViewModel />
+    </ContentPage.BindingContext>
+
+    <AbsoluteLayout>
+
+        <!-- Background Image -->
+        <Image Source="background2.png" Aspect="AspectFill" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" />
+
+        <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" VerticalScrollBarVisibility="Always">
+            <Grid x:Name="FullGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Header Grid -->
+                <Grid x:Name="HeaderGrid" Grid.Row="0" HeightRequest="66" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <Image Source="back.png" WidthRequest="32" HeightRequest="32" VerticalOptions="Center" HorizontalOptions="Start" Margin="10,2,10,0">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding GoBackCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                    <!-- Icon Share -->
+                    <Image Grid.Column="0" Source="share.png" HeightRequest="32" WidthRequest="32" Margin="10,2,10,0"
+                           VerticalOptions="Center" HorizontalOptions="End" />
+
+                    <!-- Icon Cart -->
+                    <Image Grid.Column="1" Source="cart.png" HeightRequest="32" WidthRequest="32" Margin="0,2,10,0"
+                           VerticalOptions="Center" HorizontalOptions="End" />
+
+                    <!-- Icon Menu -->
+                    <Image Grid.Column="2" Source="menu.png" HeightRequest="32" WidthRequest="32" Margin="0,2,10,0"
+                           VerticalOptions="Center" HorizontalOptions="End" />
+                    <Frame HeightRequest="20" WidthRequest="20" Padding="0" Margin="380,-15,0,0">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding MoveToCart1Command}"/>
+                        </Frame.GestureRecognizers>
+                        <Label Text="{Binding Dem}" TextColor="Black" FontSize="13" Margin="4,0,0,0"/>
+                    </Frame>
+                </Grid>
+
+                <!-- Content Grid -->
+                <Grid x:Name="ContentGrid" Grid.Row="1" BackgroundColor="#f2f2f2" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                        <StackLayout Padding="10">
+                            <Frame CornerRadius="20" BackgroundColor="White" HasShadow="True">
+                                <Image Source="{Binding Product.Image}" HeightRequest="200" Aspect="AspectFill"/>
+                            </Frame>
+
+                            <Frame CornerRadius="30" BackgroundColor="Transparent" HasShadow="True" Margin="-310,-45,0,0" WidthRequest="80" BorderColor="Transparent">
+                                <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Grid.Column="0" Source="star.png" HeightRequest="15" WidthRequest="15" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Text="{Binding Product.Evaluate}" FontSize="13" FontAttributes="Bold" TextColor="#757171" VerticalOptions="Center"/>
+                                    <Label Grid.Column="2" Text="/5" FontSize="13" FontAttributes="Bold" TextColor="#757171" VerticalOptions="Center"/>
+                                </Grid>
+                            </Frame>
+
+                            <Label Text="{Binding Product.ProductName}" FontSize="28" FontAttributes="Bold" Margin="5,0,0,0" />
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="$" FontSize="30" TextColor="#F83737" Margin="5,0,0,0"/>
+                                <Label Text="{Binding Product.Price}" FontSize="30" TextColor="#F83737"/>
+                                <Label Text=" -  $30000" FontSize="30" TextColor="#F83737" Margin="5,0,0,0"/>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
+                                <Image Source="info.png" HeightRequest="32" WidthRequest="32"/>
+                                <Label Text="Information" FontSize="28" FontAttributes="Italic" TextColor="#010040"/>
+                            </StackLayout>
+
+                            <Grid HeightRequest="110">
+                                <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                    <Frame>
+                                        <StackLayout>
+                                            <Label Text="{Binding Product.Detail}" FontSize="16"/>
+                                        </StackLayout>
+                                    </Frame>
+
+                                </ScrollView>
+                            </Grid>
+                            <ScrollView VerticalScrollBarVisibility="Always">
+                                <StackLayout Orientation="Vertical" Spacing="10" Padding="10">
+
+                                    <!-- Highlights section -->
+                                    <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                                        <Label Text="Highlights" FontSize="18" FontAttributes="Bold" HorizontalOptions="StartAndExpand"/>
+                                        <Label Text=">" FontSize="18" FontAttributes="Bold" HorizontalOptions="End">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding ShowContentCommand}" CommandParameter="Highlights" />
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                    </StackLayout>
+                                    <BoxView Color="#CCCCCC" HeightRequest="0.5"/>
+                                    <Label Text="{Binding Product.Feature}" FontSize="16" Margin="10,5,10,10" IsVisible="{Binding IsHighlightsVisible}" />
+
+                                    <!-- Feature section -->
+                                    <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                                        <Label Text="Feature" FontSize="18" FontAttributes="Bold" HorizontalOptions="StartAndExpand"/>
+                                        <Label Text=">" FontSize="18" FontAttributes="Bold" HorizontalOptions="End">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding ShowContentCommand}" CommandParameter="Feature" />
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                    </StackLayout>
+                                    <BoxView Color="#CCCCCC" HeightRequest="0.5"/>
+                                    <Label Text="{Binding Product.Specifications}" FontSize="16" Margin="10,5,10,10" IsVisible="{Binding IsFeatureVisible}" />
+
+                                    <!-- Specifications section -->
+                                    <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                                        <Label Text="Specifications" FontSize="18" FontAttributes="Bold" HorizontalOptions="StartAndExpand"/>
+                                        <Label Text=">" FontSize="18" FontAttributes="Bold" HorizontalOptions="End">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding ShowContentCommand}" CommandParameter="Specifications" />
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                    </StackLayout>
+                                    <BoxView Color="#CCCCCC" HeightRequest="0.5"/>
+                                    <Label Text="{Binding Product.Helps}" FontSize="16" Margin="10,5,10,10" IsVisible="{Binding IsSpecificationsVisible}" />
+
+                                </StackLayout>
+                            </ScrollView>
+
+                            <!-- Hiển thị thêm các thuộc tính khác của sản phẩm nếu cần -->
+                        </StackLayout>
+                    </ScrollView>
+                </Grid>
+
+                <!-- Footer Grid -->
+                <Grid x:Name="FooterGrid" Grid.Row="2" HeightRequest="65" BackgroundColor="White" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Add Frame -->
+                    <Frame x:Name="AddFrame" Grid.Column="0" BackgroundColor="#6FCF72" WidthRequest="130" HeightRequest="50" Padding="10,0" Margin="200,2,10,0" CornerRadius="0">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding IncrementQuantityCommand}" />
+                        </Frame.GestureRecognizers>
+                        <Label Text="Add to Cart" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" TextColor="White" FontSize="18" />
+                    </Frame>
+
+
+                    <!-- Buy Frame -->
+                    <Frame x:Name="BuyFrame" Grid.Column="1" BackgroundColor="#FD6C6C" WidthRequest="130" HeightRequest="50" Padding="10,0" Margin="65,2,10,0" CornerRadius="0">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding MoveToCartCommand}" />
+                        </Frame.GestureRecognizers>
+                        <Label Text="Buy Now" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" TextColor="White" FontSize="18" />
+                    </Frame>
+
+                </Grid>
+
+
+            </Grid>
+        </ScrollView>
+
+    </AbsoluteLayout>
+
+</ContentPage>

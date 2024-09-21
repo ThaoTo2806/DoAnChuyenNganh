@@ -1,0 +1,301 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|d:\\hoctap\\wpf\\qlmakichhoat\\quanlymamoblie\\quanlymamoblie\\views\\activationview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|solutionrelative:quanlymamoblie\\views\\activationview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\quanlymamoblie\\views\\infouser.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|solutionrelative:quanlymamoblie\\views\\infouser.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\quanlymamoblie\\viewmodels\\infouserviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|solutionrelative:quanlymamoblie\\viewmodels\\infouserviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\quanlymamoblie\\viewmodels\\cartviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|solutionrelative:quanlymamoblie\\viewmodels\\cartviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\quanlymamoblie\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|solutionrelative:quanlymamoblie\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\quanlymamoblie\\viewmodels\\paymentviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|solutionrelative:quanlymamoblie\\viewmodels\\paymentviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\quanlymamoblie\\models\\activationcode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|solutionrelative:quanlymamoblie\\models\\activationcode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\quanlymamoblie\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|solutionrelative:quanlymamoblie\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\quanlymamoblie\\views\\registerview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|solutionrelative:quanlymamoblie\\views\\registerview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\quanlymamoblie\\views\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|solutionrelative:quanlymamoblie\\views\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\quanlymamoblie\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|solutionrelative:quanlymamoblie\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\quanlymamoblie\\viewmodels\\forgotpassviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|solutionrelative:quanlymamoblie\\viewmodels\\forgotpassviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\quanlymamoblie\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|solutionrelative:quanlymamoblie\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\quanlymamoblie\\views\\forgotpassview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|solutionrelative:quanlymamoblie\\views\\forgotpassview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\quanlymamoblie\\models\\member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|solutionrelative:quanlymamoblie\\models\\member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 12,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{131369f2-062d-44a2-8671-91ff31efb4f4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{92755723-0816-4623-955b-8aa705bf0237}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "InfoUser.xaml",
+              "DocumentMoniker": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\Views\\InfoUser.xaml",
+              "RelativeDocumentMoniker": "QuanLyMaMoblie\\Views\\InfoUser.xaml",
+              "ToolTip": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\Views\\InfoUser.xaml",
+              "RelativeToolTip": "QuanLyMaMoblie\\Views\\InfoUser.xaml",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAADEAAABeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-08-05T09:38:53.433Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "InfoUserViewModel.cs",
+              "DocumentMoniker": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\ViewModels\\InfoUserViewModel.cs",
+              "RelativeDocumentMoniker": "QuanLyMaMoblie\\ViewModels\\InfoUserViewModel.cs",
+              "ToolTip": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\ViewModels\\InfoUserViewModel.cs",
+              "RelativeToolTip": "QuanLyMaMoblie\\ViewModels\\InfoUserViewModel.cs",
+              "ViewState": "AQIAAKMAAAAAAAAAAAAYwK4AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-05T09:14:13.131Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ActivationView.xaml",
+              "DocumentMoniker": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\Views\\ActivationView.xaml",
+              "RelativeDocumentMoniker": "QuanLyMaMoblie\\Views\\ActivationView.xaml",
+              "ToolTip": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\Views\\ActivationView.xaml",
+              "RelativeToolTip": "QuanLyMaMoblie\\Views\\ActivationView.xaml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-31T07:54:41.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CartViewModel.cs",
+              "DocumentMoniker": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\ViewModels\\CartViewModel.cs",
+              "RelativeDocumentMoniker": "QuanLyMaMoblie\\ViewModels\\CartViewModel.cs",
+              "ToolTip": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\ViewModels\\CartViewModel.cs",
+              "RelativeToolTip": "QuanLyMaMoblie\\ViewModels\\CartViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T08:16:03.506Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Cart.cs",
+              "DocumentMoniker": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\Models\\Cart.cs",
+              "RelativeDocumentMoniker": "QuanLyMaMoblie\\Models\\Cart.cs",
+              "ToolTip": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\Models\\Cart.cs",
+              "RelativeToolTip": "QuanLyMaMoblie\\Models\\Cart.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T08:13:09.59Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PayMentViewModel.cs",
+              "DocumentMoniker": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\ViewModels\\PayMentViewModel.cs",
+              "RelativeDocumentMoniker": "QuanLyMaMoblie\\ViewModels\\PayMentViewModel.cs",
+              "ToolTip": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\ViewModels\\PayMentViewModel.cs",
+              "RelativeToolTip": "QuanLyMaMoblie\\ViewModels\\PayMentViewModel.cs",
+              "ViewState": "AQIAADMAAAAAAAAAAAAAAGoAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T06:33:17.368Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ActivationCode.cs",
+              "DocumentMoniker": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\Models\\ActivationCode.cs",
+              "RelativeDocumentMoniker": "QuanLyMaMoblie\\Models\\ActivationCode.cs",
+              "ToolTip": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\Models\\ActivationCode.cs",
+              "RelativeToolTip": "QuanLyMaMoblie\\Models\\ActivationCode.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T06:25:59.216Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Product.cs",
+              "DocumentMoniker": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "QuanLyMaMoblie\\Models\\Product.cs",
+              "ToolTip": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\Models\\Product.cs",
+              "RelativeToolTip": "QuanLyMaMoblie\\Models\\Product.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAABAAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T06:23:14.592Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RegisterView.xaml",
+              "DocumentMoniker": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\Views\\RegisterView.xaml",
+              "RelativeDocumentMoniker": "QuanLyMaMoblie\\Views\\RegisterView.xaml",
+              "ToolTip": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\Views\\RegisterView.xaml",
+              "RelativeToolTip": "QuanLyMaMoblie\\Views\\RegisterView.xaml",
+              "ViewState": "AQIAACoAAAAAAAAAAAAAADgAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-24T17:20:21.037Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "LoginView.xaml",
+              "DocumentMoniker": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\Views\\LoginView.xaml",
+              "RelativeDocumentMoniker": "QuanLyMaMoblie\\Views\\LoginView.xaml",
+              "ToolTip": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\Views\\LoginView.xaml",
+              "RelativeToolTip": "QuanLyMaMoblie\\Views\\LoginView.xaml",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAADcAAABmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-24T17:19:52.713Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "RegisterViewModel.cs",
+              "DocumentMoniker": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\ViewModels\\RegisterViewModel.cs",
+              "RelativeDocumentMoniker": "QuanLyMaMoblie\\ViewModels\\RegisterViewModel.cs",
+              "ToolTip": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\ViewModels\\RegisterViewModel.cs",
+              "RelativeToolTip": "QuanLyMaMoblie\\ViewModels\\RegisterViewModel.cs",
+              "ViewState": "AQIAADwAAAAAAAAAAIA0wE4AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T17:15:30.941Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ForgotPassViewModel.cs",
+              "DocumentMoniker": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\ViewModels\\ForgotPassViewModel.cs",
+              "RelativeDocumentMoniker": "QuanLyMaMoblie\\ViewModels\\ForgotPassViewModel.cs",
+              "ToolTip": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\ViewModels\\ForgotPassViewModel.cs",
+              "RelativeToolTip": "QuanLyMaMoblie\\ViewModels\\ForgotPassViewModel.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAA+wEoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T17:11:52.03Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\ViewModels\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "QuanLyMaMoblie\\ViewModels\\LoginViewModel.cs",
+              "ToolTip": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\ViewModels\\LoginViewModel.cs",
+              "RelativeToolTip": "QuanLyMaMoblie\\ViewModels\\LoginViewModel.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAA1wBUAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T17:10:56.563Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ForgotPassView.xaml",
+              "DocumentMoniker": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\Views\\ForgotPassView.xaml",
+              "RelativeDocumentMoniker": "QuanLyMaMoblie\\Views\\ForgotPassView.xaml",
+              "ToolTip": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\Views\\ForgotPassView.xaml",
+              "RelativeToolTip": "QuanLyMaMoblie\\Views\\ForgotPassView.xaml",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAADMAAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-24T16:56:33.168Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Member.cs",
+              "DocumentMoniker": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\Models\\Member.cs",
+              "RelativeDocumentMoniker": "QuanLyMaMoblie\\Models\\Member.cs",
+              "ToolTip": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\Models\\Member.cs",
+              "RelativeToolTip": "QuanLyMaMoblie\\Models\\Member.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAD4vycAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T07:13:49.425Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

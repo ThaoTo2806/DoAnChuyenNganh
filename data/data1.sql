@@ -1,0 +1,222 @@
+CREATE TABLE NHACUNGCAP
+(
+   MaNCC INT AUTO_INCREMENT PRIMARY KEY,
+   TenNCC TEXT NOT NULL,
+   DiaChi TEXT NOT NULL,
+   Email TEXT NOT NULL,
+   SoDienThoai VARCHAR(12) NOT NULL,
+   DaXoa TINYINT DEFAULT 0 NULL
+);
+
+CREATE TABLE LOAITHANHVIEN
+(
+    MaLoaiTV INT AUTO_INCREMENT PRIMARY KEY,
+    TenLoai TEXT NOT NULL,
+    DaXoa TINYINT DEFAULT 0 NULL
+);
+
+CREATE TABLE THANHVIEN
+(
+    MaTV INT AUTO_INCREMENT PRIMARY KEY,
+    MaLoaiTV INT NULL,
+    TaiKhoan TEXT NOT NULL UNIQUE,
+    MatKhau TEXT NOT NULL, 
+    Email TEXT NULL,
+    HinhDaiDien TEXT DEFAULT 'default.png' NULL,
+    DaXoa TINYINT DEFAULT 0 NULL,
+
+    CONSTRAINT FK_TV_LTV FOREIGN KEY(MaLoaiTV) REFERENCES LOAITHANHVIEN(MaLoaiTV)
+);
+
+CREATE TABLE THONGTINKH
+(
+    MaKH INT AUTO_INCREMENT PRIMARY KEY,
+    MATV INT NOT NULL,
+    HoTen TEXT NOT NULL,
+    SoDienThoai VARCHAR(12) NULL,
+    DiaChi TEXT NULL,
+    DaXoa TINYINT DEFAULT 0 NULL,
+    
+    CONSTRAINT FK_TTKH_TV FOREIGN KEY(MaTV) REFERENCES THANHVIEN(MaTV)
+);
+
+
+CREATE TABLE LOAISANPHAM
+(
+    MaLoaiSP INT AUTO_INCREMENT PRIMARY KEY,
+    TenLoaiSP TEXT NOT NULL,
+    Mota TEXT NULL,
+    DaXoa TINYINT DEFAULT 0 NULL
+);
+
+CREATE TABLE SANPHAM
+(
+    MaSP INT AUTO_INCREMENT PRIMARY KEY,
+    MaNCC INT NOT NULL,
+    MaLoaiSP INT NOT NULL,
+    TenSP TEXT NOT NULL,
+    DonGia DECIMAL(18,0) NULL,
+    NgayCapNhat DATETIME NULL,
+    MoTa TEXT NULL,
+    HinhAnh TEXT NULL,
+    HinhAnh2 TEXT NULL,
+    HinhAnh3 TEXT NULL,
+    LuotXem INT NULL,
+    LuotBinhChon INT NULL,
+    LuotBinhLuan INT NULL,
+    SoLanMua INT NULL,
+    Moi TINYINT NOT NULL,
+    DaXoa TINYINT DEFAULT 0 NULL,
+
+    CONSTRAINT FK_SP_LSP FOREIGN KEY(MaLoaiSP) REFERENCES LOAISANPHAM(MaLoaiSP),
+    CONSTRAINT FK_SP_NCC FOREIGN KEY(MaNCC) REFERENCES NHACUNGCAP(MaNCC)
+);
+
+CREATE TABLE PHIEUNHAP (
+    MaPN INT AUTO_INCREMENT PRIMARY KEY,
+    TenPN TEXT NOT NULL
+);
+
+-- Sau khi bạn đã tạo bảng PHIEUNHAP, bạn có thể tạo lại bảng CHITIETPHIEUNHAP với ràng buộc khóa ngoại đúng
+CREATE TABLE CHITIETPHIEUNHAP (
+    MaCTPN INT AUTO_INCREMENT PRIMARY KEY,
+    MaPN INT NOT NULL,
+    MaSP INT NOT NULL,
+    DonGiaNhap DECIMAL(18,0) NOT NULL,
+    SoLuongNhap INT NULL,
+    DaXoa TINYINT DEFAULT 0 NULL,
+
+    CONSTRAINT FK_CTPN_PN FOREIGN KEY(MaPN) REFERENCES PHIEUNHAP(MaPN),
+    CONSTRAINT FK_CTPN_SP FOREIGN KEY(MaSP) REFERENCES SANPHAM(MaSP)
+);
+
+
+CREATE TABLE DONDATHANG
+(
+    MaDDH INT AUTO_INCREMENT PRIMARY KEY,
+    NgayDatHang DATETIME NOT NULL,
+    NgayGiao DATETIME NULL,
+    DaThanhToan TINYINT NOT NULL,
+    DiaChiGiaoHang TEXT NULL, 
+    TinhTrang ENUM('Chưa duyệt', 'Đã duyệt', 'Đã giao', 'Đang chờ') DEFAULT 'Chưa duyệt' NOT NULL,
+    DaXoa TINYINT DEFAULT 0 NULL,
+    ThanhTien DECIMAL(18,0) NULL,
+    MaKH INT NOT NULL,
+
+    CONSTRAINT FK_DDH_TTDDH FOREIGN KEY(MaKH) REFERENCES THONGTINKH(MaKH)
+);
+
+
+CREATE TABLE CHITIETDONDATHANG
+(
+    MaChiTietDDH INT AUTO_INCREMENT PRIMARY KEY,
+    MaDDH INT NOT NULL,
+    MaSP INT NOT NULL,
+    SoLuong INT NOT NULL,
+    DonGia DECIMAL(18,0) NOT NULL,
+
+    CONSTRAINT FK_CTDDH_DDH FOREIGN KEY(MaDDH) REFERENCES DONDATHANG(MaDDH),
+    CONSTRAINT FK_CTDDH_SP FOREIGN KEY(MaSP) REFERENCES SANPHAM(MaSP)
+);
+
+CREATE TABLE MAKICHOAT (
+    MaKichHoat INT AUTO_INCREMENT PRIMARY KEY,
+    MaSP INT NOT NULL,
+    Sitecode INT NOT NULL,
+    MID INT NOT NULL,
+    Code CHAR(12) GENERATED ALWAYS AS (
+        CONCAT(
+            LPAD(CAST(MaSP AS CHAR), 2, '0'),
+            LPAD(CAST(MID AS CHAR), 4, '0'),
+            LPAD(CAST(Sitecode AS CHAR), 4, '0'),
+            SUBSTRING(MD5(CONCAT(MaSP, MID, Sitecode)), 1, 2) -- Generating code based on other column values
+        )
+    ),
+    NgayCap DATE NOT NULL,
+    NgayHetHan DATE NOT NULL,
+    MaDinhKy INT NOT NULL,
+    TrangThai ENUM('Chưa hết hạn', 'Hết hạn') DEFAULT 'Chưa hết hạn' NOT NULL, -- Changed to ENUM type
+    DaXoa TINYINT DEFAULT 0 NULL
+);
+
+CREATE TABLE DINHKY
+(
+    MaDinhKy INT AUTO_INCREMENT PRIMARY KEY,
+    MaSP INT NOT NULL,
+    ThoiHan INT NOT NULL, 
+    Gia DECIMAL(18,0) NOT NULL,
+    DaXoa TINYINT DEFAULT 0 NULL,
+
+    CONSTRAINT FK_DK_SP FOREIGN KEY(MaSP) REFERENCES SANPHAM(MaSP)
+);
+
+ALTER TABLE MAKICHOAT
+    ADD CONSTRAINT FK_MKH_SP FOREIGN KEY(MaSP) REFERENCES SANPHAM(MaSP),
+    ADD CONSTRAINT FK_MKH_DK FOREIGN KEY(MaDinhKy) REFERENCES DINHKY(MaDinhKy);
+
+-- Chèn dữ liệu vào bảng NHACUNGCAP
+INSERT INTO NHACUNGCAP (TenNCC, DiaChi, Email, SoDienThoai, DaXoa) 
+VALUES 
+('Bruker', '123 Bruker Street, Germany', 'info@bruker.com', '0123456789', 0);
+
+-- Chèn dữ liệu vào bảng LOAISANPHAM
+INSERT INTO LOAISANPHAM (TenLoaiSP, Mota, DaXoa)
+VALUES 
+('Spectrometer', 'Thiết bị phân tích phổ', 0);
+
+-- Chèn dữ liệu vào bảng SANPHAM
+INSERT INTO SANPHAM (MaNCC, MaLoaiSP, TenSP, DonGia, NgayCapNhat, MoTa, Moi, DaXoa)
+VALUES 
+(1, 1, 'BEAM - Process FT-NIR Spectrometer', 50000000, NOW(), 'Thiết bị phân tích phổ FT-NIR cho quy trình', 1, 0),
+(1, 1, 'Other Bruker Product', 0, NOW(), 'Mô tả sản phẩm khác của Bruker', 0, 0);
+
+-- Chèn dữ liệu vào bảng LOAITHANHVIEN
+INSERT INTO LOAITHANHVIEN (TenLoai, DaXoa)
+VALUES 
+('Admin', 0),
+('User', 0);
+
+-- Chèn dữ liệu vào bảng THANHVIEN
+INSERT INTO THANHVIEN (MaLoaiTV, TaiKhoan, MatKhau, Email, HinhDaiDien, DaXoa)
+VALUES 
+(1, 'admin', '1', 'admin@example.com', 'admin.png', 0),
+(2, 'user', '2', 'user@example.com', 'user.png', 0);
+
+-- Chèn dữ liệu vào bảng THONGTINKH
+INSERT INTO THONGTINKH (MATV, HoTen, SoDienThoai, DiaChi, DaXoa)
+VALUES 
+(1, 'Admin', '0123456789', '123 Admin Street', 0),
+(2, 'User', '0987654321', '456 User Street', 0);
+
+-- Chèn 2 dòng dữ liệu vào bảng PHIEUNHAP
+INSERT INTO PHIEUNHAP (TenPN) VALUES ('Phiếu nhập 1'), ('Phiếu nhập 2');
+
+-- Chèn dữ liệu vào bảng CHITIETPHIEUNHAP
+INSERT INTO CHITIETPHIEUNHAP (MaPN, MaSP, DonGiaNhap, SoLuongNhap, DaXoa)
+VALUES 
+(1, 1, 48000000, 2, 0),
+(2, 1, 49000000, 3, 0);
+
+-- Chèn dữ liệu vào bảng DONDATHANG
+INSERT INTO DONDATHANG (NgayDatHang, NgayGiao, DaThanhToan, DiaChiGiaoHang, TinhTrang, ThanhTien, MaKH, DaXoa)
+VALUES 
+(NOW(), NOW(), 1, '123 User Street', 'Chưa duyệt', 0, 2, 0),
+(NOW(), NOW(), 1, '456 Admin Street', 'Đã duyệt', 0, 1, 0);
+
+-- Chèn dữ liệu vào bảng CHITIETDONDATHANG
+INSERT INTO CHITIETDONDATHANG (MaDDH, MaSP, SoLuong, DonGia)
+VALUES 
+(1, 1, 1, 50000000),
+(2, 1, 2, 50000000);
+
+-- Chèn dữ liệu vào bảng MAKICHOAT
+INSERT INTO MAKICHOAT (MaSP, Sitecode, MID, NgayCap, NgayHetHan, MaDinhKy, TrangThai, DaXoa)
+VALUES 
+(1, 1234, 1, NOW(), DATE_ADD(NOW(), INTERVAL 30 DAY), 1, 0, 0),
+(1, 5678, 2, NOW(), DATE_ADD(NOW(), INTERVAL 30 DAY), 2, 0, 0);
+
+-- Chèn dữ liệu vào bảng DINHKY
+INSERT INTO DINHKY (MaSP, ThoiHan, Gia, DaXoa)
+VALUES 
+(1, 30, 1000000, 0),
+(1, 60, 1500000, 0);

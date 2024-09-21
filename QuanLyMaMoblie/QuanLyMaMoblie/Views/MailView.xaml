@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:QuanLyMaMoblie.ViewModels"
+             x:Class="QuanLyMaMoblie.Views.MailView"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.BindingContext>
+        <vm:MailViewModel />
+    </ContentPage.BindingContext>
+
+    <AbsoluteLayout>
+
+        <!-- Background Image -->
+        <Image Source="background2.png" Aspect="AspectFill" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" />
+
+        <Grid x:Name="FullGrid" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Header Grid -->
+            <Grid x:Name="HeaderGrid" Grid.Row="0" HeightRequest="66" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Image Source="back.png" WidthRequest="32" HeightRequest="32" VerticalOptions="Center" HorizontalOptions="Start" Margin="10,2,10,0">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoBackCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <!-- Icon Share -->
+                <Image Grid.Column="0" Source="share.png" HeightRequest="32" WidthRequest="32" Margin="10,2,10,0"
+                       VerticalOptions="Center" HorizontalOptions="End" />
+
+                <!-- Icon Cart -->
+                <Image Grid.Column="1" Source="bell.png" HeightRequest="32" WidthRequest="32" Margin="0,2,10,0"
+                       VerticalOptions="Center" HorizontalOptions="End" />
+
+                <!-- Icon Menu -->
+                <Image Grid.Column="2" Source="menu.png" HeightRequest="32" WidthRequest="32" Margin="0,2,10,0"
+                       VerticalOptions="Center" HorizontalOptions="End" />
+            </Grid>
+
+            <!-- Content Grid -->
+            <Grid x:Name="ContentGrid" Grid.Row="1" BackgroundColor="#A7BFF2" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <CollectionView ItemsSource="{Binding ExpiredOrdersList}" Margin="5,0" VerticalScrollBarVisibility="Always">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Margin="0,5">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <!-- LeftImage Frame -->
+                                    <Frame Grid.Column="0" Margin="0,5" Padding="0" BorderColor="White">
+                                        <Image Source="{Binding FirstImage}" HeightRequest="100" WidthRequest="100" Aspect="AspectFill"/>
+                                    </Frame>
+
+                                    <!-- RightInfo Frame -->
+                                    <Frame Grid.Column="1" Margin="20,5,0,5" Padding="0" BorderColor="White">
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type Page}}, Path=BindingContext.NavigateToDetailOrderCommand}" 
+  CommandParameter="{Binding}" />
+                                        </Frame.GestureRecognizers>
+                                        <StackLayout>
+                                            <Label Text="{Binding FirstProductName}" FontSize="Medium" TextColor="Black" FontAttributes="Bold"/>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="{Binding InitiatedDate, StringFormat='{0:MM/dd/yyyy}'}" FontSize="Small" TextColor="Gray" FontAttributes="Bold"/>
+                                                <Label Text="  -  " FontSize="Small" TextColor="Gray" FontAttributes="Bold"/>
+                                                <Label Text="{Binding ExpiredDate, StringFormat='{0:MM/dd/yyyy}'}" FontSize="Small" TextColor="Gray" FontAttributes="Bold"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal" Spacing="10">
+
+                                                <!-- TinhTrangMa Frame -->
+                                                <Frame x:Name="TTFrame" BackgroundColor="Red" HeightRequest="25" WidthRequest="60" Margin="0,5,5,0" Padding="0" Opacity="0.5">
+                                                    <Label x:Name="TTLabel" Text="{Binding CStatus}" FontSize="Small" TextColor="White"
+           HorizontalOptions="Center" VerticalOptions="Center"
+           HorizontalTextAlignment="Center"/>
+                                                </Frame>
+
+
+                                            </StackLayout>
+
+
+
+
+                                        </StackLayout>
+                                    </Frame>
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+
+
+            <!-- Footer Grid -->
+            <Grid x:Name="FooterGrid" Grid.Row="2" HeightRequest="50" BackgroundColor="White" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Icon Home -->
+                <Frame x:Name="HomeF" BackgroundColor="White" CornerRadius="0" Padding="0" Margin="0" HasShadow="False" BorderColor="White">
+                    <Image Source="home.png" HeightRequest="32" WidthRequest="32" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding HomeCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+
+
+                <!-- Icon Note -->
+                <Frame x:Name="NoteF" BackgroundColor="White" Grid.Column="1" CornerRadius="0" Padding="0" Margin="0" HasShadow="False" BorderColor="White">
+                    <Image Source="note.png" HeightRequest="32" WidthRequest="32" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NoteCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+
+                <!-- Icon Mail -->
+                <Frame x:Name="MailF" BackgroundColor="White" Grid.Column="2" CornerRadius="0" Padding="0" Margin="0" HasShadow="False" BorderColor="White">
+                    <Image Source="mail2.png" HeightRequest="32" WidthRequest="32" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding MailCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+
+                <!-- Icon User -->
+                <Frame x:Name="UserF" BackgroundColor="White" Grid.Column="3" CornerRadius="0" Padding="0" Margin="0" HasShadow="False" BorderColor="White">
+                    <Image Source="user.png" HeightRequest="32" WidthRequest="32" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding UserCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+            </Grid>
+        </Grid>
+    </AbsoluteLayout>
+</ContentPage>

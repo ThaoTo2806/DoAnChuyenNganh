@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:QuanLyMaWinApp.ViewModels"
+             x:Class="QuanLyMaWinApp.Views.AddCustomerPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.BindingContext>
+        <vm:AddCustomerViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <Frame VerticalOptions="Center" HorizontalOptions="Center" Padding="20" BackgroundColor="#EBEFF0" CornerRadius="20" WidthRequest="1000" HeightRequest="600">
+            <ScrollView VerticalScrollBarVisibility="Always">
+                <StackLayout Spacing="10">
+                    <Label Text="Add New Customer" 
+                       FontSize="24" 
+                       HorizontalOptions="Center" 
+                       Margin="0,0,0,10" TextColor="Black" FontAttributes="Bold"/>
+
+                    <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                        <Label Text="Full Name:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black" Margin="0,5,0,0"/>
+                        <Frame BorderColor="Gray" CornerRadius="5" Padding="0" HorizontalOptions="FillAndExpand" Margin="-350,-8,0,0" BackgroundColor="Transparent">
+                            <Entry Text="{Binding Name}" FontSize="16" Margin="0" TextColor="Gray" />
+                        </Frame>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                        <Label Text="Gender:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black" Margin="0,5,0,0"/>
+                        <StackLayout Orientation="Horizontal" Margin="-830,-8,0,0">
+                            <RadioButton x:Name="maleRadioButton" Content="Male" GroupName="GenderGroup" VerticalOptions="Center" TextColor="Blue" IsChecked="{Binding IsMale}"/>
+                            <RadioButton x:Name="femaleRadioButton" Content="Female" GroupName="GenderGroup" VerticalOptions="Center" TextColor="Blue" IsChecked="{Binding IsFemale}"/>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                        <Label Text="Image:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black" Margin="0,5,0,0"/>
+                        <Frame CornerRadius="10" BorderColor="Gray" Padding="10" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" WidthRequest="120" Margin="-1055,-10,0,0">
+                            <Image x:Name="SelectedImage" HeightRequest="100" WidthRequest="100" Margin="0,0,0,0" Source="{Binding SelectedImage}"/>
+                        </Frame>
+                        <Button Text="Select Image" Command="{Binding ChooseImageCommand}" HorizontalOptions="Center" BackgroundColor="#0026F2" WidthRequest="120" HeightRequest="30" Margin="-1200,-20,0,0"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                        <Label Text="BirthDate:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black" Margin="0,5,0,0"/>
+                        <Frame BorderColor="Gray" CornerRadius="5" Padding="0" HorizontalOptions="FillAndExpand" Margin="-350,-8,0,0" BackgroundColor="Transparent">
+                            <DatePicker x:Name="birthDatePicker" Date="{Binding Birth}" Format="dd/MM/yyyy" TextColor="Black" Grid.Column="1" WidthRequest="1000"/>
+                        </Frame>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                        <Label Text="Account:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black" Margin="0,5,0,0"/>
+                        <Frame BorderColor="Gray" CornerRadius="5" Padding="0" HorizontalOptions="FillAndExpand" Margin="-350,-8,0,0" BackgroundColor="Transparent">
+                            <Entry Text="{Binding Account}" FontSize="16" Margin="0" TextColor="Gray" />
+                        </Frame>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                        <Label Text="Phone:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black" Margin="0,5,0,0"/>
+                        <Frame BorderColor="Gray" CornerRadius="5" Padding="0" HorizontalOptions="FillAndExpand" Margin="-350,-8,0,0" BackgroundColor="Transparent">
+                            <Entry x:Name="phoneEntry" FontSize="16" Margin="0" Keyboard="Numeric" TextColor="Gray" Text="{Binding Phone}"/>
+                        </Frame>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                        <Label Text="Email:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black" Margin="0,5,0,0"/>
+                        <Frame BorderColor="Gray" CornerRadius="5" Padding="0" HorizontalOptions="FillAndExpand" Margin="-350,-8,0,0" BackgroundColor="Transparent">
+                            <Entry x:Name="emailEntry" FontSize="16" Margin="0" TextColor="Gray" Text="{Binding Email}"/>
+                        </Frame>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                        <Label Text="Address:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black" Margin="0,5,0,0"/>
+                        <Frame BorderColor="Gray" CornerRadius="5" Padding="0" HorizontalOptions="FillAndExpand" Margin="-350,-8,0,0" BackgroundColor="Transparent">
+                            <Entry x:Name="dCEntry" FontSize="16" Margin="0" TextColor="Gray" Text="{Binding Address}"/>
+                        </Frame>
+                    </StackLayout>
+
+                    <Button Text="Save"
+                        Command="{Binding SaveCommand}"
+                        FontSize="18"
+                        BackgroundColor="#0026F2"
+                        TextColor="White"
+                        CornerRadius="10"
+                        Margin="0,20,0,0" WidthRequest="300"/>
+                </StackLayout>
+            </ScrollView>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

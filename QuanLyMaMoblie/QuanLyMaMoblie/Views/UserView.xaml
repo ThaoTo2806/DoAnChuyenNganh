@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:QuanLyMaMoblie.ViewModels"
+             x:Class="QuanLyMaMoblie.Views.UserView"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.BindingContext>
+        <vm:UserViewModel />
+    </ContentPage.BindingContext>
+
+    <AbsoluteLayout>
+        <!-- Background Image -->
+        <Grid x:Name="FullGrid" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Content Grid -->
+            <Grid x:Name="ContentGrid" Grid.Row="1" BackgroundColor="#f2f2f2" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Frame VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Margin="5,-650,5,-5">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavigateToInfoCommand}" CommandParameter="{Binding Profile}" />
+                        </Frame.GestureRecognizers>
+                        <Frame.BackgroundColor>
+                            <OnPlatform x:TypeArguments="Color">
+                                <On Platform="iOS, Android" Value="#f2f2f2" />
+                            </OnPlatform>
+                        </Frame.BackgroundColor>
+                        <Frame VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" HasShadow="False" CornerRadius="5" BorderColor="Transparent" Margin="-25,-20,0,0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="{Binding Profile.Image}" HeightRequest="50" WidthRequest="50" Margin="0,0,0,0"/>
+                                <Label Grid.Column="1" Text="{Binding Profile.Name}" HorizontalOptions="Start" FontSize="Medium" FontAttributes="Bold" TextColor="Black" Margin="20,5,0,0" />
+                                <Label Grid.Column="2" Text="{Binding Profile.Email}" HorizontalOptions="Start" FontSize="Small" TextColor="Black" Margin="-40,30,0,0" />
+
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding NavigateToInfoCommand}" CommandParameter="{Binding .}" />
+                                </Grid.GestureRecognizers>
+                            </Grid>
+                        </Frame>
+
+                    </Frame>
+                </ScrollView>
+                <Frame BackgroundColor="#f2f2f2" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Margin="5,105,5,10" HeightRequest="6100">
+                    <ScrollView VerticalScrollBarVisibility="Always">
+                        <StackLayout Orientation="Vertical" Spacing="10">
+
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="pro.png" HeightRequest="32" WidthRequest="32" VerticalOptions="Center" HorizontalOptions="Start" />
+                                <Label Text="Manage your orders" FontSize="16" HorizontalOptions="StartAndExpand" Margin="15,5,0,0" TextColor="Black" />
+                                <Label Text=">" FontSize="16" HorizontalOptions="End" Margin="15,5,0,0" TextColor="Black" ></Label>
+                            </StackLayout>
+                            <BoxView Color="#CCCCCC" HeightRequest="0.5"/>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="time.png" HeightRequest="32" WidthRequest="32" VerticalOptions="Center" HorizontalOptions="Start" />
+                                <Label Text="Just watched" FontSize="16" HorizontalOptions="StartAndExpand" Margin="15,5,0,0" TextColor="Black" />
+                                <Label Text=">" FontSize="16" HorizontalOptions="End" Margin="15,5,0,0" TextColor="Black" ></Label>
+                            </StackLayout>
+                            <BoxView Color="#CCCCCC" HeightRequest="0.5"/>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="star1.png" HeightRequest="32" WidthRequest="32" VerticalOptions="Center" HorizontalOptions="Start" />
+                                <Label Text="My evaluate" FontSize="16" HorizontalOptions="StartAndExpand" Margin="15,5,0,0" TextColor="Black" />
+                                <Label Text=">" FontSize="16" HorizontalOptions="End" Margin="15,5,0,0" TextColor="Black" ></Label>
+                            </StackLayout>
+                            <BoxView Color="#CCCCCC" HeightRequest="0.5"/>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="setting.png" HeightRequest="32" WidthRequest="32" VerticalOptions="Center" HorizontalOptions="Start" />
+                                <Label Text="Setting" FontSize="16" HorizontalOptions="StartAndExpand" Margin="15,5,0,0" TextColor="Black" />
+                                <Label Text=">" FontSize="16"  HorizontalOptions="End" Margin="15,5,0,0" TextColor="Black" ></Label>
+                            </StackLayout>
+                            <BoxView Color="#CCCCCC" HeightRequest="0.5"/>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="help.png" HeightRequest="32" WidthRequest="32" VerticalOptions="Center" HorizontalOptions="Start" />
+                                <Label Text="Help Center" FontSize="16" HorizontalOptions="StartAndExpand" Margin="15,5,0,0" TextColor="Black" />
+                                <Label Text=">" FontSize="16"  HorizontalOptions="End" Margin="15,5,0,0" TextColor="Black" ></Label>
+                            </StackLayout>
+                            <BoxView Color="#CCCCCC" HeightRequest="0.5"/>
+
+                            <StackLayout Orientation="Horizontal">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding LogoutCommand}"/>
+                                </StackLayout.GestureRecognizers>
+                                <Image Source="logout.png" HeightRequest="32" WidthRequest="32" VerticalOptions="Center" HorizontalOptions="Start" />
+                                <Label Text="Log out" FontSize="16" HorizontalOptions="StartAndExpand" Margin="15,5,0,0" TextColor="Black" />
+                            </StackLayout>
+                            <BoxView Color="#CCCCCC" HeightRequest="0.5"/>
+                        </StackLayout>
+                    </ScrollView>
+                </Frame>
+            </Grid>
+
+            <!-- Footer Grid -->
+            <Grid x:Name="FooterGrid" Grid.Row="2" HeightRequest="50" BackgroundColor="White" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Icon Home -->
+                <Frame x:Name="HomeF" BackgroundColor="White" CornerRadius="0" Padding="0" Margin="0" HasShadow="False" BorderColor="White">
+                    <Image Source="home.png" HeightRequest="32" WidthRequest="32" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding HomeCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+
+
+                <!-- Icon Note -->
+                <Frame x:Name="NoteF" BackgroundColor="White" Grid.Column="1" CornerRadius="0" Padding="0" Margin="0" HasShadow="False" BorderColor="White">
+                    <Image Source="note.png" HeightRequest="32" WidthRequest="32" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NoteCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+
+                <!-- Icon Mail -->
+                <Frame x:Name="MailF" BackgroundColor="White" Grid.Column="2" CornerRadius="0" Padding="0" Margin="0" HasShadow="False" BorderColor="White">
+                    <Image Source="mail.png" HeightRequest="32" WidthRequest="32" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding MailCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+
+                <!-- Icon User -->
+                <Frame x:Name="UserF" BackgroundColor="White" Grid.Column="3" CornerRadius="0" Padding="0" Margin="0" HasShadow="False" BorderColor="White">
+                    <Image Source="user1.png" HeightRequest="32" WidthRequest="32" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding UserCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+            </Grid>
+        </Grid>
+
+
+    </AbsoluteLayout>
+</ContentPage>

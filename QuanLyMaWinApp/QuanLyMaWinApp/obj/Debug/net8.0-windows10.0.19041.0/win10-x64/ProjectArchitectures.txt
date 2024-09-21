@@ -1,0 +1,1 @@
+D:\HOCTAP\WPF\QLMaKichHoat\QuanLyMaWinApp\QuanLyMaWinApp\QuanLyMaWinApp.csproj;x64

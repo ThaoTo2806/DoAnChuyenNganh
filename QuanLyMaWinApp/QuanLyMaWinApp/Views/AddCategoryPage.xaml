@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:QuanLyMaWinApp.ViewModels"
+             x:Class="QuanLyMaWinApp.Views.AddCategoryPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.BindingContext>
+        <vm:AddCategoryViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <Frame VerticalOptions="Center" HorizontalOptions="Center" Padding="20" BackgroundColor="#EBEFF0" CornerRadius="20" WidthRequest="1000" HeightRequest="600">
+            <ScrollView VerticalScrollBarVisibility="Always">
+                <StackLayout Spacing="10">
+                    <Label Text="Add New Category" 
+                           FontSize="24" 
+                           HorizontalOptions="Center" 
+                           Margin="0,0,0,10" TextColor="Black" FontAttributes="Bold"/>
+
+                    <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                        <Label Text="Category ID:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray" Margin="0,5,0,0"/>
+                        <Entry Text="{Binding ID}" 
+                               FontSize="16" 
+                               TextColor="Black"
+                               Placeholder="Enter Category ID" Margin="-820,-5,0,0"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                        <Label Text="Category Name:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray" Margin="0,5,0,0"/>
+                        <Entry Text="{Binding Name}" 
+                               FontSize="16" 
+                               Margin="-820,-5,0,0" 
+                               TextColor="Black"
+                               Placeholder="Enter Category Name"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                        <Label Text="Detail:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray" Margin="0,5,0,0"/>
+                        <Editor Text="{Binding Detail}" 
+                                FontSize="16" 
+                                Margin="-820,-5,0,0" 
+                                TextColor="Black" 
+                                AutoSize="TextChanges"
+                                Placeholder="Enter Category Details"/>
+                    </StackLayout>
+
+                    <Button Text="Save"
+                            FontSize="18"
+                            BackgroundColor="#0026F2"
+                            TextColor="White"
+                            CornerRadius="10"
+                            Margin="0,20,0,0" 
+                            WidthRequest="300"
+                            Command="{Binding SaveCommand}" FontAttributes="Bold" />
+                </StackLayout>
+            </ScrollView>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

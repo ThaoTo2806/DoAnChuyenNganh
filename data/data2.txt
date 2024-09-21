@@ -1,0 +1,94 @@
+
+CREATE TABLE User (
+    ID INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    Account VARCHAR(255) NOT NULL UNIQUE,
+    PassWord VARCHAR(255),
+    IdType BOOLEAN DEFAULT 0,
+    Name VARCHAR(255),
+    Phone VARCHAR(20),
+    Image VARCHAR(255),
+    Gender BOOLEAN,
+    Address VARCHAR(255),
+    Birth Date,
+    IsDeleted BOOLEAN DEFAULT 0
+);
+
+-- Tạo bảng Log
+CREATE TABLE Log (
+    ID INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    IdMember INT,
+    Activity DATE,
+    Detail VARCHAR(255),
+    FOREIGN KEY (IdMember) REFERENCES User(ID)
+);
+
+-- Tạo bảng Category
+CREATE TABLE Category (
+    ID VARCHAR(255) NOT NULL PRIMARY KEY,
+    CategoryName VARCHAR(255),
+    Detail VARCHAR(255),
+    IsDeleted BOOLEAN DEFAULT 0
+);
+
+-- Tạo bảng ActivationCode
+CREATE TABLE ActivationCode (
+    ID INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    ActiCode VARCHAR(12),
+    Status ENUM('Active', 'Expired'),
+    NgayKhoiTao DATE,
+    NgayHetHan DATE,
+    NgayCapNhat DaTE,
+    DinhKy ENUM('1', '3', '8', '15') DEFAULT '1',
+    Price DOUBLE
+);
+
+-- Tạo bảng Product
+CREATE TABLE Product (
+    ID VARCHAR(255) NOT NULL PRIMARY KEY,
+    ProductName VARCHAR(255),
+    ldCate VARCHAR(255),
+    ldCode INT,
+    Evaluate DOUBLE CHECK (Evaluate >= 0 AND Evaluate <= 5),
+    image VARCHAR(255),
+    SL INT,
+    Price DOUBLE,
+    Detail VARCHAR(255),
+    Feature VARCHAR(255),
+    Specifications VARCHAR(255),
+    Helps VARCHAR(255),
+    Sitecode VARCHAR(12),
+    MID VARCHAR(12),
+    IsDeleted BOOLEAN DEFAULT 0,
+    FOREIGN KEY (ldCate) REFERENCES Category(ID),
+    FOREIGN KEY (ldCode) REFERENCES ActivationCode(ID)
+);
+
+-- Tạo bảng Orders
+CREATE TABLE Orders (
+    ID INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    IdUser INT,
+    DCGH VARCHAR(255),
+    NgayDat DATE NOT NULL,
+    NgayGiao DATE,
+    SLTong int DEFAULT 0,
+    TongTien DETERMAL(10,2) DEFAULT 0,
+    ThanhToanStatus ENUM('Napas', 'Credit') NOT NULL,
+    DonHangStatus ENUM('Processing', 'Delivered', 'Cancelled', 'Confirmed'),
+    FOREIGN KEY (IdUser) REFERENCES User(ID)
+);
+
+-- Tạo bảng OrderDetail
+CREATE TABLE OrderDetail (
+    ID INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    IdOrder int,
+    IdActiveCode INT,
+    IdSP VARCHAR(255),
+    SLSP INT DEFAULT 1,
+    FOREIGN KEY (IdSP) REFERENCES Product(ID),
+    FOREIGN KEY (IdOrder) REFERENCES Orders(ID),
+    CONSTRAINT fk_IdActiveCode FOREIGN KEY (IdActiveCode) REFERENCES ActivationCode(ID)
+);
+
+
+
+

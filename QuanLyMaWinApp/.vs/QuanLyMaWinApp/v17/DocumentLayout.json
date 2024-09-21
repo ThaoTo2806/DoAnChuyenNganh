@@ -1,0 +1,247 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|d:\\hoctap\\wpf\\qlmakichhoat\\quanlymawinapp\\quanlymawinapp\\viewmodels\\addcategoryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|solutionrelative:quanlymawinapp\\viewmodels\\addcategoryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\quanlymawinapp\\viewmodels\\categoryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|solutionrelative:quanlymawinapp\\viewmodels\\categoryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\quanlymawinapp\\models\\categorymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|solutionrelative:quanlymawinapp\\models\\categorymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|d:\\hoctap\\wpf\\qlmakichhoat\\quanlymawinapp\\quanlymawinapp\\models\\ordermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|solutionrelative:quanlymawinapp\\models\\ordermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|d:\\hoctap\\wpf\\qlmakichhoat\\quanlymawinapp\\quanlymawinapp\\models\\orderdetailmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|solutionrelative:quanlymawinapp\\models\\orderdetailmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|d:\\hoctap\\wpf\\qlmakichhoat\\quanlymawinapp\\quanlymawinapp\\viewmodels\\orderviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|solutionrelative:quanlymawinapp\\viewmodels\\orderviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|d:\\hoctap\\wpf\\qlmakichhoat\\quanlymawinapp\\quanlymawinapp\\views\\orderview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|solutionrelative:quanlymawinapp\\views\\orderview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\quanlymawinapp\\views\\logview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|solutionrelative:quanlymawinapp\\views\\logview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\quanlymawinapp\\views\\productview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|solutionrelative:quanlymawinapp\\views\\productview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\quanlymawinapp\\viewmodels\\logviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|solutionrelative:quanlymawinapp\\viewmodels\\logviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\quanlymawinapp\\models\\log.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|solutionrelative:quanlymawinapp\\models\\log.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\quanlymawinapp\\views\\category.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|solutionrelative:quanlymawinapp\\views\\category.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\quanlymawinapp\\views\\mailview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|solutionrelative:quanlymawinapp\\views\\mailview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AddCategoryViewModel.cs",
+              "DocumentMoniker": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\ViewModels\\AddCategoryViewModel.cs",
+              "RelativeDocumentMoniker": "QuanLyMaWinApp\\ViewModels\\AddCategoryViewModel.cs",
+              "ToolTip": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\ViewModels\\AddCategoryViewModel.cs",
+              "RelativeToolTip": "QuanLyMaWinApp\\ViewModels\\AddCategoryViewModel.cs",
+              "ViewState": "AQIAADkAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T08:11:05.77Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OrderModel.cs",
+              "DocumentMoniker": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\Models\\OrderModel.cs",
+              "RelativeDocumentMoniker": "QuanLyMaWinApp\\Models\\OrderModel.cs",
+              "ToolTip": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\Models\\OrderModel.cs",
+              "RelativeToolTip": "QuanLyMaWinApp\\Models\\OrderModel.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T08:05:48.074Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OrderDetailModel.cs",
+              "DocumentMoniker": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\Models\\OrderDetailModel.cs",
+              "RelativeDocumentMoniker": "QuanLyMaWinApp\\Models\\OrderDetailModel.cs",
+              "ToolTip": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\Models\\OrderDetailModel.cs",
+              "RelativeToolTip": "QuanLyMaWinApp\\Models\\OrderDetailModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T08:05:46.11Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "OrderViewModel.cs",
+              "DocumentMoniker": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\ViewModels\\OrderViewModel.cs",
+              "RelativeDocumentMoniker": "QuanLyMaWinApp\\ViewModels\\OrderViewModel.cs",
+              "ToolTip": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\ViewModels\\OrderViewModel.cs",
+              "RelativeToolTip": "QuanLyMaWinApp\\ViewModels\\OrderViewModel.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAABgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T06:43:45.841Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProductView.xaml",
+              "DocumentMoniker": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\Views\\ProductView.xaml",
+              "RelativeDocumentMoniker": "QuanLyMaWinApp\\Views\\ProductView.xaml",
+              "ToolTip": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\Views\\ProductView.xaml",
+              "RelativeToolTip": "QuanLyMaWinApp\\Views\\ProductView.xaml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-24T16:40:18.626Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Category.xaml.cs",
+              "DocumentMoniker": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\Views\\Category.xaml.cs",
+              "RelativeDocumentMoniker": "QuanLyMaWinApp\\Views\\Category.xaml.cs",
+              "ToolTip": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\Views\\Category.xaml.cs",
+              "RelativeToolTip": "QuanLyMaWinApp\\Views\\Category.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T16:26:13.853Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LogView.xaml",
+              "DocumentMoniker": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\Views\\LogView.xaml",
+              "RelativeDocumentMoniker": "QuanLyMaWinApp\\Views\\LogView.xaml",
+              "ToolTip": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\Views\\LogView.xaml",
+              "RelativeToolTip": "QuanLyMaWinApp\\Views\\LogView.xaml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-24T16:16:27.382Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "LogViewModel.cs",
+              "DocumentMoniker": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\ViewModels\\LogViewModel.cs",
+              "RelativeDocumentMoniker": "QuanLyMaWinApp\\ViewModels\\LogViewModel.cs",
+              "ToolTip": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\ViewModels\\LogViewModel.cs",
+              "RelativeToolTip": "QuanLyMaWinApp\\ViewModels\\LogViewModel.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAawCkAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T16:15:15.227Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Log.cs",
+              "DocumentMoniker": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\Models\\Log.cs",
+              "RelativeDocumentMoniker": "QuanLyMaWinApp\\Models\\Log.cs",
+              "ToolTip": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\Models\\Log.cs",
+              "RelativeToolTip": "QuanLyMaWinApp\\Models\\Log.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAB4AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T16:03:22.864Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CategoryModel.cs",
+              "DocumentMoniker": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\Models\\CategoryModel.cs",
+              "RelativeDocumentMoniker": "QuanLyMaWinApp\\Models\\CategoryModel.cs",
+              "ToolTip": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\Models\\CategoryModel.cs",
+              "RelativeToolTip": "QuanLyMaWinApp\\Models\\CategoryModel.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAAB0AAABcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T04:14:52.036Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CategoryViewModel.cs",
+              "DocumentMoniker": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\ViewModels\\CategoryViewModel.cs",
+              "RelativeDocumentMoniker": "QuanLyMaWinApp\\ViewModels\\CategoryViewModel.cs",
+              "ToolTip": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\ViewModels\\CategoryViewModel.cs",
+              "RelativeToolTip": "QuanLyMaWinApp\\ViewModels\\CategoryViewModel.cs",
+              "ViewState": "AQIAAEMAAAAAAAAAAAAAAEkAAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T00:41:43.124Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "OrderView.xaml",
+              "DocumentMoniker": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\Views\\OrderView.xaml",
+              "RelativeDocumentMoniker": "QuanLyMaWinApp\\Views\\OrderView.xaml",
+              "ToolTip": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\Views\\OrderView.xaml",
+              "RelativeToolTip": "QuanLyMaWinApp\\Views\\OrderView.xaml",
+              "ViewState": "AQIAAGEAAAAAAAAAAAAAAAwAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-24T16:42:41.698Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "MailView.xaml",
+              "DocumentMoniker": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\Views\\MailView.xaml",
+              "RelativeDocumentMoniker": "QuanLyMaWinApp\\Views\\MailView.xaml",
+              "ToolTip": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\Views\\MailView.xaml",
+              "RelativeToolTip": "QuanLyMaWinApp\\Views\\MailView.xaml",
+              "ViewState": "AQIAABYAAAAAAAAAAAAuwCUAAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-24T00:41:00.823Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:QuanLyMaMoblie.ViewModels"
+             x:Class="QuanLyMaMoblie.Views.ActivationView"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.BindingContext>
+        <vm:ActivationViewModel />
+    </ContentPage.BindingContext>
+
+    <AbsoluteLayout>
+
+        <!-- Background Image -->
+        <Image Source="background2.png" Aspect="AspectFill" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" />
+
+        <Grid x:Name="FullGrid" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Header Grid -->
+            <Grid x:Name="HeaderGrid" Grid.Row="0" HeightRequest="66" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                <Image Source="back1.png" WidthRequest="32" HeightRequest="32" VerticalOptions="Center" HorizontalOptions="Start" Margin="10,2,10,0">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoBackCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Text="Request Activation Code" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="Large" TextColor="White"/>
+            </Grid>
+
+            <!-- Content Grid -->
+            <Grid x:Name="ContentGrid" Grid.Row="1" BackgroundColor="White" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout Padding="20">
+                    <!-- Order Information -->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- LeftImage Frame -->
+                        <Frame Grid.Column="0" Margin="0,5" Padding="0" BorderColor="White">
+                            <Image Source="{Binding ExpiredOrdersList[0].FirstImage}" HeightRequest="100" WidthRequest="100" Aspect="AspectFill"/>
+                        </Frame>
+                        <Frame Grid.Column="1" Margin="20,5,0,5" Padding="0" BorderColor="White">
+                            <StackLayout>
+                                <Label Text="{Binding ExpiredOrdersList[0].FirstProductName}" FontSize="16" VerticalOptions="Center" Margin="10,10,0,0" />
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding ExpiredOrdersList[0].InitiatedDate, StringFormat='{0:MM/dd/yyyy}'}" FontSize="16" TextColor="Gray" Margin="10,0,0,0"/>
+                                    <Label Text="  -  " FontSize="16" TextColor="Gray"/>
+                                    <Label Text="{Binding ExpiredOrdersList[0].ExpiredDate, StringFormat='{0:MM/dd/yyyy}'}" FontSize="16" TextColor="Gray"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <!-- TT Frame -->
+                                    <Frame x:Name="TTFrame" BackgroundColor="Red" HeightRequest="25" WidthRequest="90" Margin="10,0,10,0" Padding="0" Opacity="0.5">
+                                        <Label x:Name="TTLabel" Text="{Binding ExpiredOrdersList[0].CStatus}" FontSize="16" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+                                    </Frame>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+                </StackLayout>
+            </Grid>
+            <!-- Request Information -->
+            <Grid Grid.Row="2" BackgroundColor="White" Padding="20" Margin="0,-650,0,0">
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Full Name: " FontSize="16" TextColor="Gray"/>
+                        <Label Text="{Binding Profile.Name}" FontSize="16" Margin="0,0,0,10"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Email: " FontSize="16" TextColor="Gray"/>
+                        <Label Text="{Binding Profile.Email}" FontSize="16" Margin="0,0,0,10"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Payment:" FontSize="16" TextColor="Gray"/>
+                        <StackLayout Orientation="Horizontal" Spacing="10" Margin="10">
+                            <RadioButton Content="Napas" GroupName="PaymentMethods" IsChecked="{Binding IsNapasSelected}" FontSize="16" />
+                            <RadioButton Content="Cash" GroupName="PaymentMethods" IsChecked="{Binding IsCashSelected}" FontSize="16" />
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Period:" FontSize="16" TextColor="Gray"/>
+                        <StackLayout Orientation="Horizontal" Spacing="10" Margin="-50,20,0,10">
+                            <RadioButton Content="1 year" GroupName="Periods" IsChecked="{Binding Is1Selected}" FontSize="16" />
+                            <RadioButton Content="3 years" GroupName="Periods" IsChecked="{Binding Is3Selected}" FontSize="16" />
+                            <RadioButton Content="8 years" GroupName="Periods" IsChecked="{Binding Is8Selected}" FontSize="16" />
+                            <RadioButton Content="15 years" GroupName="Periods" IsChecked="{Binding Is15Selected}" FontSize="16" />
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Total: " FontSize="16" TextColor="Gray"/>
+                        <Label Text="$" FontSize="16" Margin="0,0,0,10"/>
+                        <Label Text="{Binding Price}" FontSize="16" Margin="0,0,0,10"/>
+                    </StackLayout>
+
+                    <Button Text="Send" 
+                BackgroundColor="Red" 
+                TextColor="White" 
+                FontSize="16" 
+                CornerRadius="10" 
+                HorizontalOptions="Center" 
+                VerticalOptions="Center"
+                Command="{Binding SendCommand}" />
+                </StackLayout>
+            </Grid>
+        </Grid>
+    </AbsoluteLayout>
+</ContentPage>

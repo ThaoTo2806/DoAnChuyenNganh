@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:QuanLyMaMoblie.ViewModels"
+             x:Class="QuanLyMaMoblie.Views.IndexView"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.BindingContext>
+        <vm:IndexViewModel />
+    </ContentPage.BindingContext>
+
+    <AbsoluteLayout>
+        <!-- Background Image -->
+        <Image Source="background2.png" Aspect="AspectFill" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" />
+        <Grid x:Name="FullGrid" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Header Grid -->
+            <Grid x:Name="HeaderGrid" Grid.Row="0" HeightRequest="66" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Frame Grid.Column="0" CornerRadius="18" BackgroundColor="White" Opacity="0.5" Padding="0" Margin="5,2,10,0" VerticalOptions="Center" HorizontalOptions="Start" HeightRequest="40">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="search.png" HeightRequest="32" WidthRequest="32" VerticalOptions="Center" HorizontalOptions="Start" Margin="5,0,5,0" />
+                        <Entry Grid.Column="1" Placeholder="Search" WidthRequest="250" VerticalOptions="Center" HorizontalOptions="Start" HeightRequest="40" />
+                    </Grid>
+                </Frame>
+                <!-- Icon Bell -->
+                <Image Grid.Column="1" Source="bell.png" HeightRequest="32" WidthRequest="32" Margin="10,2,0,0"
+       VerticalOptions="Center" HorizontalOptions="End" />
+                
+                <!-- Icon Cart -->
+                <Image Grid.Column="2" Source="cart.png" HeightRequest="32" WidthRequest="32" Margin="10,2,10,0"
+VerticalOptions="Center" HorizontalOptions="End" />
+                <Frame HeightRequest="20" WidthRequest="20" Padding="0" Margin="470,-15,0,0">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding MoveToCartCommand}"/>
+                    </Frame.GestureRecognizers>
+                    <Label Text="{Binding Dem}" TextColor="Black" FontSize="13" Margin="5,0,0,0"/>
+                </Frame>
+
+
+            </Grid>
+
+            <!-- Content Grid -->
+            <Grid x:Name="ContentGrid" Grid.Row="1" BackgroundColor="#f2f2f2" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <StackLayout Spacing="0">
+                        <!-- Content Grid 3 -->
+                        <Grid x:Name="ContentGrid3" HeightRequest="190" BackgroundColor="#FFFFFF">
+                            <Frame CornerRadius="10" BackgroundColor="#F5F8FD" Margin="10,45,10,10" Padding="10">
+                                <ScrollView Orientation="Horizontal">
+                                    <CollectionView ItemsSource="{Binding Products}" ItemsLayout="HorizontalList">
+                                        <CollectionView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Frame CornerRadius="10" Margin="5" Padding="5" BackgroundColor="{Binding FrameColor}">
+                                                    <Frame.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.FrameTappedCommand}" 
+                                                      CommandParameter="{Binding}" />
+                                                    </Frame.GestureRecognizers>
+                                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Start">
+                                                        <Image Source="{Binding Image}" WidthRequest="100" HeightRequest="100" Margin="5"/>
+                                                    </StackLayout>
+                                                </Frame>
+                                            </DataTemplate>
+                                        </CollectionView.ItemTemplate>
+                                    </CollectionView>
+                                </ScrollView>
+                            </Frame>
+
+                            <Label Text="The best-selling products" FontSize="20" FontAttributes="Bold, Italic" TextColor="Black" HorizontalOptions="Start" Margin="5,10,0,0"/>
+                        </Grid>
+                        <!-- Content Grid 1 -->
+                        <Grid x:Name="ContentGrid1" HeightRequest="50">
+                            <!-- Label "Suggested for you" -->
+                            <Label Text="Suggested for you" FontSize="20" FontAttributes="Bold, Italic" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Start" Margin="10,0,0,0"/>
+
+                            <!-- Picker containing ComboBox options -->
+                            <Picker Grid.Column="1" Title="Select an option" Margin="240,2,10,0.8">
+                                <Picker.ItemsSource>
+                                    <x:Array Type="{x:Type x:String}">
+                                        <x:String>See all</x:String>
+                                        <x:String>Newest</x:String>
+                                        <x:String>Best Sale</x:String>
+                                    </x:Array>
+                                </Picker.ItemsSource>
+                            </Picker>
+
+                        </Grid>
+                        
+                        <!-- Content Grid 2 -->
+                        <Frame CornerRadius="20" BackgroundColor="#EBF2FD" HeightRequest="480" Margin="5">
+                            <CollectionView ItemsSource="{Binding Products}">
+                                <CollectionView.ItemsLayout>
+                                    <GridItemsLayout Orientation="Vertical" Span="2" />
+                                </CollectionView.ItemsLayout>
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Frame CornerRadius="10" BackgroundColor="{Binding FrameColor}" Margin="5" Padding="5"
+                       IsClippedToBounds="True" InputTransparent="False">
+                                            <StackLayout Padding="0" VerticalOptions="Center" HorizontalOptions="Center">
+                                                <Image Source="{Binding Image}" HeightRequest="160" WidthRequest="119" Aspect="AspectFit" />
+                                                <Label Text="{Binding ProductName}" FontSize="14" TextColor="#1967FF" HorizontalOptions="Center" FontAttributes="Bold"/>
+                                            </StackLayout>
+                                            <Frame.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.FrameTappedCommand}" 
+                                              CommandParameter="{Binding}" />
+                                            </Frame.GestureRecognizers>
+                                        </Frame>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </Frame>
+
+                    </StackLayout>
+                </ScrollView>
+            </Grid>
+
+
+            <!-- Footer Grid -->
+            <Grid x:Name="FooterGrid" Grid.Row="2" HeightRequest="50" BackgroundColor="White" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Icon Home -->
+                <Frame x:Name="HomeF" BackgroundColor="White" CornerRadius="0" Padding="0" Margin="0" HasShadow="False" BorderColor="White">
+                    <Image Source="home1.png" HeightRequest="32" WidthRequest="32" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding HomeCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+
+
+                <!-- Icon Note -->
+                <Frame x:Name="NoteF" BackgroundColor="White" Grid.Column="1" CornerRadius="0" Padding="0" Margin="0" HasShadow="False" BorderColor="White">
+                    <Image Source="note.png" HeightRequest="32" WidthRequest="32" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NoteCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+
+                <!-- Icon Mail -->
+                <Frame x:Name="MailF" BackgroundColor="White" Grid.Column="2" CornerRadius="0" Padding="0" Margin="0" HasShadow="False" BorderColor="White">
+                    <Image Source="mail.png" HeightRequest="32" WidthRequest="32" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding MailCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+
+                <!-- Icon User -->
+                <Frame x:Name="UserF" BackgroundColor="White" Grid.Column="3" CornerRadius="0" Padding="0" Margin="0" HasShadow="False" BorderColor="White">
+                    <Image Source="user.png" HeightRequest="32" WidthRequest="32" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding UserCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+            </Grid>
+        </Grid>
+
+
+    </AbsoluteLayout>
+</ContentPage>

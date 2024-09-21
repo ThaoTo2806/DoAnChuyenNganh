@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+    <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:QuanLyMaWinApp.ViewModels"
+             xmlns:views="clr-namespace:QuanLyMaWinApp.Views"
+             x:Class="QuanLyMaWinApp.Views.MainPageView"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.BindingContext>
+        <vm:MainPageViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <!-- Row for TitleGrid -->
+            <RowDefinition Height="Auto"/>
+            <!-- Row for Main Content (LeftGrid and RightGrid) -->
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <!-- Column for LeftGrid -->
+            <ColumnDefinition Width="300"/>
+            <!-- Column for RightGrid -->
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- TitleGrid -->
+        <Grid x:Name="TitleGrid" BackgroundColor="Black" Grid.RowSpan="2" Grid.ColumnSpan="2">
+            <Label Text="Home" FontSize="13" TextColor="White" VerticalOptions="Center" HorizontalOptions="Start" Margin="10,0,0,0" />
+        </Grid>
+
+        <!-- LeftGrid (Column 0) -->
+        <Grid x:Name="LeftGrid" BackgroundColor="#262630" Grid.Row="1" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <!-- Search Entry Row -->
+                <RowDefinition Height="Auto" />
+                <!-- CollectionView Row -->
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Search Entry -->
+            <Entry Grid.Row="0" WidthRequest="250" Placeholder="Search..." />
+
+            <!-- CollectionView -->
+            <CollectionView Grid.Row="1" ItemsSource="{Binding Tools}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Padding="10" Margin="5" CornerRadius="10" HasShadow="True" BackgroundColor="#262630" BorderColor="Transparent">
+                            <Grid Padding="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <!-- Tool Image -->
+                                <Image Grid.Column="0" Source="{Binding Image}" HeightRequest="40" WidthRequest="40" Margin="0,0,20,0">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MainPageViewModel}}, Path=ItemSelectedCommand}" CommandParameter="{Binding .}" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+
+                                <!-- Tool Name Label -->
+                                <Label Grid.Column="1" Text="{Binding Name}" FontAttributes="Bold" VerticalOptions="Center" VerticalTextAlignment="Center">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MainPageViewModel}}, Path=ItemSelectedCommand}" CommandParameter="{Binding .}" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+
+        <!-- RightGrid (Column 1) -->
+        <ContentView x:Name="RightGrid" BackgroundColor="#9399A0" Grid.Row="1" Grid.Column="1" Content="{Binding CurrentContent}">
+            <!-- RightGrid sẽ hiển thị nội dung được bind từ CurrentContent -->
+        </ContentView>
+    </Grid>
+</ContentPage>

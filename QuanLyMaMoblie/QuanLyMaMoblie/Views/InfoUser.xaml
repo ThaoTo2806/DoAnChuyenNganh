@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:QuanLyMaMoblie.ViewModels"
+             x:Class="QuanLyMaMoblie.Views.InfoUser"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.BindingContext>
+        <vm:InfoUserViewModel />
+    </ContentPage.BindingContext>
+
+    <AbsoluteLayout>
+
+        <!-- Background Image -->
+        <Image Source="background2.png" Aspect="AspectFill" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" />
+
+        <Grid x:Name="FullGrid" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Header Grid -->
+            <Grid x:Name="HeaderGrid" Grid.Row="0" HeightRequest="66" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                <Image Source="back1.png" WidthRequest="32" HeightRequest="32" VerticalOptions="Center" HorizontalOptions="Start" Margin="10,2,10,0">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding NoteCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Text="Profile" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="Large" TextColor="White"/>
+                <Label Text="Save" FontSize="Medium" TextColor="#DEDEDE" HorizontalOptions="End" Margin="0,20,15,0">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SaveCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+
+            <!-- Content Grid -->
+            <Grid x:Name="ContentGrid" Grid.Row="1" BackgroundColor="White" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout Padding="20">
+
+                    <StackLayout Orientation="Horizontal" Margin="0,0,0,20" HorizontalOptions="Center">
+                        <Frame Padding="0" Margin="0" WidthRequest="50" HeightRequest="50" BorderColor="White">
+                            <Image Source="{Binding _member.Image}" Aspect="AspectFill" >
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ChooseImageCommand}" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </Frame>
+                    </StackLayout>
+                    <Grid>
+                        <!-- Product Information -->
+                        <Frame CornerRadius="10" Padding="10" BorderColor="Gray">
+                            <StackLayout>
+
+                                <Label Text="Full Name:" FontSize="Small" VerticalOptions="Center" />
+                                <Frame Padding="0" Margin="5,5,5,10" WidthRequest="310">
+                                    <Entry Text="{Binding Name}" FontSize="Small" VerticalOptions="Center" Margin="5,0,0,0" TextColor="Gray"/>
+                                </Frame>
+
+                                <Label Text="BirthDate:" FontSize="Small" VerticalOptions="Center" />
+                                <Frame Padding="0" Margin="5,5,5,10" WidthRequest="310">
+                                    <DatePicker Date="{Binding Birth}" FontSize="Small" VerticalOptions="Center" Margin="5,0,0,0" TextColor="Gray"/>
+                                </Frame>
+
+                                <Label Text="Gender:" FontSize="Small" VerticalOptions="Center" />
+                                <Frame Padding="0" Margin="5,5,5,10" WidthRequest="310">
+                                    <StackLayout Orientation="Horizontal">
+                                        <RadioButton Content="Male" IsChecked="{Binding IsMale}" GroupName="Gender"/>
+                                        <RadioButton Content="Female" IsChecked="{Binding IsFemale}" GroupName="Gender" Margin="10,0,0,0"/>
+                                    </StackLayout>
+                                </Frame>
+
+
+                                <Label Text="Phone:" FontSize="Small" VerticalOptions="Center" />
+                                <Frame Padding="0" Margin="5,5,5,10" WidthRequest="310">
+                                    <Entry Text="{Binding Phone}" FontSize="Small" VerticalOptions="Center" Margin="10,0,0,0" TextColor="Gray"/>
+                                </Frame>
+
+                                <Label Text="Email:" FontSize="Small" VerticalOptions="Center" />
+                                <Frame Padding="0" Margin="5,5,5,10" WidthRequest="310">
+                                    <Entry Text="{Binding Email}" FontSize="Small" VerticalOptions="Center" Margin="10,0,0,0" TextColor="Gray"/>
+                                </Frame>
+
+                                <Label Text="Address:" FontSize="Small" VerticalOptions="Center" />
+                                <Frame Padding="0" Margin="5,5,5,10" WidthRequest="310">
+                                    <Entry Text="{Binding Address}" FontSize="Small" VerticalOptions="Center" Margin="10,0,0,0" TextColor="Gray"/>
+                                </Frame>
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+                </StackLayout>
+            </Grid>
+        </Grid>
+    </AbsoluteLayout>
+</ContentPage>

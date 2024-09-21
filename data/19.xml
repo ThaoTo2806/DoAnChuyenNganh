@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<User xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ID>19</ID>
+  <Account>to98374</Account>
+  <PassWord>1</PassWord>
+  <IdType>false</IdType>
+  <Name>thao</Name>
+  <Phone>0123456798</Phone>
+  <Image>avy1.png</Image>
+  <Gender>true</Gender>
+  <Address>123 ffff</Address>
+  <IsDeleted>false</IsDeleted>
+  <Email>thao@gmail.com</Email>
+  <Birth>2004-07-24T00:00:00</Birth>
+</User>

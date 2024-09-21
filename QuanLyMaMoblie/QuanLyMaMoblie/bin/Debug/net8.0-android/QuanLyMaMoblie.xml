@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>QuanLyMaMoblie</name>
+    </assembly>
+    <members>
+        <member name="P:QuanLyMaMoblie.Models.ActivationCode.MaCode">
+            <inheritdoc cref="F:QuanLyMaMoblie.Models.ActivationCode.maCode"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.Models.ActivationCode.DinhKy">
+            <inheritdoc cref="F:QuanLyMaMoblie.Models.ActivationCode.dinhKy"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.Models.ActivationCode.DonGiaKy">
+            <inheritdoc cref="F:QuanLyMaMoblie.Models.ActivationCode.donGiaKy"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.Models.ActivationCode.TinhTrangMa">
+            <inheritdoc cref="F:QuanLyMaMoblie.Models.ActivationCode.tinhTrangMa"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.Models.ActivationCode.NgayTao">
+            <inheritdoc cref="F:QuanLyMaMoblie.Models.ActivationCode.ngayTao"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.Models.ActivationCode.NgayHetHan">
+            <inheritdoc cref="F:QuanLyMaMoblie.Models.ActivationCode.ngayHetHan"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.Models.ActivationCode.FrameColor5">
+            <inheritdoc cref="F:QuanLyMaMoblie.Models.ActivationCode.frameColor5"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.Models.ActivationCode.FrameColor6">
+            <inheritdoc cref="F:QuanLyMaMoblie.Models.ActivationCode.frameColor6"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.Models.Product.FrameColor">
+            <inheritdoc cref="F:QuanLyMaMoblie.Models.Product.frameColor"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.Models.Product.CheckInCart">
+            <inheritdoc cref="F:QuanLyMaMoblie.Models.Product.checkInCart"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.ViewModels.ActivationViewModel.IsNapasSelected">
+            <inheritdoc cref="F:QuanLyMaMoblie.ViewModels.ActivationViewModel.isNapasSelected"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.ViewModels.ActivationViewModel.IsCashSelected">
+            <inheritdoc cref="F:QuanLyMaMoblie.ViewModels.ActivationViewModel.isCashSelected"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.ViewModels.ActivationViewModel.Is1Selected">
+            <inheritdoc cref="F:QuanLyMaMoblie.ViewModels.ActivationViewModel.is1Selected"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.ViewModels.ActivationViewModel.Is3Selected">
+            <inheritdoc cref="F:QuanLyMaMoblie.ViewModels.ActivationViewModel.is3Selected"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.ViewModels.ActivationViewModel.Is8Selected">
+            <inheritdoc cref="F:QuanLyMaMoblie.ViewModels.ActivationViewModel.is8Selected"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.ViewModels.ActivationViewModel.Is15Selected">
+            <inheritdoc cref="F:QuanLyMaMoblie.ViewModels.ActivationViewModel.is15Selected"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.ViewModels.ActivationViewModel.Price">
+            <inheritdoc cref="F:QuanLyMaMoblie.ViewModels.ActivationViewModel.price"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.ViewModels.CartViewModel.Dem">
+            <inheritdoc cref="F:QuanLyMaMoblie.ViewModels.CartViewModel._dem"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.ViewModels.CartViewModel.ProductsInCart">
+            <inheritdoc cref="F:QuanLyMaMoblie.ViewModels.CartViewModel._productsInCart"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.ViewModels.CartViewModel.TotalPrice">
+            <inheritdoc cref="F:QuanLyMaMoblie.ViewModels.CartViewModel._totalPrice"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.ViewModels.ForgotPassViewModel.Account">
+            <inheritdoc cref="F:QuanLyMaMoblie.ViewModels.ForgotPassViewModel._account"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.ViewModels.ForgotPassViewModel.Email">
+            <inheritdoc cref="F:QuanLyMaMoblie.ViewModels.ForgotPassViewModel._email"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.ViewModels.IndexViewModel.Dem">
+            <inheritdoc cref="F:QuanLyMaMoblie.ViewModels.IndexViewModel._dem"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.ViewModels.LoginViewModel.TaiKhoan">
+            <inheritdoc cref="F:QuanLyMaMoblie.ViewModels.LoginViewModel._taiKhoan"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.ViewModels.LoginViewModel.MatKhau">
+            <inheritdoc cref="F:QuanLyMaMoblie.ViewModels.LoginViewModel._matKhau"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.ViewModels.LoginViewModel.GhiNhoToi">
+            <inheritdoc cref="F:QuanLyMaMoblie.ViewModels.LoginViewModel._ghiNhoToi"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.ViewModels.PayMentViewModel.Name">
+            <inheritdoc cref="F:QuanLyMaMoblie.ViewModels.PayMentViewModel.name"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.ViewModels.PayMentViewModel.Address">
+            <inheritdoc cref="F:QuanLyMaMoblie.ViewModels.PayMentViewModel.address"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.ViewModels.PayMentViewModel.Phone">
+            <inheritdoc cref="F:QuanLyMaMoblie.ViewModels.PayMentViewModel.phone"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.ViewModels.PayMentViewModel.CartItems">
+            <inheritdoc cref="F:QuanLyMaMoblie.ViewModels.PayMentViewModel.cartItems"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.ViewModels.PayMentViewModel.TotalPrice">
+            <inheritdoc cref="F:QuanLyMaMoblie.ViewModels.PayMentViewModel.totalPrice"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.ViewModels.PayMentViewModel.ActivationCodeInfo">
+            <inheritdoc cref="F:QuanLyMaMoblie.ViewModels.PayMentViewModel.activationCodeInfo"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.ViewModels.PayMentViewModel.IsNapasSelected">
+            <inheritdoc cref="F:QuanLyMaMoblie.ViewModels.PayMentViewModel.isNapasSelected"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.ViewModels.PayMentViewModel.IsCashSelected">
+            <inheritdoc cref="F:QuanLyMaMoblie.ViewModels.PayMentViewModel.isCashSelected"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.ViewModels.PayMentViewModel.PaymentStatus">
+            <inheritdoc cref="F:QuanLyMaMoblie.ViewModels.PayMentViewModel.paymentStatus"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.ViewModels.RegisterViewModel.FullNameEntry">
+            <inheritdoc cref="F:QuanLyMaMoblie.ViewModels.RegisterViewModel.fullNameEntry"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.ViewModels.RegisterViewModel.EmailEntry">
+            <inheritdoc cref="F:QuanLyMaMoblie.ViewModels.RegisterViewModel.emailEntry"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.ViewModels.RegisterViewModel.PhoneEntry">
+            <inheritdoc cref="F:QuanLyMaMoblie.ViewModels.RegisterViewModel.phoneEntry"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.ViewModels.RegisterViewModel.AccountEntry">
+            <inheritdoc cref="F:QuanLyMaMoblie.ViewModels.RegisterViewModel.accountEntry"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.ViewModels.RegisterViewModel.PasswordEntry">
+            <inheritdoc cref="F:QuanLyMaMoblie.ViewModels.RegisterViewModel.passwordEntry"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.ViewModels.RegisterViewModel.ConfirmPasswordEntry">
+            <inheritdoc cref="F:QuanLyMaMoblie.ViewModels.RegisterViewModel.confirmPasswordEntry"/>
+        </member>
+        <member name="P:QuanLyMaMoblie.ViewModels.UserViewModel.Profile">
+            <inheritdoc cref="F:QuanLyMaMoblie.ViewModels.UserViewModel._profile"/>
+        </member>
+    </members>
+</doc>

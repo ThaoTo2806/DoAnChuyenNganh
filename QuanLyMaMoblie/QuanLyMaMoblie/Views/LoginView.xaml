@@ -1,0 +1,79 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:QuanLyMaMoblie.ViewModels"
+             x:Class="QuanLyMaMoblie.Views.LoginView"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel />
+    </ContentPage.BindingContext>
+
+    <AbsoluteLayout>
+        <!-- Background Image -->
+        <Image Source="background.png" Aspect="AspectFill"
+               AbsoluteLayout.LayoutFlags="All"
+               AbsoluteLayout.LayoutBounds="0,0,1,1" />
+        
+        <Grid AbsoluteLayout.LayoutFlags="PositionProportional">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Image Source="back.png" WidthRequest="32" HeightRequest="32" VerticalOptions="Center" HorizontalOptions="Start" Margin="10,10,0,0">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GoBackCommand}" />
+                </Image.GestureRecognizers>
+            </Image>
+        </Grid>
+
+        <!-- Your content here -->
+        <Frame
+               BackgroundColor="Transparent"
+               BorderColor="Transparent"
+               Opacity="0.8" 
+               CornerRadius="10" 
+               Padding="10"
+               AbsoluteLayout.LayoutFlags="All"
+               AbsoluteLayout.LayoutBounds="0.2, 1, 1, 0.8"
+               HasShadow="True">
+
+            <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                <!-- Tiêu đề -->
+                <Label Text="Login" FontSize="36" FontAttributes="Bold" HorizontalOptions="Center" TextColor="Black"/>
+
+                <!-- Nhập tài khoản -->
+                <Label Text="Account" FontSize="14" TextColor="Black"/>
+                <Entry Text="{Binding TaiKhoan}" Placeholder="Account" TextColor="Black"/>
+
+                <!-- Nhập mật khẩu -->
+                <Label Text="Password" FontSize="14" TextColor="Black"/>
+                <Entry Text="{Binding MatKhau}" Placeholder="************" IsPassword="True" TextColor="Black"/> <!--sửa màu làm sao để sửa-->
+
+                <!-- Checkbox Nhớ tài khoản và Liên kết Quên mật khẩu -->
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox IsChecked="{Binding GhiNhoToi}" HorizontalOptions="Start" Color="Blue"/>
+                    <Label Text="Remember Me" VerticalOptions="Center" HorizontalOptions="Start" TextColor="Black"/>
+                    <Button Text="Forgot Password?" BackgroundColor="Transparent" TextColor="Blue" Command="{Binding OnForgotPassCommand}"/>
+                </StackLayout>
+
+                <!-- Nút Gửi -->
+                <Frame
+                    BackgroundColor="#010040"
+                    Padding="0"
+                    CornerRadius="20"
+                    HasShadow="False">
+                    <Button Text="Sign In"
+                            BackgroundColor="#010040"
+                            TextColor="White" FontAttributes="Bold" 
+                            Command="{Binding OnSubmitCommand}"
+                            WidthRequest="120"
+                            HeightRequest="45"
+                            CornerRadius="20"
+                            HorizontalOptions="Center" />
+                </Frame>
+            </StackLayout>
+        </Frame>
+    </AbsoluteLayout>
+</ContentPage>

@@ -1,0 +1,142 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:QuanLyMaMoblie.ViewModels"
+             x:Class="QuanLyMaMoblie.Views.CartView"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.BindingContext>
+        <vm:CartViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Image Source="background2.png" Aspect="AspectFill" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" />
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- Header Grid -->
+            <Grid Grid.Row="0" HeightRequest="66" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Back Button -->
+                <Image Grid.Column="0" Source="back.png" WidthRequest="32" HeightRequest="32" VerticalOptions="Center" HorizontalOptions="Start" Margin="10,2,10,0">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoBackCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Text="Cart" TextColor="#D7D0D0" FontSize="Large" Margin="50,18,0,0"/>
+                <Label Text="{Binding Dem, StringFormat='({0})'}" TextColor="#D7D0D0" FontSize="Medium" Margin="96,22,0,0"/>
+
+                <!-- Share Button -->
+                <Image Grid.Column="2" Source="share.png" HeightRequest="32" WidthRequest="32" Margin="10,2,10,0" VerticalOptions="Center" HorizontalOptions="End" />
+
+                <!-- Menu Button -->
+                <Image Grid.Column="4" Source="menu.png" HeightRequest="32" WidthRequest="32" Margin="0,2,10,0" VerticalOptions="Center" HorizontalOptions="End" />
+
+            </Grid>
+            <!-- Scrollable Content -->
+            <ScrollView Grid.Row="1">
+                <CollectionView ItemsSource="{Binding ProductsInCart}" SelectionMode="None">
+                    <!-- Không cho phép chọn để tránh xung đột với Checkbox -->
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Margin="5" Padding="0" BackgroundColor="White">
+                                <StackLayout Orientation="Horizontal">
+                                    <!-- CheckBox -->
+                                    <CheckBox IsChecked="true" Margin="0,0,5,38" />
+                                    <Frame WidthRequest="30" HeightRequest="30" Padding="0" Margin="-42,25,5,0" 
+       HasShadow="False" BorderColor="Transparent">
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:CartViewModel}}, Path=RemoveProductCommand}" CommandParameter="{Binding .}" />
+                                        </Frame.GestureRecognizers>
+                                        <Image Source="remove_icon.png" Aspect="AspectFit" />
+                                    </Frame>
+
+
+                                    <!-- Image sản phẩm -->
+                                    <Image Source="{Binding Image}" WidthRequest="100" HeightRequest="100" Margin="0,2,-5,0"/>
+
+                                    <!-- Frame chứa thông tin sản phẩm và nút tăng/giảm số lượng -->
+                                    <Frame WidthRequest="240" HeightRequest="120" BackgroundColor="#F3FAFA" Padding="10" Margin="10">
+                                        <StackLayout>
+                                            <!-- Tên sản phẩm -->
+                                            <Label Text="{Binding ProductName}" FontSize="Small" Margin="0,2,0,0" FontAttributes="Bold"/>
+
+                                            <!-- Giá sản phẩm -->
+                                            <Label Text="{Binding Price, StringFormat='Price: {0:C}'}" Margin="0,2,0,0" TextColor="red" FontAttributes="Bold"/>
+
+                                            <!-- Phần số lượng và các nút tăng/giảm -->
+                                            <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                                                <Label Text="Quantity:" Margin="0,2,0,0" FontAttributes="Bold"/>
+
+                                                <!-- Nút tăng số lượng -->
+                                                <Frame BackgroundColor="LightGray" WidthRequest="20" HeightRequest="20" Padding="0" Margin="5,0,0,0">
+                                                    <Frame.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:CartViewModel}}, Path=IncrementQuantityCommand}" CommandParameter="{Binding .}" />
+                                                    </Frame.GestureRecognizers>
+                                                    <Label Text="+" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" TextColor="Black" FontSize="Small" FontAttributes="Bold"/>
+                                                </Frame>
+
+                                                <Entry Text="{Binding Quantity}" Keyboard="Numeric" WidthRequest="80" Margin="5,-16,0,0" IsReadOnly="True" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+
+                                                <!-- Nút giảm số lượng -->
+                                                <Frame BackgroundColor="LightGray" WidthRequest="20" HeightRequest="20" Padding="0" Margin="5,0,0,0">
+                                                    <Frame.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:CartViewModel}}, Path=DecrementQuantityCommand}" CommandParameter="{Binding .}" />
+                                                    </Frame.GestureRecognizers>
+                                                    <Label Text="-" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" TextColor="Black" FontSize="Small" FontAttributes="Bold"/>
+                                                </Frame>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Frame>
+                                </StackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </ScrollView>
+
+            <!-- Footer Grid -->
+            <Grid Grid.Row="2" HeightRequest="65" BackgroundColor="White" VerticalOptions="End" HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Add to Cart Button -->
+                <Frame Grid.Column="0" BackgroundColor="white" Padding="10,0" Margin="10,5" CornerRadius="5" BorderColor="White" WidthRequest="200">
+                    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                        <CheckBox IsChecked="true" VerticalOptions="Center" Margin="-10,0,0,0" />
+                        <StackLayout>
+                            <Label Text="All" TextColor="Black" FontSize="Small" Margin="-5,16,0,0"/>
+                            <Label Text="Total:" TextColor="Black" FontSize="Small" Margin="50,-30,0,0"/>
+                            <Label Text="{Binding TotalPrice, StringFormat='{0:C}'}" TextColor="Red" FontSize="Medium" FontAttributes="Bold" Margin="50,0,0,0"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+
+                <!-- Buy Now Button -->
+                <Frame Grid.Column="1" BackgroundColor="#FA1A1A" Padding="10,0" Margin="10,5" CornerRadius="5">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding MoveToPayCommand}" />
+                    </Frame.GestureRecognizers>
+                    <Label Text="Buy" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" FontSize="18" />
+                </Frame>
+
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>

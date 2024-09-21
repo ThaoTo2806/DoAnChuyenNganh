@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:QuanLyMaWinApp.ViewModels"
+             x:Class="QuanLyMaWinApp.Views.SendCodePage"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.BindingContext>
+        <vm:SendCodeViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <Frame VerticalOptions="Center" HorizontalOptions="Center" Padding="20" BackgroundColor="White" CornerRadius="20" WidthRequest="1000" HeightRequest="600">
+            <ScrollView VerticalScrollBarVisibility="Always">
+                <StackLayout Spacing="10">
+                    <Label Text="Order Infomation" 
+                   FontSize="24" 
+                   HorizontalOptions="Center" 
+                   Margin="0,0,0,10" TextColor="Black" FontAttributes="Bold"/>
+
+                    <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                        <Label Text="ID Order:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray" Margin="20,5,0,0"/>
+                        <Label Text="{Binding _mailModel.OrderID}" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="red" Margin="-20,5,0,0"/>
+                        <Label Text="Request Date:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray" Margin="0,5,0,0"/>
+                        <Label Text="{Binding _mailModel.RequestDay}" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="red" Margin="0,5,0,0"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                        <Label Text="UserName:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray" Margin="20,5,0,0"/>
+                        <Label Text="{Binding _mailModel.Username}" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black" Margin="-20,5,0,0"/>
+                        <Label Text="Email:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray" Margin="0,5,0,0"/>
+                        <Label Text="{Binding _mailModel.Email}" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black" Margin="0,5,0,0"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                        <Label Text="Periodic:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray" Margin="20,5,0,0"/>
+                        <Label Text="{Binding _mailModel.Periodic}" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Blue" Margin="30,5,0,0"/>
+                        <Label Text="Total:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray" Margin="97,5,0,0"/>
+                        <Label Text="$" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Blue" Margin="145,5,0,0"/>
+                        <Label Text="{Binding _mailModel.Total}" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Blue" Margin="-35,5,0,0"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Margin="350,10,0,0">
+                        <Button Text="Create" BackgroundColor="#49BE49" Command="{Binding SaveCommand}" CommandParameter="{Binding}" HorizontalOptions="Center" Margin="50,0,0,0" WidthRequest="100"/>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

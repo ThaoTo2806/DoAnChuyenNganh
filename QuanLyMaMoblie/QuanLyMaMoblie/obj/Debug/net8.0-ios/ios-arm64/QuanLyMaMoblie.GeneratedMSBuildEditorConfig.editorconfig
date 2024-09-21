@@ -1,0 +1,137 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0-ios
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = QuanLyMaMoblie
+build_property.ProjectDir = D:\HOCTAP\WPF\QLMaKichHoat\QuanLyMaMoblie\QuanLyMaMoblie\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+
+[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaMoblie/QuanLyMaMoblie/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaMoblie.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaMoblie/QuanLyMaMoblie/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaMoblie.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaMoblie/QuanLyMaMoblie/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaMoblie.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaMoblie/QuanLyMaMoblie/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaMoblie.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaMoblie/QuanLyMaMoblie/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaMoblie.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaMoblie/QuanLyMaMoblie/Views/ActivationView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaMoblie.Views.ActivationView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ActivationView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ActivationView.xaml
+
+[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaMoblie/QuanLyMaMoblie/Views/AllOrdersView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaMoblie.Views.AllOrdersView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\AllOrdersView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\AllOrdersView.xaml
+
+[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaMoblie/QuanLyMaMoblie/Views/CartView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaMoblie.Views.CartView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\CartView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\CartView.xaml
+
+[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaMoblie/QuanLyMaMoblie/Views/DetailOrderView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaMoblie.Views.DetailOrderView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\DetailOrderView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\DetailOrderView.xaml
+
+[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaMoblie/QuanLyMaMoblie/Views/FirstPageView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaMoblie.Views.FirstPageView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\FirstPageView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\FirstPageView.xaml
+
+[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaMoblie/QuanLyMaMoblie/Views/ForgotPassView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaMoblie.Views.ForgotPassView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ForgotPassView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ForgotPassView.xaml
+
+[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaMoblie/QuanLyMaMoblie/Views/IndexView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaMoblie.Views.IndexView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\IndexView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\IndexView.xaml
+
+[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaMoblie/QuanLyMaMoblie/Views/InfoProduct.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaMoblie.Views.InfoProduct.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\InfoProduct.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\InfoProduct.xaml
+
+[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaMoblie/QuanLyMaMoblie/Views/InfoUser.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaMoblie.Views.InfoUser.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\InfoUser.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\InfoUser.xaml
+
+[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaMoblie/QuanLyMaMoblie/Views/LoadingPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaMoblie.Views.LoadingPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\LoadingPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\LoadingPage.xaml
+
+[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaMoblie/QuanLyMaMoblie/Views/LoginView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaMoblie.Views.LoginView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\LoginView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\LoginView.xaml
+
+[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaMoblie/QuanLyMaMoblie/Views/MailView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaMoblie.Views.MailView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\MailView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\MailView.xaml
+
+[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaMoblie/QuanLyMaMoblie/Views/PayMentView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaMoblie.Views.PayMentView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\PayMentView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\PayMentView.xaml
+
+[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaMoblie/QuanLyMaMoblie/Views/RegisterView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaMoblie.Views.RegisterView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\RegisterView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\RegisterView.xaml
+
+[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaMoblie/QuanLyMaMoblie/Views/UserView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaMoblie.Views.UserView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\UserView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\UserView.xaml

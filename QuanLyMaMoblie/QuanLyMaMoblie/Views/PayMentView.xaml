@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:QuanLyMaMoblie.ViewModels"
+             x:Class="QuanLyMaMoblie.Views.PayMentView"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.BindingContext>
+        <vm:PayMentViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Image Source="background2.png" Aspect="AspectFill" />
+
+        <!-- Header -->
+        <Grid HeightRequest="66" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Back Button -->
+            <Image Grid.Column="0" Source="back.png" WidthRequest="32" HeightRequest="32" VerticalOptions="Center" HorizontalOptions="Start" Margin="10,-775,10,0">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GoBackCommand}" />
+                </Image.GestureRecognizers>
+            </Image>
+            <!-- Title -->
+            <Label Grid.Column="1" Text="Payment" TextColor="#D7D0D0" FontSize="Large" Margin="0,-775,0,0" VerticalOptions="Center" HorizontalOptions="Start"/>
+
+        </Grid>
+
+
+        <!-- Scrollable Content -->
+        <ScrollView>
+            <StackLayout Padding="10">
+                <!-- Customer Information Frame -->
+                <Frame Padding="10" BackgroundColor="White" CornerRadius="5" Margin="0,70,0,10">
+                    <StackLayout>
+                        <Label Text="Customer Information" FontSize="20" FontAttributes="Bold"  HorizontalOptions="Center"  VerticalOptions="Center" />
+                        <StackLayout Orientation="Horizontal" Spacing="5">
+                            <Label Text="FullName: " FontSize="16" TextColor="Gray"/>
+                            <Label Text="{Binding Name}" FontSize="16"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Spacing="5">
+                            <Label Text="Address: " FontSize="16" TextColor="Gray"/>
+                            <Label Text="{Binding Address}" FontSize="16" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Spacing="5">
+                            <Label Text="Phone: " FontSize="16" TextColor="Gray"/>
+                            <Label Text="{Binding Phone}" FontSize="16" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Product List Frame -->
+                <Frame Padding="10" BackgroundColor="White" CornerRadius="5" Margin="0,0,0,10" >
+                    <StackLayout>
+                        <Label Text="Product information" FontSize="20" FontAttributes="Bold"  HorizontalOptions="Center"  VerticalOptions="Center" />
+                        <CollectionView ItemsSource="{Binding CartItems}" SelectionMode="None">
+                            <CollectionView.ItemsLayout>
+                                <LinearItemsLayout Orientation="Vertical" />
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout Orientation="Horizontal" Padding="5">
+                                        <Image Source="{Binding Image}" WidthRequest="50" HeightRequest="50" />
+                                        <StackLayout>
+                                            <Label Text="{Binding ProductName}" FontSize="16" Margin="10,0,0,0"/>
+                                            <Label Text="{Binding Price, StringFormat='Price: {0:C}'}" FontSize="16" Margin="10,0,0,0"/>
+                                            <Label Text="{Binding Quantity, StringFormat='Quantity: {0}'}" FontSize="16" Margin="10,0,0,0"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </StackLayout>
+                </Frame>
+
+                <!-- ActivationCodeInfo Frame -->
+                <Frame Padding="10" BackgroundColor="White" CornerRadius="5" Margin="0,0,0,10">
+                    <StackLayout>
+                        <!-- Activation Code Info -->
+                        <Label Text="Activation Code Info" FontSize="20" FontAttributes="Bold" Margin="0,0,0,10" />
+                        <Label Text="{Binding ActivationCodeInfo}" FontSize="16" />
+
+                        <!-- Payment Methods -->
+                        <Label Text="Payment Methods" FontSize="20" FontAttributes="Bold" Margin="0,20,0,10" />
+                        <StackLayout Orientation="Horizontal" Spacing="10">
+                            <RadioButton Content="Napas" GroupName="PaymentMethods" IsChecked="{Binding IsNapasSelected}" FontSize="16" />
+                            <RadioButton Content="Cash" GroupName="PaymentMethods" IsChecked="{Binding IsCashSelected}" FontSize="16" />
+                        </StackLayout>
+
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+
+        <!-- Footer -->
+        <Grid HeightRequest="65" BackgroundColor="White" VerticalOptions="End" HorizontalOptions="FillAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Total -->
+            <Frame Grid.Column="0" BackgroundColor="White" Padding="10,0" Margin="10,5" CornerRadius="5" BorderColor="White">
+                <Label Text="{Binding TotalPrice, StringFormat='Total: {0:C}'}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="18" TextColor="#FA1A1A"/>
+            </Frame>
+
+            <!-- Buy Now Button -->
+            <Frame Grid.Column="1" BackgroundColor="#FA1A1A" Padding="10,0" Margin="10,5" CornerRadius="5">
+                <Label Text="Continue" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" FontSize="18">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ContinueCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </Frame>
+
+        </Grid>
+    </Grid>
+</ContentPage>

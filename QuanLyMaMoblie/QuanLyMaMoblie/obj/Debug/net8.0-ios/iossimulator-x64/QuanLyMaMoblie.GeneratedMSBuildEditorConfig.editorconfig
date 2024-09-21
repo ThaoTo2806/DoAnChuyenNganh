@@ -1,0 +1,59 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0-ios
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = QuanLyMaMoblie
+build_property.ProjectDir = D:\HOCTAP\WPF\QuanLyMaMoblie\QuanLyMaMoblie\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+
+[D:/HOCTAP/WPF/QuanLyMaMoblie/QuanLyMaMoblie/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaMoblie.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[D:/HOCTAP/WPF/QuanLyMaMoblie/QuanLyMaMoblie/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaMoblie.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[D:/HOCTAP/WPF/QuanLyMaMoblie/QuanLyMaMoblie/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaMoblie.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[D:/HOCTAP/WPF/QuanLyMaMoblie/QuanLyMaMoblie/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaMoblie.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[D:/HOCTAP/WPF/QuanLyMaMoblie/QuanLyMaMoblie/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaMoblie.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[D:/HOCTAP/WPF/QuanLyMaMoblie/QuanLyMaMoblie/Views/IndexView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaMoblie.Views.IndexView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\IndexView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\IndexView.xaml
+
+[D:/HOCTAP/WPF/QuanLyMaMoblie/QuanLyMaMoblie/Views/LoginView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaMoblie.Views.LoginView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\LoginView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\LoginView.xaml

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:QuanLyMaMoblie.ViewModels"
+             x:Class="QuanLyMaMoblie.Views.RegisterView"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.BindingContext>
+        <vm:RegisterViewModel />
+    </ContentPage.BindingContext>
+
+    <AbsoluteLayout>
+        <!-- Background Image -->
+        <Image Source="background1.png" Aspect="AspectFill"
+           AbsoluteLayout.LayoutFlags="All"
+           AbsoluteLayout.LayoutBounds="0,0,1,1" />
+
+        <!-- Your content here -->
+        <Frame x:Name="registerFrame"
+           BackgroundColor="Transparent"
+           BorderColor="Transparent"
+           Opacity="0.8" 
+           CornerRadius="10" 
+           Padding="10"
+           AbsoluteLayout.LayoutFlags="All"
+           AbsoluteLayout.LayoutBounds="0.1, 0.8, 1, 0.8"
+           HasShadow="True">
+
+            <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                <!-- Tiêu đề -->
+                <Label Text="Register" FontSize="36" FontAttributes="Bold" HorizontalOptions="Center" TextColor="Black"/>
+
+                <!-- Nhập tên -->
+                <Label Text="Full Name" FontSize="14" TextColor="Black"/>
+                <Entry Placeholder="thao to" Text="{Binding FullNameEntry}" TextColor="Black"/>
+
+                <!-- Nhập Email -->
+                <Label Text="Email" FontSize="14" TextColor="Black"/>
+                <Entry Placeholder="thaoto123@gmail.com" Text="{Binding EmailEntry}" TextColor="Black"/>
+                
+                <!-- Nhập Phone -->
+                <Label Text="Phone" FontSize="14" TextColor="Black"/>
+                <Entry Placeholder="0123456789" Text="{Binding PhoneEntry}" TextColor="Black"/>
+
+                <!-- Nhập tài khoản -->
+                <Label Text="Account" FontSize="14" TextColor="Black"/>
+                <Entry Placeholder="thaoto123" Text="{Binding AccountEntry}" TextColor="Black"/>
+
+                <!-- Nhập mật khẩu -->
+                <Label Text="Password" FontSize="14" TextColor="Black"/>
+                <Entry Placeholder="************" IsPassword="True" Text="{Binding PasswordEntry}" TextColor="Black"/>
+
+                <!-- Nhập lại mật khẩu -->
+                <Label Text="Confirm Password" FontSize="14" TextColor="Black"/>
+                <Entry Placeholder="************" IsPassword="True" Text="{Binding ConfirmPasswordEntry}" TextColor="Black"/>
+
+                <!-- Nếu có tài khoản rồi thì Login -->
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label Text="Already Member? " VerticalOptions="Center" HorizontalOptions="Start" TextColor="Black" />
+                    <Button Text="Login" BackgroundColor="Transparent" TextColor="Blue" Command="{Binding OnLoginCommand}" />
+                </StackLayout>
+
+                <!-- Nút Gửi -->
+                <Frame
+                BackgroundColor="#010040"
+                Padding="0"
+                CornerRadius="20"
+                HasShadow="False">
+                    <Button Text="Sign Up"
+                        BackgroundColor="#010040"
+                        TextColor="White" FontAttributes="Bold" 
+                        Command="{Binding OnSubmitCommand}"
+                        WidthRequest="290"
+                        HeightRequest="45"
+                        CornerRadius="20"
+                        HorizontalOptions="Center" />
+                </Frame>
+            </StackLayout>
+        </Frame>
+    </AbsoluteLayout>
+</ContentPage>

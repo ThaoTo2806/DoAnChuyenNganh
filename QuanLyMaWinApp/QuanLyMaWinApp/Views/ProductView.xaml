@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:QuanLyMaWinApp.ViewModels"
+             x:Class="QuanLyMaWinApp.Views.ProductView">
+
+    <ContentView.BindingContext>
+        <vm:ProductViewModel />
+    </ContentView.BindingContext>
+
+    <Grid>
+        <Frame x:Name="ContentFrame" Grid.Row="3" Grid.Column="1" Style="{StaticResource FrameStyle}">
+            <ScrollView VerticalScrollBarVisibility="Always">
+                <StackLayout Orientation="Vertical" Spacing="10">
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding AddCommand}" />
+                        </StackLayout.GestureRecognizers>
+
+                        <Image Source="add_icon.png" HeightRequest="32" WidthRequest="32" InputTransparent="True" IsEnabled="True" />
+                        <Label Text="Add new product" TextColor="white" VerticalOptions="Center" FontSize="Small"/>
+                    </StackLayout>
+
+                    <!-- Bảng 4 cột -->
+                    <Frame BorderColor="White" CornerRadius="5" Padding="0" Margin="10,0,10,0">
+                        <StackLayout Orientation="Vertical" Spacing="10">
+                            <!-- Dòng tiêu đề -->
+                            <StackLayout Orientation="Horizontal" Padding="5" BackgroundColor="Black">
+                                <Label Text="ID" TextColor="White" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                                <Label Text="Name" TextColor="White" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                                <Label Text="Type" TextColor="White" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                                <Label Text="Image" TextColor="White" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                                <Label Text="Quantity" TextColor="White" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                                <Label Text="Price" TextColor="White" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                                <Label Text="Detail" TextColor="White" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                                <Label Text="Feature" TextColor="White" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                                <Label Text="Specifications" TextColor="White" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                                <Label Text="Helps" TextColor="White" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                                <Label Text="Action" TextColor="White" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                            </StackLayout>
+
+                            <!-- Bảng dữ liệu -->
+                            <CollectionView ItemsSource="{Binding Products}">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackLayout Orientation="Horizontal" Padding="5" BackgroundColor="White">
+                                            <Label Text="{Binding ID}" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                                            <Label Text="{Binding ProductName}" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                                            <Label Text="{Binding ldCate}" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                                            <Image Source="{Binding Image}" HeightRequest="50" WidthRequest="50" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                                            <Label Text="{Binding SL}" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                                            <Label Text="{Binding Price}" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                                            <Label Text="{Binding Detail}" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                                            <Label Text="{Binding Feature}" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                                            <Label Text="{Binding Specifications}" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                                            <Label Text="{Binding Helps}" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+                                                <Frame Padding="5" HasShadow="False" BackgroundColor="Transparent">
+                                                    <Image Source="{Binding iconEdit}" HeightRequest="20" WidthRequest="20">
+                                                        <Image.GestureRecognizers>
+                                                            <TapGestureRecognizer Command="{Binding BindingContext.EditCommand, Source={x:Reference Name=ContentFrame}}" CommandParameter="{Binding .}" />
+                                                        </Image.GestureRecognizers>
+                                                    </Image>
+                                                </Frame>
+                                                <Frame Padding="5" HasShadow="False" BackgroundColor="Transparent" Margin="10,0,0,0">
+                                                    <Image Source="{Binding iconDelete}" HeightRequest="20" WidthRequest="20">
+                                                        <Image.GestureRecognizers>
+                                                            <TapGestureRecognizer Command="{Binding BindingContext.DeleteCommand, Source={x:Reference Name=ContentFrame}}" CommandParameter="{Binding .}" />
+                                                        </Image.GestureRecognizers>
+                                                    </Image>
+                                                </Frame>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+
+                            <!-- Phân trang -->
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10" Padding="10">
+                                <Button Text="Prev" Command="{Binding PreviousPageCommand}" IsEnabled="{Binding CanGoToPreviousPage}" />
+                                <Label Text="{Binding CurrentPageLabel}" VerticalOptions="Center" />
+                                <Button Text="Next" Command="{Binding NextPageCommand}" IsEnabled="{Binding CanGoToNextPage}" />
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+        </Frame>
+    </Grid>
+</ContentView>

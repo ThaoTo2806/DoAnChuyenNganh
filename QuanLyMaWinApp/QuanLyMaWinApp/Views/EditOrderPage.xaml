@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:QuanLyMaWinApp.ViewModels"
+             x:Class="QuanLyMaWinApp.Views.EditOrderPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+        <Frame VerticalOptions="Center" HorizontalOptions="Center" Padding="20" BackgroundColor="White" CornerRadius="20" WidthRequest="1000" HeightRequest="600">
+            <ScrollView VerticalScrollBarVisibility="Always">
+                <StackLayout Spacing="10">
+                    <Label Text="Order Infomation" 
+                   FontSize="24" 
+                   HorizontalOptions="Center" 
+                   Margin="0,0,0,10" TextColor="Black" FontAttributes="Bold"/>
+
+                    <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                        <Label Text="ID Order:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray" Margin="0,5,0,0"/>
+                        <Label Text="{Binding OrderDetails[0].OrderID}" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black" Margin="-60,5,0,0"/>
+                        <Label Text="Customer Name:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray" Margin="0,5,0,0"/>
+                        <Label Text="{Binding OrderDetails[0].UserName}" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black" Margin="-50,5,0,0"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                        <Label Text="Phone:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray" Margin="0,5,0,0"/>
+                        <Label Text="{Binding OrderDetails[0].UserPhone}" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black" Margin="-60,5,0,0"/>
+                        <Label Text="Address:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray" Margin="0,5,0,0"/>
+                        <Label Text="{Binding OrderDetails[0].UserAddress}" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black" Margin="-50,5,0,0"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                        <Label Text="Product IDs:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray" Margin="0,5,0,0"/>
+                        <Label Text="{Binding ProductIds}" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black" Margin="-300,5,0,0"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                        <Label Text="Quantity:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray" Margin="0,5,0,0"/>
+                        <Label Text="{Binding OrderDetails[0].TotalQuantity}" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black" Margin="-60,5,0,0"/>
+                        <Label Text="ToTal:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray" Margin="0,5,0,0"/>
+                        <Label Text="{Binding OrderDetails[0].TotalPrice, StringFormat='{0:C}'}"  FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black" Margin="-50,5,0,0"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                        <RadioButton Content="Processing" GroupName="Role" IsChecked="{Binding IsProcess}" TextColor="#0E54A3" Margin="-40,0,0,0"/>
+                        <RadioButton Content="Confirm" GroupName="Role" IsChecked="{Binding IsConfirm}" TextColor="#0E54A3" Margin="120,0,0,0"/>
+                    </StackLayout>
+
+
+                    <!-- Button Save màu xanh -->
+                    <Button Text="Save" BackgroundColor="#49BE49" Command="{Binding SaveCommand}" CommandParameter="{Binding}" HorizontalOptions="Center"/>
+                </StackLayout>
+            </ScrollView>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

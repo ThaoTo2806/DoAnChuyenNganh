@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:QuanLyMaWinApp.ViewModels"
+             x:Class="QuanLyMaWinApp.Views.OrderView">
+    
+    <ContentView.BindingContext>
+        <vm:OrderViewModel />
+    </ContentView.BindingContext>
+
+    <Grid>
+        <Frame x:Name="ContentFrame" Grid.Row="3" Grid.Column="1" Style="{StaticResource FrameStyle}">
+            <ScrollView VerticalScrollBarVisibility="Always">
+                <StackLayout Orientation="Vertical" Spacing="10">
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Label Text="Orders (Not Yet Approved)" TextColor="white" VerticalOptions="Center" FontSize="Title" FontAttributes="Bold"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Spacing="10" >
+                        <Frame BorderColor="Gray" CornerRadius="10" Padding="5" BackgroundColor="#E0E5E6" HorizontalOptions="StartAndExpand" VerticalOptions="Center" WidthRequest="200" HeightRequest="40" Margin="5,0,0,10">
+                            <StackLayout Orientation="Horizontal" Spacing="5">
+                                <Entry Placeholder="Search" TextColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="0,-8,0,0"/>
+                                <Image Source="search.png" HeightRequest="32" WidthRequest="32" VerticalOptions="Center" />
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+
+                    <!-- Bảng 4 cột -->
+                    <Frame BorderColor="White" CornerRadius="5" Padding="0" Margin="10,0,10,0">
+                        <StackLayout Orientation="Vertical" Spacing="10">
+                            <!-- Dòng tiêu đề -->
+                            <StackLayout Orientation="Horizontal" Padding="5" BackgroundColor="Black">
+                                <Label Text="ID Order" TextColor="White" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                                <Label Text="Order Date" TextColor="White" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                                <Label Text="Order Status" TextColor="White" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                                <Label Text="Action" TextColor="White" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                            </StackLayout>
+
+                            <!-- Bảng dữ liệu -->
+                            <CollectionView ItemsSource="{Binding UnPaidOrders}"
+                RemainingItemsThreshold="1"
+                RemainingItemsThresholdReachedCommand="{Binding LoadMore1Command}">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackLayout Orientation="Horizontal" Padding="5" BackgroundColor="#E0E5E6">
+                                            <Label Text="{Binding OrderId}" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                            <Label Text="{Binding NgayDat}" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                            <Label Text="{Binding DonHangStatus}" TextColor="red" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+                                                <Frame Padding="5" HasShadow="False" BackgroundColor="Transparent">
+                                                    <Image Source="{Binding iconEdit}" HeightRequest="20" WidthRequest="20">
+                                                        <Image.GestureRecognizers>
+                                                            <TapGestureRecognizer Command="{Binding BindingContext.EditCommand, Source={x:Reference Name=ContentFrame}}" CommandParameter="{Binding .}" />
+                                                        </Image.GestureRecognizers>
+                                                    </Image>
+                                                </Frame>
+                                                <Frame Padding="5" HasShadow="False" BackgroundColor="Transparent" Margin="10,0,0,0">
+                                                    <Image Source="{Binding iconDelete}" HeightRequest="20" WidthRequest="20">
+                                                        <Image.GestureRecognizers>
+                                                            <TapGestureRecognizer Command="{Binding BindingContext.DeleteCommand, Source={x:Reference Name=ContentFrame}}" CommandParameter="{Binding .}" />
+                                                        </Image.GestureRecognizers>
+                                                    </Image>
+                                                </Frame>
+
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                            <!-- Pagination Controls -->
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="End" Spacing="10" Margin="0,10,0,0">
+                                <!-- Prev Button -->
+                                <Button Text="Prev" Command="{Binding PreviousPage1Command}" IsEnabled="{Binding CanGoToNextPage1}" />
+
+                                <!-- Page Numbers -->
+                                <Label Text="{Binding CurrentPageLabel1}" VerticalOptions="Center" HorizontalOptions="Center" />
+
+                                <!-- Next Button -->
+                                <Button Text="Next" Command="{Binding NextPage1Command}" IsEnabled="{Binding CanGoToNextPage1}" />
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+
+                    <StackLayout Orientation="Horizontal" Spacing="10" Margin="0,80,10,0">
+                        <Label Text="Orders (Approved)" TextColor="white" VerticalOptions="Center" FontSize="Title" FontAttributes="Bold"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Spacing="10" >
+                        <Frame BorderColor="Gray" CornerRadius="10" Padding="5" BackgroundColor="#E0E5E6" HorizontalOptions="StartAndExpand" VerticalOptions="Center" WidthRequest="200" HeightRequest="40" Margin="5,0,0,10">
+                            <StackLayout Orientation="Horizontal" Spacing="5">
+                                <Entry Placeholder="Search" TextColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="0,-8,0,0"/>
+                                <Image Source="search.png" HeightRequest="32" WidthRequest="32" VerticalOptions="Center" />
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+
+                    <!-- Bảng 4 cột -->
+                    <Frame BorderColor="White" CornerRadius="5" Padding="0" Margin="10,0,10,0">
+                        <StackLayout Orientation="Vertical" Spacing="10">
+                            <!-- Dòng tiêu đề -->
+                            <StackLayout Orientation="Horizontal" Padding="5" BackgroundColor="Black">
+                                <Label Text="ID Order" TextColor="White" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                                <Label Text="Order Date" TextColor="White" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                                <Label Text="Delivery Date" TextColor="White" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                                <Label Text="Order Status" TextColor="White" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                            </StackLayout>
+
+                            <!-- Bảng dữ liệu -->
+                            <CollectionView ItemsSource="{Binding PaidOrders}"
+                RemainingItemsThreshold="1"
+                RemainingItemsThresholdReachedCommand="{Binding LoadMore2Command}">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackLayout Orientation="Horizontal" Padding="5" BackgroundColor="#E0E5E6">
+                                            <Label Text="{Binding OrderId}" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                            <Label Text="{Binding NgayDat}" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                            <Label Text="{Binding NgayGiao}" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                                            <Label Text="{Binding DonHangStatus}" TextColor="Green" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                                        </StackLayout>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                            <!-- Pagination Controls -->
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="End" Spacing="10" Margin="0,10,0,0">
+                                <!-- Prev Button -->
+                                <Button Text="Prev" Command="{Binding PreviousPageCommand2}" IsEnabled="{Binding CanGoToPreviousPage2}" />
+
+                                <!-- Page Numbers -->
+                                <Label Text="{Binding CurrentPageLabel2}" VerticalOptions="Center" HorizontalOptions="Center" />
+
+                                <!-- Next Button -->
+                                <Button Text="Next" Command="{Binding NextPageCommand2}" IsEnabled="{Binding CanGoToNextPage2}" />
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+        </Frame>
+    </Grid>
+</ContentView>
