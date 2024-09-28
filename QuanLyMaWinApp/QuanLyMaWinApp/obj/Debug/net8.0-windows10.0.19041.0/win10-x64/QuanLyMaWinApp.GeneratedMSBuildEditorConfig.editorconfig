@@ -8,137 +8,137 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = QuanLyMaWinApp
-build_property.ProjectDir = D:\HOCTAP\WPF\QLMaKichHoat\QuanLyMaWinApp\QuanLyMaWinApp\
+build_property.ProjectDir = D:\HOCTAP\HK7\DoAn1Chi\DoAnChuyenNganh\QuanLyMaWinApp\QuanLyMaWinApp\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaWinApp/QuanLyMaWinApp/App.xaml]
+[D:/HOCTAP/HK7/DoAn1Chi/DoAnChuyenNganh/QuanLyMaWinApp/QuanLyMaWinApp/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaWinApp.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaWinApp/QuanLyMaWinApp/AppShell.xaml]
+[D:/HOCTAP/HK7/DoAn1Chi/DoAnChuyenNganh/QuanLyMaWinApp/QuanLyMaWinApp/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaWinApp.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaWinApp/QuanLyMaWinApp/MainPage.xaml]
+[D:/HOCTAP/HK7/DoAn1Chi/DoAnChuyenNganh/QuanLyMaWinApp/QuanLyMaWinApp/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaWinApp.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 
-[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaWinApp/QuanLyMaWinApp/Resources/Styles/Colors.xaml]
+[D:/HOCTAP/HK7/DoAn1Chi/DoAnChuyenNganh/QuanLyMaWinApp/QuanLyMaWinApp/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaWinApp.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
-[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaWinApp/QuanLyMaWinApp/Resources/Styles/Styles.xaml]
+[D:/HOCTAP/HK7/DoAn1Chi/DoAnChuyenNganh/QuanLyMaWinApp/QuanLyMaWinApp/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaWinApp.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
-[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaWinApp/QuanLyMaWinApp/Views/AddCategoryPage.xaml]
+[D:/HOCTAP/HK7/DoAn1Chi/DoAnChuyenNganh/QuanLyMaWinApp/QuanLyMaWinApp/Views/AddCategoryPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaWinApp.Views.AddCategoryPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\AddCategoryPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\AddCategoryPage.xaml
 
-[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaWinApp/QuanLyMaWinApp/Views/AddCustomerPage.xaml]
+[D:/HOCTAP/HK7/DoAn1Chi/DoAnChuyenNganh/QuanLyMaWinApp/QuanLyMaWinApp/Views/AddCustomerPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaWinApp.Views.AddCustomerPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\AddCustomerPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\AddCustomerPage.xaml
 
-[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaWinApp/QuanLyMaWinApp/Views/AddProductPage.xaml]
+[D:/HOCTAP/HK7/DoAn1Chi/DoAnChuyenNganh/QuanLyMaWinApp/QuanLyMaWinApp/Views/AddProductPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaWinApp.Views.AddProductPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\AddProductPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\AddProductPage.xaml
 
-[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaWinApp/QuanLyMaWinApp/Views/Category.xaml]
+[D:/HOCTAP/HK7/DoAn1Chi/DoAnChuyenNganh/QuanLyMaWinApp/QuanLyMaWinApp/Views/Category.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaWinApp.Views.Category.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\Category.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\Category.xaml
 
-[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaWinApp/QuanLyMaWinApp/Views/CustomerView.xaml]
+[D:/HOCTAP/HK7/DoAn1Chi/DoAnChuyenNganh/QuanLyMaWinApp/QuanLyMaWinApp/Views/CustomerView.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaWinApp.Views.CustomerView.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\CustomerView.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\CustomerView.xaml
 
-[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaWinApp/QuanLyMaWinApp/Views/EditCategoryPage.xaml]
+[D:/HOCTAP/HK7/DoAn1Chi/DoAnChuyenNganh/QuanLyMaWinApp/QuanLyMaWinApp/Views/EditCategoryPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaWinApp.Views.EditCategoryPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\EditCategoryPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\EditCategoryPage.xaml
 
-[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaWinApp/QuanLyMaWinApp/Views/EditOrderPage.xaml]
+[D:/HOCTAP/HK7/DoAn1Chi/DoAnChuyenNganh/QuanLyMaWinApp/QuanLyMaWinApp/Views/EditOrderPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaWinApp.Views.EditOrderPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\EditOrderPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\EditOrderPage.xaml
 
-[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaWinApp/QuanLyMaWinApp/Views/EditProductPage.xaml]
+[D:/HOCTAP/HK7/DoAn1Chi/DoAnChuyenNganh/QuanLyMaWinApp/QuanLyMaWinApp/Views/EditProductPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaWinApp.Views.EditProductPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\EditProductPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\EditProductPage.xaml
 
-[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaWinApp/QuanLyMaWinApp/Views/IndexView.xaml]
+[D:/HOCTAP/HK7/DoAn1Chi/DoAnChuyenNganh/QuanLyMaWinApp/QuanLyMaWinApp/Views/IndexView.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaWinApp.Views.IndexView.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\IndexView.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\IndexView.xaml
 
-[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaWinApp/QuanLyMaWinApp/Views/LoginView.xaml]
+[D:/HOCTAP/HK7/DoAn1Chi/DoAnChuyenNganh/QuanLyMaWinApp/QuanLyMaWinApp/Views/LoginView.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaWinApp.Views.LoginView.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\LoginView.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\LoginView.xaml
 
-[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaWinApp/QuanLyMaWinApp/Views/LogView.xaml]
+[D:/HOCTAP/HK7/DoAn1Chi/DoAnChuyenNganh/QuanLyMaWinApp/QuanLyMaWinApp/Views/LogView.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaWinApp.Views.LogView.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\LogView.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\LogView.xaml
 
-[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaWinApp/QuanLyMaWinApp/Views/MailView.xaml]
+[D:/HOCTAP/HK7/DoAn1Chi/DoAnChuyenNganh/QuanLyMaWinApp/QuanLyMaWinApp/Views/MailView.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaWinApp.Views.MailView.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\MailView.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\MailView.xaml
 
-[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaWinApp/QuanLyMaWinApp/Views/MainPageView.xaml]
+[D:/HOCTAP/HK7/DoAn1Chi/DoAnChuyenNganh/QuanLyMaWinApp/QuanLyMaWinApp/Views/MainPageView.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaWinApp.Views.MainPageView.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\MainPageView.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\MainPageView.xaml
 
-[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaWinApp/QuanLyMaWinApp/Views/OrderView.xaml]
+[D:/HOCTAP/HK7/DoAn1Chi/DoAnChuyenNganh/QuanLyMaWinApp/QuanLyMaWinApp/Views/OrderView.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaWinApp.Views.OrderView.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\OrderView.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\OrderView.xaml
 
-[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaWinApp/QuanLyMaWinApp/Views/ProductView.xaml]
+[D:/HOCTAP/HK7/DoAn1Chi/DoAnChuyenNganh/QuanLyMaWinApp/QuanLyMaWinApp/Views/ProductView.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaWinApp.Views.ProductView.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\ProductView.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\ProductView.xaml
 
-[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaWinApp/QuanLyMaWinApp/Views/SendCodePage.xaml]
+[D:/HOCTAP/HK7/DoAn1Chi/DoAnChuyenNganh/QuanLyMaWinApp/QuanLyMaWinApp/Views/SendCodePage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaWinApp.Views.SendCodePage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\SendCodePage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\SendCodePage.xaml
 
-[D:/HOCTAP/WPF/QLMaKichHoat/QuanLyMaWinApp/QuanLyMaWinApp/Views/Statistics.xaml]
+[D:/HOCTAP/HK7/DoAn1Chi/DoAnChuyenNganh/QuanLyMaWinApp/QuanLyMaWinApp/Views/Statistics.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuanLyMaWinApp.Views.Statistics.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\Statistics.xaml

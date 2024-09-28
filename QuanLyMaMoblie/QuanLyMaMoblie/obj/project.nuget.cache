@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9Fsou8fyYZZaZnmXYJ9DoZQcwF7mLxkb/SIIa/KCoD+S1BOOlbVB4NP4ae9f5IihmolNjCheZiiOOrOIZSdOsQ==",
+  "dgSpecHash": "rbKSj7FLTNES8jC37NFOvLJl6fsHOScbmnIDy2YwxqXFR+SsSxx1FVv/vyGay2XDLU9B88+ORS6n7jjX/zwVPg==",
   "success": true,
-  "projectFilePath": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\QuanLyMaMoblie.csproj",
+  "projectFilePath": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\QuanLyMaMoblie.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\thanhthao\\.nuget\\packages\\communitytoolkit.mvvm\\8.0.0\\communitytoolkit.mvvm.8.0.0.nupkg.sha512",
     "C:\\Users\\thanhthao\\.nuget\\packages\\googlegson\\2.10.1.4\\googlegson.2.10.1.4.nupkg.sha512",

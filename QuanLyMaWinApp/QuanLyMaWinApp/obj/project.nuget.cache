@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bttSHOw8tlufh+SdB7EB/qqJCldD5GgkiiP/oXNnS+InzCYumQDOgWi8EFaNMoBt/5+kxkGlHiY41Bet2QJL0A==",
+  "dgSpecHash": "EVsPHhzB2aE+/e4hLvIjOVUSuFGGqhdLhBGcs89T195ydSXXKI8rVcNPagwQRQFbA2GiMGBxcFvHLvtB+hlOjA==",
   "success": true,
-  "projectFilePath": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\QuanLyMaWinApp.csproj",
+  "projectFilePath": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaWinApp\\QuanLyMaWinApp\\QuanLyMaWinApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\thanhthao\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\thanhthao\\.nuget\\packages\\communitytoolkit.mvvm\\8.2.2\\communitytoolkit.mvvm.8.2.2.nupkg.sha512",

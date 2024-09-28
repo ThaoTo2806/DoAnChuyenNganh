@@ -1,0 +1,11 @@
+# Bỏ qua thư mục .vs của Visual Studio
+.vs/
+
+# Bỏ qua thư mục obj và bin
+bin/
+obj/
+
+# Bỏ qua các tệp tạm thời
+*.tmp
+*.log
+*.vscode/

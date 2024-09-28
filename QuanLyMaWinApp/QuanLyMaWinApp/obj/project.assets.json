@@ -75825,11 +75825,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\QuanLyMaWinApp.csproj",
+      "projectUniqueName": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaWinApp\\QuanLyMaWinApp\\QuanLyMaWinApp.csproj",
       "projectName": "QuanLyMaWinApp",
-      "projectPath": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\QuanLyMaWinApp.csproj",
+      "projectPath": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaWinApp\\QuanLyMaWinApp\\QuanLyMaWinApp.csproj",
       "packagesPath": "C:\\Users\\thanhthao\\.nuget\\packages\\",
-      "outputPath": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\obj\\",
+      "outputPath": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaWinApp\\QuanLyMaWinApp\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [

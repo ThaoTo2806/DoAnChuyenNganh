@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\QuanLyMaMoblie.csproj": {}
+    "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\QuanLyMaMoblie.csproj": {}
   },
   "projects": {
-    "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\QuanLyMaMoblie.csproj": {
+    "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\QuanLyMaMoblie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\QuanLyMaMoblie.csproj",
+        "projectUniqueName": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\QuanLyMaMoblie.csproj",
         "projectName": "QuanLyMaMoblie",
-        "projectPath": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\QuanLyMaMoblie.csproj",
+        "projectPath": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\QuanLyMaMoblie.csproj",
         "packagesPath": "C:\\Users\\thanhthao\\.nuget\\packages\\",
-        "outputPath": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaMoblie\\QuanLyMaMoblie\\obj\\",
+        "outputPath": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [

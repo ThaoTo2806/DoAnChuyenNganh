@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9qWQdlYEjxeJnvbnRY0kFZySQAsSR/DX9ywaUQkStPjEWLfrRRIdlpFM4dZJ1T18EsVM3pDpN4qTTPRlQLFotA==",
+  "dgSpecHash": "jO9lD7hpv93PZdhOhfQFAhhRvcX4Mqwyc9aPOa5Br7Vr4gLqaxcLvgJ1dr6GQKvnnL4FXbQG2QhGn4pdHCwfTg==",
   "success": true,
-  "projectFilePath": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\webapi\\webapi\\webapi.csproj",
+  "projectFilePath": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\webapi\\webapi\\webapi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\thanhthao\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\thanhthao\\.nuget\\packages\\azure.identity\\1.11.3\\azure.identity.1.11.3.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\HOCTAP\\WPF\\QLMaKichHoat\\webapi\\webapi\\webapi.csproj": {}
+    "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\webapi\\webapi\\webapi.csproj": {}
   },
   "projects": {
-    "D:\\HOCTAP\\WPF\\QLMaKichHoat\\webapi\\webapi\\webapi.csproj": {
+    "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\webapi\\webapi\\webapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\webapi\\webapi\\webapi.csproj",
+        "projectUniqueName": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\webapi\\webapi\\webapi.csproj",
         "projectName": "webapi",
-        "projectPath": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\webapi\\webapi\\webapi.csproj",
+        "projectPath": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\webapi\\webapi\\webapi.csproj",
         "packagesPath": "C:\\Users\\thanhthao\\.nuget\\packages\\",
-        "outputPath": "D:\\HOCTAP\\WPF\\QLMaKichHoat\\webapi\\webapi\\obj\\",
+        "outputPath": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\webapi\\webapi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
