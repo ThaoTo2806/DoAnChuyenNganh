@@ -18,12 +18,12 @@ namespace QuanLyMaWinApp.ViewModels
 
         public string Name
         {
-            get => _customer?.Name;
+            get => _customer?.Username;
             set
             {
-                if (_customer != null && _customer.Name != value)
+                if (_customer != null && _customer.Username != value)
                 {
-                    _customer.Name = value;
+                    _customer.Username = value;
                     OnPropertyChanged();
                 }
             }
@@ -166,7 +166,7 @@ namespace QuanLyMaWinApp.ViewModels
                     SelectedImage = ImageSource.FromStream(() => stream);
                     string imagePath = result.FullPath;
 
-                    _customer.Image = imagePath;
+                    //_customer.Image = imagePath;
                 }
             }
             catch (Exception ex)
@@ -179,33 +179,33 @@ namespace QuanLyMaWinApp.ViewModels
         {
             try
             {
-                bool gender = IsMale; // Sử dụng giá trị của IsMale để xác định giới tính
+                //bool gender = IsMale; // Sử dụng giá trị của IsMale để xác định giới tính
 
-                bool success = await Member.InsertMemberAsync(
-                    Name,
-                    Account,
-                    //PassWord,
-                    Phone,
-                    _customer.Image,
-                    gender,
-                    Address,
-                    Email,
-                    Birth
-                );
+                //bool success = await Member.InsertMemberAsync(
+                //    Name,
+                //    Account,
+                //    //PassWord,
+                //    Phone,
+                //    _customer.Image,
+                //    gender,
+                //    Address,
+                //    Email,
+                //    Birth
+                //);
 
-                if (success)
-                {
-                    await Application.Current.MainPage.DisplayAlert("Success", "User created successfully", "OK");
+                //if (success)
+                //{
+                //    await Application.Current.MainPage.DisplayAlert("Success", "User created successfully", "OK");
 
-                    if (Application.Current.MainPage.Navigation.NavigationStack.Count > 1)
-                    {
-                        await Application.Current.MainPage.Navigation.PopAsync();
-                    }
-                }
-                else
-                {
-                    await Application.Current.MainPage.DisplayAlert("Error", "Could not create the User", "OK");
-                }
+                //    if (Application.Current.MainPage.Navigation.NavigationStack.Count > 1)
+                //    {
+                //        await Application.Current.MainPage.Navigation.PopAsync();
+                //    }
+                //}
+                //else
+                //{
+                //    await Application.Current.MainPage.DisplayAlert("Error", "Could not create the User", "OK");
+                //}
             }
             catch (Exception ex)
             {

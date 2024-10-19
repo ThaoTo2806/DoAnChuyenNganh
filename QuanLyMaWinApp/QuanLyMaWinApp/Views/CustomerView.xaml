@@ -37,7 +37,7 @@
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout Orientation="Horizontal" Padding="5" BackgroundColor="White">
-                                <Label Text="{Binding ID}" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                                <Label Text="{Binding IdCustomer}" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
                                 <Label Text="{Binding Name}" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
                                 <Label Text="{Binding Birth, StringFormat='{0:MM/dd/yyyy}'}" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
                                 <Label Text="{Binding GenderDisplay}" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />

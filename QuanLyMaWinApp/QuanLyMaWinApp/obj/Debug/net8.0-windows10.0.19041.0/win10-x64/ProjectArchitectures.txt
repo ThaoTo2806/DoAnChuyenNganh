@@ -1,1 +1,1 @@
-D:\HOCTAP\WPF\QLMaKichHoat\QuanLyMaWinApp\QuanLyMaWinApp\QuanLyMaWinApp.csproj;x64
+D:\HOCTAP\HK7\DoAn1Chi\DoAnChuyenNganh\QuanLyMaWinApp\QuanLyMaWinApp\QuanLyMaWinApp.csproj;x64

@@ -17,7 +17,7 @@ namespace QuanLyMaWinApp.ViewModels
         private const int PageSize = 5;
         private int _currentPage = 1;
         private bool _isBusy;
-        private List<Member> _allCustomers = new List<Member>();
+        private List<CustomerDto> _allCustomers = new List<CustomerDto>();
 
         public bool IsBusy
         {
@@ -25,7 +25,7 @@ namespace QuanLyMaWinApp.ViewModels
             set => SetProperty(ref _isBusy, value);
         }
 
-        public ObservableCollection<Member> Customers { get; set; } = new ObservableCollection<Member>();
+        public ObservableCollection<CustomerDto> Customers { get; set; } = new ObservableCollection<CustomerDto>();
 
         public ICommand AddCommand { get; }
         public IAsyncRelayCommand LoadCustomersCommand { get; }
@@ -67,7 +67,7 @@ namespace QuanLyMaWinApp.ViewModels
             {
                 IsBusy = true;
                 _currentPage = 1;
-                _allCustomers = await Member.GetRegularUsersAsync();
+                _allCustomers = await CustomerDto.GetRegularUsersAsync();
 
                 Console.WriteLine($"Loaded {_allCustomers.Count} customers."); // Thêm dòng này
 
@@ -202,10 +202,11 @@ namespace QuanLyMaWinApp.ViewModels
             }
         }
 
-        public async Task<string> GetGenderDisplayAsync(Member member)
+        public async Task<string> GetGenderDisplayAsync(CustomerDto member)
         {
             try
             {
+                //return member.GenderDisplay;
                 return member.GenderDisplay;
             }
             catch (Exception ex)

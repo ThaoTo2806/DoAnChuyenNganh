@@ -6,21 +6,29 @@ using System.Threading.Tasks;
 
 namespace QuanLyMaWinApp.Models
 {
+    public class Customer
+    {
+        public int IdCustomer { get; set; }
+        public string Name { get; set; }
+        public string? Image { get; set; }
+        public int IdUser { get; set; }
+        public bool IsDeleted { get; set; }
+
+        public Member? User { get; set; }
+    }
     public class Member
     {
-        public int ID { get; set; }
+        public int IdUser { get; set; }
         public string Account { get; set; }
+        public string Username { get; set; }
         public string PassWord { get; set; }
-        public bool? IdType { get; set; } = false;
-        public string Name { get; set; }
-        public string Phone { get; set; }
-        public string Email { get; set; }
-        public string Image { get; set; }
-        public bool? Gender { get; set; } // nullable
-        public string Address { get; set; }
-        public DateTime Birth { get; set; }
-        public bool? IsDeleted { get; set; } = false; // Set default value to false
-        public bool isDelete { get; set; }
+        public string? Email { get; set; }
+        public string? Phone { get; set; }
+        public string? Address { get; set; }
+        public bool? Gender { get; set; }
+        public DateTime? Birth { get; set; }
+        public int? IdRole { get; set; }
+        public bool? IsDeleted { get; set; } = false;
         public string iconDelete { get; set; }
         public string iconEdit { get; set; }
         public Member ()
@@ -59,7 +67,7 @@ namespace QuanLyMaWinApp.Models
                             PropertyNamingPolicy = JsonNamingPolicy.CamelCase
                         });
 
-                        if (user != null && user.IdType == true && user.IsDeleted == false)
+                        if (user != null && user.IdRole == 1 && user.IsDeleted == false)
                         {
                             return true;
                         }
@@ -74,11 +82,11 @@ namespace QuanLyMaWinApp.Models
             }
         }
 
-        public static async Task<List<Member>> GetRegularUsersAsync()
+        public static async Task<List<Customer>> GetRegularUsersAsync()
         {
             using (var client = new HttpClient())
             {
-                var url = "http://localhost:5134/api/Users/regular-users";
+                var url = "http://localhost:5134/api/Users/regular-customers";
 
                 try
                 {
@@ -87,13 +95,13 @@ namespace QuanLyMaWinApp.Models
                     if (response.IsSuccessStatusCode)
                     {
                         var responseBody = await response.Content.ReadAsStringAsync();
-                        var users = JsonSerializer.Deserialize<List<Member>>(responseBody, new JsonSerializerOptions
+                        var users = JsonSerializer.Deserialize<List<Customer>>(responseBody, new JsonSerializerOptions
                         {
                             PropertyNameCaseInsensitive = true,
                             PropertyNamingPolicy = JsonNamingPolicy.CamelCase
                         });
 
-                        return users ?? new List<Member>();
+                        return users ?? new List<Customer>();
                     }
                 }
                 catch (HttpRequestException ex)
@@ -101,7 +109,7 @@ namespace QuanLyMaWinApp.Models
                     Console.WriteLine($"Request error: {ex.Message}");
                 }
 
-                return new List<Member>();
+                return new List<Customer>();
             }
         }
 

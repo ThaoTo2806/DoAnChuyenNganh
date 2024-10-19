@@ -218,87 +218,87 @@ namespace webapi.Controllers
             }
         }
 
-        [HttpGet("order-info")]
-        public async Task<IActionResult> GetOrderInformation()
-        {
-            try
-            {
-                // Lấy UserID từ Session và decode từ Base64
-                var userIdBase64 = HttpContext.Session.GetString("UserID");
-                if (string.IsNullOrEmpty(userIdBase64))
-                {
-                    _logger.LogWarning("User is not logged in");
-                    return Unauthorized("User is not logged in");
-                }
+        //[HttpGet("order-info")]
+        //public async Task<IActionResult> GetOrderInformation()
+        //{
+        //    try
+        //    {
+        //        // Lấy UserID từ Session và decode từ Base64
+        //        var userIdBase64 = HttpContext.Session.GetString("UserID");
+        //        if (string.IsNullOrEmpty(userIdBase64))
+        //        {
+        //            _logger.LogWarning("User is not logged in");
+        //            return Unauthorized("User is not logged in");
+        //        }
 
-                string userIdDecoded;
-                try
-                {
-                    userIdDecoded = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(userIdBase64));
-                }
-                catch (FormatException ex)
-                {
-                    _logger.LogError(ex, "Invalid Base64 string: {UserIdBase64}", userIdBase64);
-                    return BadRequest("Invalid Base64 string for UserID");
-                }
+        //        string userIdDecoded;
+        //        try
+        //        {
+        //            userIdDecoded = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(userIdBase64));
+        //        }
+        //        catch (FormatException ex)
+        //        {
+        //            _logger.LogError(ex, "Invalid Base64 string: {UserIdBase64}", userIdBase64);
+        //            return BadRequest("Invalid Base64 string for UserID");
+        //        }
 
-                if (!int.TryParse(userIdDecoded, out int userId))
-                {
-                    _logger.LogError("UserID is not a valid integer: {UserIdDecoded}", userIdDecoded);
-                    return BadRequest("UserID is not a valid integer");
-                }
+        //        if (!int.TryParse(userIdDecoded, out int userId))
+        //        {
+        //            _logger.LogError("UserID is not a valid integer: {UserIdDecoded}", userIdDecoded);
+        //            return BadRequest("UserID is not a valid integer");
+        //        }
 
-                // Đọc thông tin người dùng từ file XML
-                var userXmlPath = Path.Combine(_cartDirectory, $"{userId}.xml");
-                if (!System.IO.File.Exists(userXmlPath))
-                {
-                    return NotFound("User information not found");
-                }
+        //        // Đọc thông tin người dùng từ file XML
+        //        var userXmlPath = Path.Combine(_cartDirectory, $"{userId}.xml");
+        //        if (!System.IO.File.Exists(userXmlPath))
+        //        {
+        //            return NotFound("User information not found");
+        //        }
 
-                User user;
-                try
-                {
-                    var xmlSerializer = new XmlSerializer(typeof(User));
-                    using (var reader = new StreamReader(userXmlPath))
-                    {
-                        user = (User)xmlSerializer.Deserialize(reader);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    _logger.LogError(ex, $"Error loading user information from XML: {ex.Message}");
-                    return StatusCode(StatusCodes.Status500InternalServerError, $"Error loading user information from XML: {ex.Message}");
-                }
+        //        User user;
+        //        try
+        //        {
+        //            var xmlSerializer = new XmlSerializer(typeof(User));
+        //            using (var reader = new StreamReader(userXmlPath))
+        //            {
+        //                user = (User)xmlSerializer.Deserialize(reader);
+        //            }
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            _logger.LogError(ex, $"Error loading user information from XML: {ex.Message}");
+        //            return StatusCode(StatusCodes.Status500InternalServerError, $"Error loading user information from XML: {ex.Message}");
+        //        }
 
-                // Load cart từ file XML
-                var cart = LoadCartFromXml(userId);
-                if (cart.Items == null || !cart.Items.Any())
-                {
-                    return BadRequest("Cart is empty");
-                }
+        //        // Load cart từ file XML
+        //        var cart = LoadCartFromXml(userId);
+        //        if (cart.Items == null || !cart.Items.Any())
+        //        {
+        //            return BadRequest("Cart is empty");
+        //        }
 
-                // Tính tổng giá giỏ hàng và cộng thêm giá của mã kích hoạt
-                var activationCodePrice = 89.99; // Chuyển đổi thành double
-                var totalPrice = cart.TotalPrice + (activationCodePrice * cart.TotalQuantity);
+        //        // Tính tổng giá giỏ hàng và cộng thêm giá của mã kích hoạt
+        //        var activationCodePrice = 89.99; // Chuyển đổi thành double
+        //        var totalPrice = cart.TotalPrice + (activationCodePrice * cart.TotalQuantity);
 
-                var orderInformation = new OrderInformation
-                {
-                    Name = user.Name,
-                    Phone = user.Phone,
-                    Address = user.Address,
-                    CartItems = cart.Items,
-                    TotalPrice = totalPrice,
-                    ActivationCodeInfo = $"Periodic: 1 year, Price: $89.99 x {cart.TotalQuantity}"
-            };
+        //        var orderInformation = new OrderInformation
+        //        {
+        //            Name = user.Name,
+        //            Phone = user.Phone,
+        //            Address = user.Address,
+        //            CartItems = cart.Items,
+        //            TotalPrice = totalPrice,
+        //            ActivationCodeInfo = $"Periodic: 1 year, Price: $89.99 x {cart.TotalQuantity}"
+        //    };
 
-                return Ok(orderInformation);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error retrieving order information");
-                return StatusCode(StatusCodes.Status500InternalServerError, $"Internal server error: {ex.Message}");
-            }
-        }
+        //        return Ok(orderInformation);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logger.LogError(ex, "Error retrieving order information");
+        //        return StatusCode(StatusCodes.Status500InternalServerError, $"Internal server error: {ex.Message}");
+        //    }
+        //}
 
         [HttpGet("processing-orders")]
         public async Task<IActionResult> GetProcessingOrders()

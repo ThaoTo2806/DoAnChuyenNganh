@@ -17,17 +17,34 @@ namespace webapi.Model
         public DbSet<Order> Orders { get; set; }
         public DbSet<Order1> orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
+        public DbSet<Customer> Customers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Cấu hình cho bảng User
             modelBuilder.Entity<User>()
                 .ToTable("User")
-                .HasKey(u => u.ID);  // Đảm bảo rằng có một khóa chính
+                .HasKey(u => u.IdUser);  // Đảm bảo rằng có một khóa chính
 
             modelBuilder.Entity<User>()
                 .Property(u => u.IsDeleted)
                 .HasDefaultValue(false);
+
+            // Cấu hình cho bảng Customer
+            modelBuilder.Entity<Customer>()
+                .ToTable("Customer")
+                .HasKey(u => u.IdCustomer);
+
+            modelBuilder.Entity<Customer>()
+                .Property(u => u.IsDeleted)
+                .HasDefaultValue(false);
+
+            //modelBuilder.Entity<Customer>()
+            //.HasOne(c => c.User)
+            //.WithMany() // Nếu User không có mối quan hệ ngược lại
+            //.HasForeignKey(c => c.IdUser); // Đảm bảo rằng IdUser là khóa ngoại
+
+            //base.OnModelCreating(modelBuilder);
 
             // Cấu hình cho bảng Category
             modelBuilder.Entity<Category>()
