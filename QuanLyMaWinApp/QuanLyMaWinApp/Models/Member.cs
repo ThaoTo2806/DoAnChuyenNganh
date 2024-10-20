@@ -8,20 +8,18 @@ namespace QuanLyMaWinApp.Models
 {
     public class Customer
     {
-        public int IdCustomer { get; set; }
-        public string Name { get; set; }
+        public int idCustomer { get; set; }
+        public string? Name { get; set; }
         public string? Image { get; set; }
-        public int IdUser { get; set; }
-        public bool IsDeleted { get; set; }
+        public int? IdUser { get; set; }
+        public bool? IsDeleted { get; set; } = false;
 
-        public Member? User { get; set; }
     }
     public class Member
     {
         public int IdUser { get; set; }
-        public string Account { get; set; }
-        public string Username { get; set; }
-        public string PassWord { get; set; }
+        public string? Account { get; set; }
+        public string? PassWord { get; set; }
         public string? Email { get; set; }
         public string? Phone { get; set; }
         public string? Address { get; set; }
@@ -82,85 +80,6 @@ namespace QuanLyMaWinApp.Models
             }
         }
 
-        public static async Task<List<Customer>> GetRegularUsersAsync()
-        {
-            using (var client = new HttpClient())
-            {
-                var url = "http://localhost:5134/api/Users/regular-customers";
-
-                try
-                {
-                    var response = await client.GetAsync(url);
-
-                    if (response.IsSuccessStatusCode)
-                    {
-                        var responseBody = await response.Content.ReadAsStringAsync();
-                        var users = JsonSerializer.Deserialize<List<Customer>>(responseBody, new JsonSerializerOptions
-                        {
-                            PropertyNameCaseInsensitive = true,
-                            PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-                        });
-
-                        return users ?? new List<Customer>();
-                    }
-                }
-                catch (HttpRequestException ex)
-                {
-                    Console.WriteLine($"Request error: {ex.Message}");
-                }
-
-                return new List<Customer>();
-            }
-        }
-
-        public static async Task<bool> InsertMemberAsync(string name, string account, string phone, string image, bool gender, string address, string email, DateTime Birth)
-        {
-            using (var client = new HttpClient())
-            {
-                var url = "http://localhost:5134/api/Users/Insert";
-                var request = new UserInsertRequest
-                {
-                    Name = name,
-                    Account = account,
-                    //PassWord = password,
-                    Phone = phone,
-                    Image = image,
-                    Gender = gender,
-                    Address = address,
-                    Email = email,
-                    Birth = Birth
-                };
-
-                try
-                {
-                    var response = await client.PostAsJsonAsync(url, request);
-                    return response.IsSuccessStatusCode;
-                }
-                catch (HttpRequestException ex)
-                {
-                    Console.WriteLine($"Request error: {ex.Message}");
-                    return false;
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"An error occurred while inserting the User: {ex.Message}");
-                    return false;
-                }
-            }
-        }
-
-        public class UserInsertRequest
-        {
-            public string Name { get; set; }
-            public string Account { get; set; }
-            //public string PassWord { get; set; }
-            public string Phone { get; set; }
-            public string Image { get; set; }
-            public bool Gender { get; set; }
-            public string Address { get; set; }
-            public string Email { get; set; }
-            public DateTime Birth { get; set; }
-        }
 
     }
 }

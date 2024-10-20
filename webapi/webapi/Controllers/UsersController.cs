@@ -48,7 +48,6 @@ namespace webapi.Controllers
                 {
                     IdUser = u.IdUser,
                     Account = u.Account,
-                    Username = u.Username,
                     PassWord = u.PassWord,
                     Email = u.Email,
                     Phone = u.Phone,
@@ -345,7 +344,7 @@ namespace webapi.Controllers
                                    where c.IsDeleted == false && u.IdRole == 2
                                    select new CustomerDto
                                    {
-                                       IdCustomer = c.IdCustomer,
+                                       IdCustomer = c.idCustomer,
                                        Name = c.Name,
                                        Image = c.Image,
                                        IsDeleted = c.IsDeleted,
@@ -366,47 +365,72 @@ namespace webapi.Controllers
             return Ok(customers);
         }
 
+        [HttpPost("Insert")]
+        public async Task<IActionResult> Insert([FromBody] UserInsertRequest request)
+        {
+            if (request == null)
+            {
+                return BadRequest("Invalid user data.");
+            }
+            try
+            {
+                var password = GenerateRandomPassword();
 
-        //[HttpPost("Insert")]
-        //public async Task<IActionResult> Insert([FromBody] UserInsertRequest request)
+                var user = new User
+                {
+                    Account = request.Account,
+                    PassWord = password,
+                    Phone = request.Phone,
+                    Gender = request.Gender,
+                    Address = request.Address,
+                    Email = request.Email,
+                    Birth = request.Birth,
+                    IdRole = 2,
+                    IsDeleted = false
+                };
+
+                _context.Users.Add(user);
+                await _context.SaveChangesAsync();
+
+                await SendPasswordByEmail(request.Email, password);
+
+                var userId = _context.Users
+                .Where(u => u.Account == request.Account)
+                .Select(u => u.IdUser)
+                .FirstOrDefault();
+
+                var cus = new Customer
+                {
+                    Name = request.Name,
+                    Image = request.Image,
+                    IdUser = userId,
+                    IsDeleted = false
+                };
+
+                _context.Customers.Add(cus);
+                await _context.SaveChangesAsync();
+
+                return Ok("User and customer created successfully.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+
+        //public int GetUserIdByAccount(string account)
         //{
-        //    if (request == null)
+        //    if (string.IsNullOrWhiteSpace(account))
         //    {
-        //        return BadRequest("Invalid user data.");
+        //        throw new ArgumentException("Account must not be null or empty.", nameof(account));
         //    }
-        //    try
-        //    {
-        //        // Tạo mật khẩu ngẫu nhiên
-        //        var password = GenerateRandomPassword();
 
-        //    // Thực hiện chèn dữ liệu vào cơ sở dữ liệu
-        //    var user = new User
-        //    {
-        //        Name = request.Name,
-        //        Account = request.Account,
-        //        PassWord = password,
-        //        Phone = request.Phone,
-        //        Image = request.Image,
-        //        Gender = request.Gender,
-        //        Address = request.Address,
-        //        Email = request.Email,
-        //        Birth = request.Birth,
-        //        IsDeleted = false
-        //    };
+        //    var userId = _context.Users
+        //        .Where(u => u.Account == account)
+        //        .Select(u => u.IdUser)
+        //        .FirstOrDefault();
 
-        //    _context.Users.Add(user);
-        //    await _context.SaveChangesAsync();
-
-        //    // Gửi email chứa mật khẩu
-        //    await SendPasswordByEmail(request.Email, password);
-
-        //    return Ok("User created successfully.");
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        // Xử lý lỗi và ghi lại thông tin lỗi
-        //        return StatusCode(500, $"Internal server error: {ex.Message}");
-        //    }
+        //    return userId;
         //}
 
         private string GenerateRandomPassword(int length = 12)

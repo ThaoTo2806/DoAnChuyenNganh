@@ -33,7 +33,7 @@ namespace webapi.Model
             // Cấu hình cho bảng Customer
             modelBuilder.Entity<Customer>()
                 .ToTable("Customer")
-                .HasKey(u => u.IdCustomer);
+                .HasKey(u => u.idCustomer);
 
             modelBuilder.Entity<Customer>()
                 .Property(u => u.IsDeleted)

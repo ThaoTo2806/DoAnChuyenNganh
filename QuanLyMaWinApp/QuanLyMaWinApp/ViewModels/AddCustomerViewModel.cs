@@ -14,16 +14,16 @@ namespace QuanLyMaWinApp.ViewModels
 {
     public class AddCustomerViewModel : ObservableObject
     {
-        private Member _customer;
+        private UserInsertRequest _customer;
 
         public string Name
         {
-            get => _customer?.Username;
+            get => _customer?.Name;
             set
             {
-                if (_customer != null && _customer.Username != value)
+                if (_customer != null && _customer.Name != value)
                 {
-                    _customer.Username = value;
+                    _customer.Name = value;
                     OnPropertyChanged();
                 }
             }
@@ -41,19 +41,6 @@ namespace QuanLyMaWinApp.ViewModels
                 }
             }
         }
-
-        //public string PassWord
-        //{
-        //    get => _customer?.PassWord;
-        //    set
-        //    {
-        //        if (_customer != null && _customer.PassWord != value)
-        //        {
-        //            _customer.PassWord = value;
-        //            OnPropertyChanged();
-        //        }
-        //    }
-        //}
 
         public DateTime Birth
         {
@@ -151,7 +138,7 @@ namespace QuanLyMaWinApp.ViewModels
         public AddCustomerViewModel()
         {
             SaveCommand = new AsyncRelayCommand(SaveExecute);
-            _customer = new Member();
+            _customer = new UserInsertRequest();
         }
 
         private async Task OnChooseImageClicked()
@@ -166,7 +153,7 @@ namespace QuanLyMaWinApp.ViewModels
                     SelectedImage = ImageSource.FromStream(() => stream);
                     string imagePath = result.FullPath;
 
-                    //_customer.Image = imagePath;
+                    _customer.Image = imagePath;
                 }
             }
             catch (Exception ex)
@@ -179,33 +166,32 @@ namespace QuanLyMaWinApp.ViewModels
         {
             try
             {
-                //bool gender = IsMale; // Sử dụng giá trị của IsMale để xác định giới tính
+                bool gender = IsMale;
 
-                //bool success = await Member.InsertMemberAsync(
-                //    Name,
-                //    Account,
-                //    //PassWord,
-                //    Phone,
-                //    _customer.Image,
-                //    gender,
-                //    Address,
-                //    Email,
-                //    Birth
-                //);
+                bool success = await UserInsertRequest.InsertMemberAsync(
+                    Name,
+                    Account,
+                    Phone,
+                    _customer.Image,
+                    gender,
+                    Address,
+                    Email,
+                    Birth
+                );
 
-                //if (success)
-                //{
-                //    await Application.Current.MainPage.DisplayAlert("Success", "User created successfully", "OK");
+                if (success)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Success", "User created successfully", "OK");
 
-                //    if (Application.Current.MainPage.Navigation.NavigationStack.Count > 1)
-                //    {
-                //        await Application.Current.MainPage.Navigation.PopAsync();
-                //    }
-                //}
-                //else
-                //{
-                //    await Application.Current.MainPage.DisplayAlert("Error", "Could not create the User", "OK");
-                //}
+                    if (Application.Current.MainPage.Navigation.NavigationStack.Count > 1)
+                    {
+                        await Application.Current.MainPage.Navigation.PopAsync();
+                    }
+                }
+                else
+                {
+                    await Application.Current.MainPage.DisplayAlert("Error", "Could not create the User", "OK");
+                }
             }
             catch (Exception ex)
             {
