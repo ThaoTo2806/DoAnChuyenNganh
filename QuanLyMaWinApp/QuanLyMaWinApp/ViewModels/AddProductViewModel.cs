@@ -32,12 +32,12 @@ namespace QuanLyMaWinApp.ViewModels
 
         public string Name
         {
-            get => _proModel?.ProductName;
+            get => _proModel?.Name;
             set
             {
-                if (_proModel != null && _proModel.ProductName != value)
+                if (_proModel != null && _proModel.Name != value)
                 {
-                    _proModel.ProductName = value;
+                    _proModel.Name = value;
                     OnPropertyChanged();
                 }
             }
@@ -169,7 +169,7 @@ namespace QuanLyMaWinApp.ViewModels
                 bool success = await ProductModel.InsertProductAsync(
                     ID,
                     Name,
-                    _proModel.ldCate,
+                    _proModel.IdCate,
                     _proModel.Image,
                     Sl,
                     price,
@@ -212,7 +212,7 @@ namespace QuanLyMaWinApp.ViewModels
                     OnPropertyChanged();
                     if (_proModel != null && _categoryNameToIdMap.TryGetValue(value, out var categoryId))
                     {
-                        _proModel.ldCate = categoryId;
+                        _proModel.IdCate = categoryId;
                     }
                 }
             }
@@ -232,9 +232,9 @@ namespace QuanLyMaWinApp.ViewModels
                 }
 
                 // Set the selected category
-                if (_proModel != null && !string.IsNullOrEmpty(_proModel.ldCate))
+                if (_proModel != null && !string.IsNullOrEmpty(_proModel.IdCate))
                 {
-                    var selectedCategory = _categoryNameToIdMap.FirstOrDefault(c => c.Value == _proModel.ldCate).Key;
+                    var selectedCategory = _categoryNameToIdMap.FirstOrDefault(c => c.Value == _proModel.IdCate).Key;
                     if (selectedCategory != null)
                     {
                         SelectedCategory = selectedCategory;

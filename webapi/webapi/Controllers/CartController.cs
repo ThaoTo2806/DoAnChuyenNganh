@@ -124,7 +124,7 @@ namespace webapi.Controllers
                     cart.Items.Add(new CartItem
                     {
                         ProductId = request.ProductId,
-                        ProductName = product.ProductName,
+                        ProductName = product.Name,
                         image = product.Image,
                         Price = product.Price,
                         Quantity = request.Quantity

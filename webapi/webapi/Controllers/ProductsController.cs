@@ -32,19 +32,18 @@ namespace webapi.Controllers
                 .Select(p => new Product
                 {
                     ID = p.ID,
-                    ProductName = p.ProductName,
-                    ldCate = p.ldCate,
+                    Name = p.Name,
+                    IdCate = p.IdCate,
                     Evaluate = p.Evaluate,
-                    Image = p.Image,
                     SL = p.SL,
                     Price = p.Price,
                     Detail = p.Detail,
                     Feature = p.Feature,
                     Specifications = p.Specifications,
                     Helps = p.Helps,
-                    Sitecode = p.Sitecode,
-                    MID = p.MID,
+                    IdVersion = p.IdVersion,
                     IsDeleted = p.IsDeleted,
+                    Image = p.Image,
                     Category = p.Category
                 }).ToList();
 
@@ -106,8 +105,8 @@ namespace webapi.Controllers
             }
 
             // Cập nhật CategoryName và Detail
-            product.ProductName = request.ProductName;
-            product.ldCate = request.ldCate;
+            product.Name = request.Name;
+            product.IdCate = request.IdCate;
             product.Image = request.Image;
             product.SL = request.SL;
             product.Price = request.Price;
@@ -115,6 +114,7 @@ namespace webapi.Controllers
             product.Feature = request.Feature;
             product.Specifications = request.Specifications;
             product.Helps = request.Helps;
+            product.IdVersion = request.IdVersion;
 
             try
             {
@@ -151,8 +151,8 @@ namespace webapi.Controllers
             var newProduct = new Product
             {
                 ID = request.ID,
-                ProductName = request.ProductName,
-                ldCate = request.ldCate,
+                Name = request.Name,
+                IdCate = request.IdCate,
                 Image = request.Image,
                 SL = request.SL,
                 Price = request.Price,
@@ -160,8 +160,9 @@ namespace webapi.Controllers
                 Feature = request.Feature,
                 Specifications = request.Specifications,
                 Helps = request.Helps,
-                IsDeleted = false  // Mới tạo nên không bị xóa
-            };
+                IsDeleted = false,
+                IdVersion = request.IdVersion
+        };
 
             try
             {

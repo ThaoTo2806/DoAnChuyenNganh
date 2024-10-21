@@ -31,12 +31,12 @@ namespace QuanLyMaWinApp.ViewModels
 
         public string Name
         {
-            get => _proModel?.ProductName;
+            get => _proModel?.Name;
             set
             {
-                if (_proModel != null && _proModel.ProductName != value)
+                if (_proModel != null && _proModel.Name != value)
                 {
-                    _proModel.ProductName = value;
+                    _proModel.Name = value;
                     OnPropertyChanged();
                 }
             }
@@ -50,6 +50,19 @@ namespace QuanLyMaWinApp.ViewModels
                 if (_proModel != null && _proModel.SL != value)
                 {
                     _proModel.SL = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public int Version
+        {
+            get => _proModel?.IdVersion?? 0;
+            set
+            {
+                if (_proModel != null && _proModel.IdVersion != value)
+                {
+                    _proModel.IdVersion = value;
                     OnPropertyChanged();
                 }
             }
@@ -169,17 +182,19 @@ namespace QuanLyMaWinApp.ViewModels
         {
             try
             {
+
                 bool success = await ProductModel.UpdateProductDetailsAsync(
                     ID,
                     Name,
-                    _proModel.ldCate,
+                    _proModel.IdCate,
                     _proModel.Image,
                     Sl,
                     price,
                     Detail,
                     ft,
                     sp,
-                    hp
+                    hp,
+                    Version
                 );
 
                 if (success)
@@ -217,9 +232,9 @@ namespace QuanLyMaWinApp.ViewModels
                 }
 
                 // Set the selected category
-                if (_proModel != null && !string.IsNullOrEmpty(_proModel.ldCate))
+                if (_proModel != null && !string.IsNullOrEmpty(_proModel.IdCate))
                 {
-                    SelectedCategory = _proModel.ldCate;
+                    SelectedCategory = _proModel.IdCate;
                 }
             }
             catch (Exception ex)
@@ -241,7 +256,7 @@ namespace QuanLyMaWinApp.ViewModels
                     // Update the category ID in the product model
                     if (_proModel != null && _categoryNameToIdMap.TryGetValue(value, out var categoryId))
                     {
-                        _proModel.ldCate = categoryId;
+                        _proModel.IdCate = categoryId;
                     }
                 }
             }

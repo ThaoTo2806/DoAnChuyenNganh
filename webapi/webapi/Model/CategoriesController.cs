@@ -121,7 +121,7 @@ namespace webapi.Controllers
                 ID = request.ID,
                 CategoryName = request.CategoryName,
                 Detail = request.Detail,
-                IsDeleted = false  // Mới tạo nên không bị xóa
+                IsDeleted = false
             };
 
             try

@@ -45,8 +45,8 @@
                                     <DataTemplate>
                                         <StackLayout Orientation="Horizontal" Padding="5" BackgroundColor="White">
                                             <Label Text="{Binding ID}" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
-                                            <Label Text="{Binding ProductName}" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
-                                            <Label Text="{Binding ldCate}" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                                            <Label Text="{Binding Name}" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                                            <Label Text="{Binding IdCate}" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
                                             <Image Source="{Binding Image}" HeightRequest="50" WidthRequest="50" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
                                             <Label Text="{Binding SL}" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
                                             <Label Text="{Binding Price}" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />

@@ -490,11 +490,14 @@ VALUES
 (5, '2024-10-05', 0);
 
 create table Category(
-	ID int primary key auto_increment,
+	ID varchar(255) primary key,
     CategoryName varchar(255),
 	Detail text,
 	IsDeleted boolean
 );
+
+ALTER TABLE `category`
+ALTER IsDeleted SET DEFAULT 0;
 
 INSERT INTO `category` ( `CategoryName`, `Detail`, `IsDeleted`) VALUES
 ( 'NMR Spectroscopy 1', 'NMR machines for molecular structure and dynamics analysis.', 1),
@@ -562,26 +565,12 @@ INSERT INTO `activationcode` (`ID`, `ActiCode`, `Status`, `NgayKhoiTao`, `NgayHe
 (41, '41e40ce3dea5', 'Active', '2024-08-17 00:00:00', '2025-08-17 00:00:00', '6', 89.99),
 (42, '603a859ec4fb', 'Active', '2024-08-17 00:00:00', '2025-08-17 00:00:00',  '6', 89.99);
 
-create table Image(
-	ID int primary key auto_increment,
-    linkImage text
-);
-INSERT INTO Image (linkImage) 
-VALUES
-('D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\Resources\\Images\\dotnet_bot.png'),
-('D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\Resources\\Images\\dotnet_bot.png'),
-('D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\Resources\\Images\\dotnet_bot.png'),
-('D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\Resources\\Images\\dotnet_bot.png'),
-('D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\Resources\\Images\\dotnet_bot.png'),
-('D:\\HOCTAP\\WPF\\QLMaKichHoat\\QuanLyMaWinApp\\QuanLyMaWinApp\\Resources\\Images\\dotnet_bot.png');
-
-
 
 create table Product(
-	ID int primary key auto_increment,
+	ID VARCHAR(255) primary key NOT NULL,
     Name varchar(255),
-    IdCate int,
-    Evaluate text,
+    IdCate varchar(255),
+    Evaluate DOUBLE,
     SL int,
     Price double,
     Detail text,
@@ -590,41 +579,40 @@ create table Product(
     Helps text,
     IdVersion int,
     IsDeleted boolean,
-    IdImage int,
+    image text,
     
     foreign key (IdCate) references Category(ID),
-    foreign key (IdVersion) references ProductVersion(ID),
-    foreign key (IdImage) references Image(ID)
+    foreign key (IdVersion) references ProductVersion(ID)
 );
-INSERT INTO Product (Name, IdCate, Evaluate, SL, Price, Detail, Feature, Specifications, Helps, IdVersion, IsDeleted, IdImage) VALUES 
-('Ascend 400 MHz NMR', 8, 4.8, 0, 190.50, 'Advanced NMR spectrometer for molecular structure analysis.', 'High Resolution', '400 MHz', 'User-friendly', NULL, 0, NULL),
-('Avance III HD', 1, 4.7, 1, 75.66, 'High-performance NMR system for advanced research.', 'High Sensitivity', 'Ultra High Field', 'Versatile Applications', NULL, 0, NULL),
-('DRX-400', 1, 4.5, 4, 96.87, 'NMR system for both routine and research applications.', 'Versatile Instrument', '400 MHz', 'Robust Performance', NULL, 0, NULL),
-('ultrafleXtreme MALDI-TOF', 2, 4.9, -4, 269.56, 'High-resolution MALDI-TOF mass spectrometer for proteomics.', 'High Resolution', 'MALDI-TOF', 'Advanced Proteomics', NULL, 0, NULL),
-('Autoflex Speed', 2, 4.6, 3, 306.56, 'Fast and reliable MALDI-TOF mass spectrometer for chemical analysis.', 'High Sensitivity', 'Rapid Analysis', 'Chemical Research', NULL, 0, NULL),
-('D8 QUEST X-Ray Diffraction', 3, 4.8, 2, 910.65, 'High-end X-ray diffraction system for crystal structure determination.', 'High Resolution', 'X-Ray Diffraction', 'Accurate Analysis', NULL, 0, NULL),
-('D8 ADVANCE X-Ray Diffraction', 3, 4.7, 3, 1569.96, 'X-ray diffraction system for various material research.', 'Versatile Instrument', 'High Performance', 'Material Analysis', NULL, 0, NULL),
-('Dimension Icon AFM', 4, 4.9, 4, 963.54, 'Advanced AFM for surface characterization at the atomic level.', 'Atomic Resolution', 'AFM', 'Surface Analysis', NULL, 0, NULL),
-('LMD7 Laser Microdissection', 5, 4.8, 178, 793.61, 'Laser microdissection system for biological research.', 'High Precision', 'Microdissection', 'Biological Research', NULL, 0, NULL),
-('Alpha II FT-IR Spectrometer', 6, 4.6, 46, 196.36, 'FT-IR spectrometer for a wide range of chemical analysis applications.', 'Reliable Performance', 'FT-IR', 'Chemical Analysis', NULL, 0, NULL),
-('Vertex 80 FT-IR Spectrometer', 6, 4.7, 3, 984.75, 'High-end FT-IR spectrometer for advanced research.', 'High Sensitivity', 'FT-IR', 'Advanced Applications', NULL, 0, NULL),
-('Nexera X2 HPLC System', 7, 4.8, 6, 769.45, 'Advanced HPLC system for high-performance liquid chromatography.', 'High Throughput', 'HPLC', 'Chemical Analysis', NULL, 0, NULL),
-('InfinityLab LC Series', 7, 4.6, 5, 963.47, 'HPLC system for a variety of liquid chromatography applications.', 'Flexible Configurations', 'HPLC', 'Liquid Chromatography', NULL, 0, NULL),
-('BioSpec 70/30 MRI', 8, 4.9, 2, 1269.56, 'MRI system for high-resolution imaging of biological samples.', 'High Resolution', 'MRI', 'Biological Imaging', NULL, 0, NULL),
-('BioSpec 94/20 MRI', 8, 4.7, 3, 1964.89, 'MRI system for advanced imaging research.', 'Advanced Features', 'MRI', 'Imaging Research', NULL, 0, NULL),
-('S8 TIGER X-Ray Fluorescence', 9, 4.8, 4, 986.78, 'X-Ray fluorescence system for elemental analysis of materials.', 'High Sensitivity', 'X-Ray Fluorescence', 'Elemental Analysis', NULL, 0, NULL),
-('BioTools Proteomics Suite', 10, 4.6, 4, 892.45, 'Bioinformatics suite for proteomics and genomics analysis.', 'Comprehensive Analysis', 'Bioinformatics', 'Proteomics Suite', NULL, 0, NULL),
-('BioTools Genomics Suite', 10, 4.7, 3, 765.85, 'Suite for genomics research and data analysis.', 'Advanced Research', 'Bioinformatics', 'Genomics Suite', NULL, 0, NULL),
-('AFM Dimension Edge', 4, 4.5, 0, 659.86, 'AFM for advanced surface characterization.', 'High Performance', 'AFM', 'Surface Analysis', NULL, 0, NULL),
-('LMD6 Laser Microdissection', 5, 4.6, 3, 98.53, 'Laser microdissection for biological samples.', 'Precise Dissection', 'Microdissection', 'Biological Research', NULL, 0, NULL),
-('a', 1, 0, 5, 89.56, 'a', 'a', 'a', 'a', NULL, 0, NULL),
-('a', 5, 0, 10, 89.56, 'a', 'a', 'a', 'a', NULL, 0, NULL);
+INSERT INTO Product (ID, Name, IdCate, Evaluate, SL, Price, Detail, Feature, Specifications, Helps, IdVersion, IsDeleted, image) VALUES 
+('1','Ascend 400 MHz NMR', 8, 4.8, 0, 190.50, 'Advanced NMR spectrometer for molecular structure analysis.', 'High Resolution', '400 MHz', 'User-friendly', NULL, 0, product1.png),
+('2','Avance III HD', 1, 4.7, 1, 75.66, 'High-performance NMR system for advanced research.', 'High Sensitivity', 'Ultra High Field', 'Versatile Applications', NULL, 0, product1.png),
+('3','DRX-400', 1, 4.5, 4, 96.87, 'NMR system for both routine and research applications.', 'Versatile Instrument', '400 MHz', 'Robust Performance', NULL, 0, product1.png),
+('4','ultrafleXtreme MALDI-TOF', 2, 4.9, -4, 269.56, 'High-resolution MALDI-TOF mass spectrometer for proteomics.', 'High Resolution', 'MALDI-TOF', 'Advanced Proteomics', NULL, 0, product1.png),
+('5','Autoflex Speed', 2, 4.6, 3, 306.56, 'Fast and reliable MALDI-TOF mass spectrometer for chemical analysis.', 'High Sensitivity', 'Rapid Analysis', 'Chemical Research', NULL, 0, product1.png),
+('6','D8 QUEST X-Ray Diffraction', 3, 4.8, 2, 910.65, 'High-end X-ray diffraction system for crystal structure determination.', 'High Resolution', 'X-Ray Diffraction', 'Accurate Analysis', NULL, 0, product1.png),
+('7','D8 ADVANCE X-Ray Diffraction', 3, 4.7, 3, 1569.96, 'X-ray diffraction system for various material research.', 'Versatile Instrument', 'High Performance', 'Material Analysis', NULL, 0, product1.png),
+('8','Dimension Icon AFM', 4, 4.9, 4, 963.54, 'Advanced AFM for surface characterization at the atomic level.', 'Atomic Resolution', 'AFM', 'Surface Analysis', NULL, 0, product1.png),
+('9','LMD7 Laser Microdissection', 5, 4.8, 178, 793.61, 'Laser microdissection system for biological research.', 'High Precision', 'Microdissection', 'Biological Research', NULL, 0, product1.png),
+('10','Alpha II FT-IR Spectrometer', 6, 4.6, 46, 196.36, 'FT-IR spectrometer for a wide range of chemical analysis applications.', 'Reliable Performance', 'FT-IR', 'Chemical Analysis', NULL, 0, product1.png),
+('11','Vertex 80 FT-IR Spectrometer', 6, 4.7, 3, 984.75, 'High-end FT-IR spectrometer for advanced research.', 'High Sensitivity', 'FT-IR', 'Advanced Applications', NULL, 0, product1.png),
+('12','Nexera X2 HPLC System', 7, 4.8, 6, 769.45, 'Advanced HPLC system for high-performance liquid chromatography.', 'High Throughput', 'HPLC', 'Chemical Analysis', NULL, 0, product1.png),
+('13','InfinityLab LC Series', 7, 4.6, 5, 963.47, 'HPLC system for a variety of liquid chromatography applications.', 'Flexible Configurations', 'HPLC', 'Liquid Chromatography', NULL, 0, product1.png),
+('14','BioSpec 70/30 MRI', 8, 4.9, 2, 1269.56, 'MRI system for high-resolution imaging of biological samples.', 'High Resolution', 'MRI', 'Biological Imaging', NULL, 0, product1.png),
+('15','BioSpec 94/20 MRI', 8, 4.7, 3, 1964.89, 'MRI system for advanced imaging research.', 'Advanced Features', 'MRI', 'Imaging Research', NULL, 0, product1.png),
+('16','S8 TIGER X-Ray Fluorescence', 9, 4.8, 4, 986.78, 'X-Ray fluorescence system for elemental analysis of materials.', 'High Sensitivity', 'X-Ray Fluorescence', 'Elemental Analysis', NULL, 0, product1.png),
+('17','BioTools Proteomics Suite', 10, 4.6, 4, 892.45, 'Bioinformatics suite for proteomics and genomics analysis.', 'Comprehensive Analysis', 'Bioinformatics', 'Proteomics Suite', NULL, 0, product1.png),
+('18','BioTools Genomics Suite', 10, 4.7, 3, 765.85, 'Suite for genomics research and data analysis.', 'Advanced Research', 'Bioinformatics', 'Genomics Suite', NULL, 0, product1.png),
+('19','AFM Dimension Edge', 4, 4.5, 0, 659.86, 'AFM for advanced surface characterization.', 'High Performance', 'AFM', 'Surface Analysis', NULL, 0, product1.png),
+('20','LMD6 Laser Microdissection', 5, 4.6, 3, 98.53, 'Laser microdissection for biological samples.', 'Precise Dissection', 'Microdissection', 'Biological Research', NULL, 0, product1.png),
+('21','a', 1, 0, 5, 89.56, 'a', 'a', 'a', 'a', NULL, 0, product1.png),
+('22','a', 5, 0, 10, 89.56, 'a', 'a', 'a', 'a', NULL, 0, product1.png);
 
 
 create table CHITIETPHIEUNHAP(
 	idCTPN int primary key auto_increment,
     idPN int, 
-    idProduct int,
+    idProduct VARCHAR(255),
     DonGiaNhap double, 
     SoLuongNhap int,
     
@@ -645,7 +633,7 @@ create table OrderDetail(
 	ID int primary key auto_increment,
     IdOrder int, 
     IdActiveCode int, 
-    IdProduct int,
+    IdProduct VARCHAR(255),
     Amount int, 
     priceCode double,
     priceProduct double,
@@ -665,4 +653,12 @@ INSERT INTO OrderDetail (IdOrder, IdActiveCode, IdProduct, Amount, priceCode, pr
 (44, NULL, 7, 4, 9.00, 1569.96, 1), 
 (44, NULL, 8, 3, 6.00, 963.54, 1); 
 
+DELETE c1
+FROM Category c1
+INNER JOIN Category c2
+WHERE c1.ID > c2.ID
+AND c1.CategoryName = c2.CategoryName;
+
+ALTER TABLE Category
+ADD CONSTRAINT UC_1 UNIQUE (CategoryName);
 

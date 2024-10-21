@@ -188,7 +188,7 @@ namespace QuanLyMaWinApp.ViewModels
                 // Hiển thị hộp thoại xác nhận xóa
                 var result = await Application.Current.MainPage.DisplayAlert(
                     "Confirm Delete",
-                    $"Are you sure you want to delete {product.ProductName}?",
+                    $"Are you sure you want to delete {product.Name}?",
                     "Yes",
                     "No"
                 );

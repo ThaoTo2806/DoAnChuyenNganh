@@ -86,7 +86,7 @@ namespace webapi.Model
             modelBuilder.Entity<Product>()
             .HasOne(p => p.Category)
             .WithMany()
-            .HasForeignKey(p => p.ldCate)
+            .HasForeignKey(p => p.IdCate)
             .OnDelete(DeleteBehavior.Restrict);
 
             base.OnModelCreating(modelBuilder);

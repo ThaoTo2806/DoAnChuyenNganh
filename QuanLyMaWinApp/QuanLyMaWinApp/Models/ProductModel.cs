@@ -11,19 +11,18 @@ namespace QuanLyMaWinApp.Models
     {
         public CategoryModel Category { get; set; }
         public string ID { get; set; }
-        public string ProductName { get; set; }
-        public string ldCate { get; set; }
+        public string Name { get; set; }
+        public string IdCate { get; set; }
         public double Evaluate { get; set; }
-        public string? Image { get; set; }
         public int SL { get; set; }
         public double Price { get; set; }
         public string? Detail { get; set; }
         public string? Feature { get; set; }
         public string? Specifications { get; set; }
         public string? Helps { get; set; }
-        public string? Sitecode { get; set; }
-        public string? MID { get; set; }
+        public int? IdVersion { get; set; }
         public bool IsDeleted { get; set; }
+        public string? Image { get; set; }
         public string iconEdit { get; set; }
         public string iconDelete { get; set; }
 
@@ -63,19 +62,20 @@ namespace QuanLyMaWinApp.Models
             }
         }
 
-        public static async Task<bool> UpdateProductDetailsAsync(string id, string productName, string ldCate, string image, int sl, double price, string detail, string feature, string specifications, string helps)
+        public static async Task<bool> UpdateProductDetailsAsync(string id, string productName, string ldCate, string image, int sl, double price, string detail, string feature, string specifications, string helps, int idVersion)
         {
             var request = new ProductUpdateRequest
             {
-                ProductName = productName,
-                ldCate = ldCate,
+                Name = productName,
+                IdCate = ldCate,
                 Image = image,
                 SL = sl,
                 Price = price,
                 Detail = detail,
                 Feature = feature,
                 Specifications = specifications,
-                Helps = helps
+                Helps = helps,
+                IdVersion = idVersion
             };
 
             try
@@ -103,7 +103,8 @@ namespace QuanLyMaWinApp.Models
                 Detail = detail,
                 Feature= ft,
                 Specifications = sp,
-                Helps = hp
+                Helps = hp,
+
             };
 
             try
@@ -120,15 +121,16 @@ namespace QuanLyMaWinApp.Models
 
         public class ProductUpdateRequest
         {
-            public string ProductName { get; set; }
-            public string ldCate { get; set; }
-            public string Image { get; set; }
+            public string Name { get; set; }
+            public string IdCate { get; set; }
+            public string? Image { get; set; }
             public int SL { get; set; }
             public double Price { get; set; }
-            public string Detail { get; set; }
-            public string Feature { get; set; }
-            public string Specifications { get; set; }
-            public string Helps { get; set; }
+            public string? Detail { get; set; }
+            public string? Feature { get; set; }
+            public string? Specifications { get; set; }
+            public string? Helps { get; set; }
+            public int? IdVersion { get; set; }
         }
 
         public class ProductInsertRequest
@@ -143,7 +145,7 @@ namespace QuanLyMaWinApp.Models
             public string? Feature { get; set; }
             public string? Specifications { get; set; }
             public string? Helps { get; set; }
-
+            public int? IdVersion { get; set; }
 
         }
 
