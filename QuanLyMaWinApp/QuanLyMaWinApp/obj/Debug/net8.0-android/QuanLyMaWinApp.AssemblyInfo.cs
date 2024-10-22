@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QuanLyMaWinApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+692767e937a9fa486287766e30426a84136bd5d4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+1fb1b48a72aee597a67621d41bb3159e88b3e969")]
 [assembly: System.Reflection.AssemblyProductAttribute("QuanLyMaWinApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QuanLyMaWinApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

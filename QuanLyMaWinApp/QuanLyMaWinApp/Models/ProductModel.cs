@@ -90,13 +90,13 @@ namespace QuanLyMaWinApp.Models
             }
         }
 
-        public static async Task<bool> InsertProductAsync(string id, string ProductName, string IdCate, string image, int SL, double Price, string detail, string ft, string sp, string hp)
+        public static async Task<bool> InsertProductAsync(string id, string ProductName, string IdCate, string image, int SL, double Price, string detail, string ft, string sp, string hp, int version)
         {
             var request = new ProductInsertRequest
             {
                 ID = id,
-                ProductName = ProductName,
-                ldCate = IdCate,
+                Name = ProductName,
+                IdCate = IdCate,
                 Image = image,
                 SL = SL,
                 Price= Price,
@@ -104,7 +104,7 @@ namespace QuanLyMaWinApp.Models
                 Feature= ft,
                 Specifications = sp,
                 Helps = hp,
-
+                IdVersion= version
             };
 
             try
@@ -136,8 +136,8 @@ namespace QuanLyMaWinApp.Models
         public class ProductInsertRequest
         {
             public string ID { get; set; }
-            public string ProductName { get; set; }
-            public string ldCate { get; set; }
+            public string Name { get; set; }
+            public string IdCate { get; set; }
             public string? Image { get; set; }
             public int SL { get; set; }
             public double Price { get; set; }

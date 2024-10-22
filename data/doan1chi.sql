@@ -578,12 +578,16 @@ create table Product(
     Specifications text,
     Helps text,
     IdVersion int,
-    IsDeleted boolean,
+    IsDeleted boolean NOT NULL,
     image text,
     
     foreign key (IdCate) references Category(ID),
     foreign key (IdVersion) references ProductVersion(ID)
 );
+
+ALTER TABLE `Product`
+ALTER IsDeleted SET DEFAULT 0;
+
 INSERT INTO Product (ID, Name, IdCate, Evaluate, SL, Price, Detail, Feature, Specifications, Helps, IdVersion, IsDeleted, image) VALUES 
 ('1','Ascend 400 MHz NMR', 8, 4.8, 0, 190.50, 'Advanced NMR spectrometer for molecular structure analysis.', 'High Resolution', '400 MHz', 'User-friendly', NULL, 0, product1.png),
 ('2','Avance III HD', 1, 4.7, 1, 75.66, 'High-performance NMR system for advanced research.', 'High Sensitivity', 'Ultra High Field', 'Versatile Applications', NULL, 0, product1.png),

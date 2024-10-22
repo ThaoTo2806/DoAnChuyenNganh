@@ -153,15 +153,16 @@ namespace webapi.Controllers
                 ID = request.ID,
                 Name = request.Name,
                 IdCate = request.IdCate,
-                Image = request.Image,
+                Evaluate = 0,
                 SL = request.SL,
                 Price = request.Price,
                 Detail = request.Detail,
                 Feature = request.Feature,
                 Specifications = request.Specifications,
                 Helps = request.Helps,
+                IdVersion = request.IdVersion,
                 IsDeleted = false,
-                IdVersion = request.IdVersion
+                Image = request.Image
         };
 
             try

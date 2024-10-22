@@ -121,6 +121,19 @@ namespace QuanLyMaWinApp.ViewModels
             }
         }
 
+        public int Version
+        {
+            get => _proModel?.IdVersion ?? 0;
+            set
+            {
+                if (_proModel != null && _proModel.IdVersion != value)
+                {
+                    _proModel.IdVersion = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
         private ImageSource _selectedImage;
         public ICommand ChooseImageCommand => new AsyncRelayCommand(OnChooseImageClicked);
 
@@ -176,7 +189,8 @@ namespace QuanLyMaWinApp.ViewModels
                     Detail,
                     ft,
                     sp,
-                    hp
+                    hp,
+                    Version
                 );
 
                 if (success)

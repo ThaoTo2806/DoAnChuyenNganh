@@ -5,7 +5,7 @@
         public string ID { get; set; }
         public string Name { get; set; }
         public string IdCate { get; set; }
-        public double Evaluate { get; set; }
+        public double? Evaluate { get; set; }
         public int SL { get; set; }
         public double Price { get; set; }
         public string? Detail { get; set; }  
