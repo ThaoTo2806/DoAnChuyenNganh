@@ -325,7 +325,6 @@ namespace webapi.Controllers
                                     IdUser = reader.GetInt32("IdUser"),
                                     DCGH = reader.GetString("DCGH"),
                                     NgayDat = reader.GetDateTime("NgayDat"),
-                                    ThanhToanStatus = reader.GetString("ThanhToanStatus"),
                                     DonHangStatus = reader.GetString("DonHangStatus"),
                                     TotalQuantity = reader.GetInt32("SLTong"),
                                     TotalPrice = reader.GetDecimal("TongTien")
@@ -460,6 +459,7 @@ namespace webapi.Controllers
 
             // Cập nhật Status
             order.DonHangStatus = request.Status;
+            order.note = request.note;
 
             try
             {

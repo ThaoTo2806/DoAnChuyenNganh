@@ -69,7 +69,7 @@
                             <!-- Pagination Controls -->
                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="End" Spacing="10" Margin="0,10,0,0">
                                 <!-- Prev Button -->
-                                <Button Text="Prev" Command="{Binding PreviousPage1Command}" IsEnabled="{Binding CanGoToNextPage1}" />
+                                <Button Text="Prev" Command="{Binding PreviousPage1Command}" IsEnabled="{Binding CanGoToPreviousPage1}" />
 
                                 <!-- Page Numbers -->
                                 <Label Text="{Binding CurrentPageLabel1}" VerticalOptions="Center" HorizontalOptions="Center" />
@@ -121,13 +121,13 @@
                             <!-- Pagination Controls -->
                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="End" Spacing="10" Margin="0,10,0,0">
                                 <!-- Prev Button -->
-                                <Button Text="Prev" Command="{Binding PreviousPageCommand2}" IsEnabled="{Binding CanGoToPreviousPage2}" />
+                                <Button Text="Prev" Command="{Binding PreviousPage2Command}" IsEnabled="{Binding CanGoToPreviousPage2}" />
 
                                 <!-- Page Numbers -->
                                 <Label Text="{Binding CurrentPageLabel2}" VerticalOptions="Center" HorizontalOptions="Center" />
 
                                 <!-- Next Button -->
-                                <Button Text="Next" Command="{Binding NextPageCommand2}" IsEnabled="{Binding CanGoToNextPage2}" />
+                                <Button Text="Next" Command="{Binding NextPage2Command}" IsEnabled="{Binding CanGoToNextPage2}" />
                             </StackLayout>
                         </StackLayout>
                     </Frame>

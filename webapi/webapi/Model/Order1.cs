@@ -4,5 +4,6 @@
     {
         public int Id { get; set; }
         public string DonHangStatus { get; set; }
+        public string? note { get; set; }
     }
 }

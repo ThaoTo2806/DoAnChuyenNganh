@@ -370,27 +370,39 @@ namespace QuanLyMaWinApp.ViewModels
         {
             try
             {
-
                 if (order != null)
                 {
                     Debug.WriteLine($"Attempting to delete: {order.OrderId}");
 
                     bool result = await Device.InvokeOnMainThreadAsync(() =>
                     {
-                        return Application.Current.MainPage.DisplayAlert("Confirm Delete", $"Are you sure you want to delete {order.OrderId}?", "Yes", "No");
+                        return Application.Current.MainPage.DisplayAlert("Confirm Delete", $"Are you sure you want to delete order {order.OrderId}?", "Yes", "No");
                     });
 
                     if (result)
                     {
-                        if (await OrderModel.UpdateOrder1Async(order.OrderId))
-                        {
-                            await Application.Current.MainPage.DisplayAlert("Success", "Order deleted successfully", "OK");
+                        string note = await Application.Current.MainPage.DisplayPromptAsync(
+                            "Input Note",
+                            "Please enter the reason for deletion or any additional notes:",
+                            accept: "OK",
+                            cancel: "Cancel"
+                        );
 
-                            UnPaidOrders.Remove(order);
+                        if (!string.IsNullOrWhiteSpace(note))
+                        {
+                            if (await OrderModel.UpdateOrder1Async(order.OrderId, note))
+                            {
+                                await Application.Current.MainPage.DisplayAlert("Success", "Order deleted successfully", "OK");
+                                UnPaidOrders.Remove(order);
+                            }
+                            else
+                            {
+                                await Application.Current.MainPage.DisplayAlert("Error", "Could not delete the order.", "OK");
+                            }
                         }
                         else
                         {
-                            await Application.Current.MainPage.DisplayAlert("Error", "Could not delete the order.", "OK");
+                            await Application.Current.MainPage.DisplayAlert("Error", "You must provide a note to delete the order.", "OK");
                         }
                     }
                 }
@@ -400,5 +412,6 @@ namespace QuanLyMaWinApp.ViewModels
                 Debug.WriteLine($"Error delete category: {ex.Message}");
             }
         }
+
     }
 }

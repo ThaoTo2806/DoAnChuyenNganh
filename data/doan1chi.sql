@@ -418,6 +418,9 @@ create table Orders(
     foreign key (IdUser) references User(idUser)
 );
 
+ALTER TABLE `orders`
+ADD COLUMN note TEXT DEFAULT NULL;
+
 INSERT INTO `orders` (`ID`, `IdUser`, `DCGH`, `NgayDat`, `NgayGiao`, `ThanhToanStatus`, `DonHangStatus`, `SLTong`, `TongTien`) VALUES
 (38, 2, '111 ddd', '2023-07-16', '2023-07-18', 'Napas', 'Delivered', 1, 280.49),
 (39, 2, '123 abc', '2024-07-17', '2024-07-24', 'Credit', 'Confirmed', 8, 7549.65),
@@ -539,6 +542,55 @@ create table ActivationCode(
     DinhKy 	ENUM('6','12','24'),
     Price double  
 );
+
+ALTER TABLE ActivationCode
+MODIFY COLUMN Status ENUM('Active', 'Expired') DEFAULT 'Active';
+
+DELIMITER //
+
+CREATE TRIGGER UpdatePriceBeforeInsert
+BEFORE INSERT ON ActivationCode
+FOR EACH ROW
+BEGIN
+    IF NEW.DinhKy = '6' THEN
+        SET NEW.Price = 89.99;
+        SET NEW.NgayHetHan = DATE_ADD(NEW.NgayKhoiTao, INTERVAL 6 MONTH);
+    ELSEIF NEW.DinhKy = '12' THEN
+        SET NEW.Price = 189.1;
+        SET NEW.NgayHetHan = DATE_ADD(NEW.NgayKhoiTao, INTERVAL 1 YEAR);
+    ELSEIF NEW.DinhKy = '24' THEN
+        SET NEW.Price = 388.85;
+        SET NEW.NgayHetHan = DATE_ADD(NEW.NgayKhoiTao, INTERVAL 2 YEAR);
+    END IF;
+END;
+
+//
+
+DELIMITER ;
+
+DELIMITER //
+
+CREATE TRIGGER UpdatePriceBeforeUpdate
+BEFORE UPDATE ON ActivationCode
+FOR EACH ROW
+BEGIN
+    IF NEW.DinhKy = '6' THEN
+        SET NEW.Price = 89.99;
+        SET NEW.NgayHetHan = DATE_ADD(NEW.NgayKhoiTao, INTERVAL 6 MONTH);
+    ELSEIF NEW.DinhKy = '12' THEN
+        SET NEW.Price = 189.1;
+        SET NEW.NgayHetHan = DATE_ADD(NEW.NgayKhoiTao, INTERVAL 1 YEAR);
+    ELSEIF NEW.DinhKy = '24' THEN
+        SET NEW.Price = 388.85;
+        SET NEW.NgayHetHan = DATE_ADD(NEW.NgayKhoiTao, INTERVAL 2 YEAR);
+    END IF;
+END;
+
+//
+
+DELIMITER ;
+
+
 INSERT INTO `activationcode` (`ID`, `ActiCode`, `Status`, `NgayKhoiTao`, `NgayHetHan`, `DinhKy`, `Price`) VALUES
 (19, '96862a4c5dfe', 'Expired', '2023-07-16 00:00:00', '2024-07-16 00:00:00', '6', 89.99),
 (20, 'bcb750c7b124', 'Active', '2024-07-17 00:00:00', '2025-07-17 00:00:00', '6', 89.99),
@@ -647,6 +699,7 @@ create table OrderDetail(
     foreign key (IdProduct) references Product(ID),
     foreign key (IdProductVersion) references ProductVersion(ID)
 );
+
 INSERT INTO OrderDetail (IdOrder, IdActiveCode, IdProduct, Amount, priceCode, priceProduct, IdProductVersion) VALUES
 (41, 19, 1, 2, 10.00, 190.50, 1), 
 (41, 41, 2, 1, 5.00, 75.66, 1),   
@@ -666,3 +719,43 @@ AND c1.CategoryName = c2.CategoryName;
 ALTER TABLE Category
 ADD CONSTRAINT UC_1 UNIQUE (CategoryName);
 
+DELIMITER $$
+
+CREATE PROCEDURE `GetProcessingOrders` ()
+BEGIN
+    SELECT orders.ID, orders.IdUser, orders.DCGH, orders.NgayDat, orders.DonHangStatus, orders.SLTong, orders.TongTien
+    FROM `orders`
+    WHERE orders.DonHangStatus = 'Processing';
+END$$
+
+DELIMITER ;
+
+
+SELECT 
+    o.ID AS OrderID,
+    u.Account AS AccCus,
+    c.Name,
+    u.Email,
+    u.Phone,
+    u.Address,
+    GROUP_CONCAT(DISTINCT p.Name) AS Products,
+    GROUP_CONCAT(DISTINCT od.Amount) AS SLSP,
+    GROUP_CONCAT(DISTINCT p.Price) AS GSP,
+    GROUP_CONCAT(DISTINCT v.Version) AS Versions,
+    SUM(v.Price) AS TotalVersionPrice, -- Nếu bạn cần tổng giá phiên bản, nếu không có thể bỏ qua
+    o.DonHangStatus
+FROM `orders` o
+LEFT JOIN `orderdetail` od ON o.ID = od.IdOrder
+LEFT JOIN `user` u ON o.IdUser = u.idUser
+LEFT JOIN `product` p ON p.ID = od.idProduct
+LEFT JOIN `productversion` v ON od.IdProductVersion = v.ID
+LEFT JOIN `customer` c ON u.idUser = c.IdUser
+WHERE o.ID = 41
+GROUP BY 
+    o.ID, 
+    u.Account, 
+    c.Name, 
+    u.Email, 
+    u.Phone, 
+    u.Address, 
+    o.DonHangStatus;

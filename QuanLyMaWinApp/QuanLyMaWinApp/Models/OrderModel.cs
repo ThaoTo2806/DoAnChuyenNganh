@@ -76,7 +76,8 @@ namespace QuanLyMaWinApp.Models
         {
             var request = new OrderUpdateRequest
             {
-                Status = "Confirmed"
+                Status = "Confirmed",
+                note = "Confirmed"
             };
 
             try
@@ -91,11 +92,12 @@ namespace QuanLyMaWinApp.Models
             }
         }
 
-        public static async Task<bool> UpdateOrder1Async(int id)
+        public static async Task<bool> UpdateOrder1Async(int id, string note)
         {
             var request = new OrderUpdateRequest
             {
-                Status = "Cancelled"
+                Status = "Cancelled",
+                note = note
             };
 
             try
@@ -112,6 +114,7 @@ namespace QuanLyMaWinApp.Models
         public class OrderUpdateRequest
         {
             public string Status { get; set; }
+            public string? note { get; set; }
         }
     }
 }
