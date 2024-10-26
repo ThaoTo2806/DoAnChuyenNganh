@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace QuanLyMaWinApp.Models
@@ -58,17 +59,22 @@ namespace QuanLyMaWinApp.Models
             }
         }
 
-        public static async Task<List<OrderDetailModel>> GetOrderDetailsByIdAsync(int orderId)
+        public static async Task<OrderDetailModel> GetOrderDetailsByIdAsync(int orderId)
         {
             try
             {
-                var response = await _httpClient.GetFromJsonAsync<List<OrderDetailModel>>($"api/Orders/order-details/{orderId}");
-                return response ?? new List<OrderDetailModel>();
+                var response = await _httpClient.GetFromJsonAsync<OrderDetailModel>($"api/Orders/order-details/{orderId}");
+                return response ?? new OrderDetailModel();
+            }
+            catch (JsonException jsonEx)
+            {
+                Console.WriteLine($"JSON conversion error: {jsonEx.Message}");
+                return new OrderDetailModel();
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"An error occurred while fetching order details: {ex.Message}");
-                return new List<OrderDetailModel>();
+                return new OrderDetailModel();
             }
         }
 

@@ -9,17 +9,18 @@ namespace QuanLyMaWinApp.Models
     public class OrderDetailModel
     {
         public int OrderID { get; set; }
-        public int UserID { get; set; }
-        public string UserName { get; set; }
-        public string UserEmail { get; set; }
-        public string UserPhone { get; set; }
-        public string UserAddress { get; set; }
-        public string ProductID { get; set; }
-        public int Quantity { get; set; }
-        public decimal UnitPrice { get; set; }
-        public string OrderStatus { get; set; }
-        public int TotalQuantity { get; set; }
-        public decimal TotalPrice { get; set; }
+        public string AccCus { get; set; } // Tài khoản khách hàng
+        public string? UserName { get; set; } // Tên người dùng
+        public string? UserEmail { get; set; } // Email người dùng
+        public string? UserPhone { get; set; } // Số điện thoại
+        public string? UserAddress { get; set; } // Địa chỉ
+        public string? Products { get; set; } // Sản phẩm (nullable)
+        public string? SLSP { get; set; } // Số lượng sản phẩm (nullable)
+        public string? GSP { get; set; } // Giá sản phẩm (nullable)
+        public string? Versions { get; set; } // Phiên bản sản phẩm (nullable)
+        public decimal? TotalVersionPrice { get; set; } // Tổng giá phiên bản (nullable)
+        public decimal TotalPrice { get; set; } // Tổng tiền
+        public string? OrderStatus { get; set; } // Trạng thái đơn hàng
     }
 
 }

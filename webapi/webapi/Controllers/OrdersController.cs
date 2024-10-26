@@ -324,7 +324,7 @@ namespace webapi.Controllers
                                     OrderId = reader.GetInt32("ID"),
                                     IdUser = reader.GetInt32("IdUser"),
                                     DCGH = reader.GetString("DCGH"),
-                                    NgayDat = reader.GetDateTime("NgayDat"),
+                                    NgayDat = reader.GetDateTime("NgayDat").ToString("yyyy-MM-dd"),
                                     DonHangStatus = reader.GetString("DonHangStatus"),
                                     TotalQuantity = reader.GetInt32("SLTong"),
                                     TotalPrice = reader.GetDecimal("TongTien")
@@ -368,8 +368,8 @@ namespace webapi.Controllers
                                     OrderId = reader.GetInt32("ID"),
                                     IdUser = reader.GetInt32("IdUser"),
                                     DCGH = reader.GetString("DCGH"),
-                                    NgayDat = reader.GetDateTime("NgayDat"),
-                                    NgayGiao = reader.GetDateTime("NgayGiao"),
+                                    NgayDat = reader.GetDateTime("NgayDat").ToString("yyyy-MM-dd"),
+                                    NgayGiao = reader.IsDBNull(reader.GetOrdinal("NgayGiao")) ? (string)null : reader.GetDateTime("NgayGiao").ToString("yyyy-MM-dd"),
                                     ThanhToanStatus = reader.GetString("ThanhToanStatus"),
                                     DonHangStatus = reader.GetString("DonHangStatus"),
                                     TotalQuantity = reader.GetInt32("SLTong"),
@@ -403,34 +403,30 @@ namespace webapi.Controllers
                     using (var command = new MySqlCommand("GetOrderDetailsById", connection))
                     {
                         command.CommandType = System.Data.CommandType.StoredProcedure;
-                        command.Parameters.AddWithValue("@orderId", orderId);
+                        command.Parameters.AddWithValue("@in_order_id", orderId);
 
                         using (var reader = await command.ExecuteReaderAsync())
                         {
-                            var orderDetails = new List<object>();
-                            while (await reader.ReadAsync())
+                            if (await reader.ReadAsync())
                             {
-                                var orderDetail = new
+                                var orderDetail = new OrderDetailModel
                                 {
                                     OrderID = reader.GetInt32("OrderID"),
-                                    UserID = reader.GetInt32("UserID"),
-                                    UserName = reader.GetString("Name"),
-                                    UserEmail = reader.GetString("Email"),
-                                    UserPhone = reader.GetString("Phone"),
-                                    UserAddress = reader.GetString("Address"),
-                                    ProductID = reader.GetString("IdSP"),
-                                    Quantity = reader.GetInt32("SLSP"),
-                                    UnitPrice = reader.GetDecimal("Price"),
-                                    OrderStatus = reader.GetString("DonHangStatus"),
-                                    TotalQuantity = reader.GetInt32("TotalAmount"),
-                                    TotalPrice = reader.GetDecimal("TongTien")
+                                    AccCus = reader.IsDBNull(reader.GetOrdinal("AccCus")) ? null : reader.GetString("AccCus"),
+                                    UserName = reader.IsDBNull(reader.GetOrdinal("Name")) ? null : reader.GetString("Name"),
+                                    UserEmail = reader.IsDBNull(reader.GetOrdinal("Email")) ? null : reader.GetString("Email"),
+                                    UserPhone = reader.IsDBNull(reader.GetOrdinal("Phone")) ? null : reader.GetString("Phone"),
+                                    UserAddress = reader.IsDBNull(reader.GetOrdinal("Address")) ? null : reader.GetString("Address"),
+                                    Products = reader.IsDBNull(reader.GetOrdinal("Products")) ? null : reader.GetString("Products"),
+                                    SLSP = reader.IsDBNull(reader.GetOrdinal("SLSP")) ? null : reader.GetString("SLSP"),
+                                    GSP = reader.IsDBNull(reader.GetOrdinal("GSP")) ? null : reader.GetString("GSP"),
+                                    Versions = reader.IsDBNull(reader.GetOrdinal("Versions")) ? null : reader.GetString("Versions"),
+                                    TotalVersionPrice = reader.IsDBNull(reader.GetOrdinal("TotalVersionPrice")) ? 0 : reader.GetDecimal("TotalVersionPrice"),
+                                    TotalPrice = reader.IsDBNull(reader.GetOrdinal("TongTien")) ? 0 : reader.GetDecimal("TongTien"),
+                                    OrderStatus = reader.IsDBNull(reader.GetOrdinal("DonHangStatus")) ? null : reader.GetString("DonHangStatus")
                                 };
-                                orderDetails.Add(orderDetail);
-                            }
 
-                            if (orderDetails.Any())
-                            {
-                                return Ok(orderDetails);
+                                return Ok(orderDetail);
                             }
                             else
                             {
@@ -446,6 +442,7 @@ namespace webapi.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, $"Internal server error: {ex.Message}");
             }
         }
+
 
         [HttpPut("UpdateOrders")]
         public async Task<IActionResult> UpdateOrderDetails([FromQuery] int id, [FromBody] OrderUpdateRequest request)

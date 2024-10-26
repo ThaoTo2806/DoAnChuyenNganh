@@ -10,7 +10,7 @@ namespace QuanLyMaWinApp.ViewModels
     public class OrderDetailViewModel : ObservableObject
     {
         private bool _isBusy;
-        private List<OrderDetailModel> _orderDetails;
+        private OrderDetailModel _orderDetails;
         private int _orderId;
         private string _productIds;
         private string _orderStatus;
@@ -23,22 +23,22 @@ namespace QuanLyMaWinApp.ViewModels
             set => SetProperty(ref _isBusy, value);
         }
 
-        public List<OrderDetailModel> OrderDetails
+        public OrderDetailModel OrderDetails
         {
             get => _orderDetails;
             set
             {
                 SetProperty(ref _orderDetails, value);
-                ProductIds = string.Join(", ", _orderDetails.Select(d => d.ProductID));
+                //ProductIds = string.Join(", ", _orderDetails.Select(d => d.ProductID));
                 UpdateStatusFlags(); // Cập nhật trạng thái của RadioButton
             }
         }
 
-        public string ProductIds
-        {
-            get => _productIds;
-            set => SetProperty(ref _productIds, value);
-        }
+        //public string ProductIds
+        //{
+        //    get => _productIds;
+        //    set => SetProperty(ref _productIds, value);
+        //}
 
         public string OrderStatus
         {
@@ -77,10 +77,9 @@ namespace QuanLyMaWinApp.ViewModels
             try
             {
                 OrderDetails = await OrderModel.GetOrderDetailsByIdAsync(_orderId);
-                // Giả sử OrderStatus được lấy từ OrderDetails, có thể cần phải điều chỉnh theo dữ liệu thực tế
-                if (OrderDetails.Any())
+                if (OrderDetails != null)
                 {
-                    OrderStatus = OrderDetails.First().OrderStatus; // Ví dụ lấy trạng thái của chi tiết đơn hàng đầu tiên
+                    OrderStatus = OrderDetails.OrderStatus;
                 }
             }
             catch (Exception ex)

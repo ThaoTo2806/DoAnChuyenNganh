@@ -141,7 +141,7 @@ namespace webapi.Controllers
             {
                 IdMember = userId,
                 Activity = DateTime.Now, // Ngày hiện tại trên hệ thống
-                Detail = "Login to System"
+                Detail = $"Tài khoản có mã {userId} đã đăng nhập vào hệ thống"
             };
 
             _context.Logs.Add(log);

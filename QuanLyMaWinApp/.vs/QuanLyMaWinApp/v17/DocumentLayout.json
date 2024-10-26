@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaWinApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaWinApp\\quanlymawinapp\\viewmodels\\orderviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|solutionrelative:quanlymawinapp\\viewmodels\\orderviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaWinApp\\quanlymawinapp\\views\\orderview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|solutionrelative:quanlymawinapp\\views\\orderview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|d:\\hoctap\\hk7\\doan1chi\\doanchuyennganh\\quanlymawinapp\\quanlymawinapp\\models\\ordermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|d:\\hoctap\\hk7\\doan1chi\\doanchuyennganh\\quanlymawinapp\\quanlymawinapp\\views\\editorderpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|solutionrelative:quanlymawinapp\\views\\editorderpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|d:\\hoctap\\hk7\\doan1chi\\doanchuyennganh\\quanlymawinapp\\quanlymawinapp\\viewmodels\\editorderviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|solutionrelative:quanlymawinapp\\viewmodels\\editorderviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|d:\\hoctap\\hk7\\doan1chi\\doanchuyennganh\\quanlymawinapp\\quanlymawinapp\\models\\orderdetailmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|solutionrelative:quanlymawinapp\\models\\orderdetailmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaWinApp\\quanlymawinapp\\models\\ordermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|solutionrelative:quanlymawinapp\\models\\ordermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaWinApp\\quanlymawinapp\\views\\orderview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|solutionrelative:quanlymawinapp\\views\\orderview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|d:\\hoctap\\hk7\\doan1chi\\doanchuyennganh\\quanlymawinapp\\quanlymawinapp\\viewmodels\\orderviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B382085-3D0E-4280-AF8E-7F940D1B2AE5}|QuanLyMaWinApp\\QuanLyMaWinApp.csproj|solutionrelative:quanlymawinapp\\viewmodels\\orderviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,39 +74,78 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "OrderViewModel.cs",
-              "DocumentMoniker": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaWinApp\\QuanLyMaWinApp\\ViewModels\\OrderViewModel.cs",
-              "RelativeDocumentMoniker": "QuanLyMaWinApp\\ViewModels\\OrderViewModel.cs",
-              "ToolTip": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaWinApp\\QuanLyMaWinApp\\ViewModels\\OrderViewModel.cs",
-              "RelativeToolTip": "QuanLyMaWinApp\\ViewModels\\OrderViewModel.cs",
-              "ViewState": "AQIAAHoBAAAAAAAAAAAgwH4BAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T07:06:49.009Z",
+              "DocumentIndex": 1,
+              "Title": "EditOrderPage.xaml",
+              "DocumentMoniker": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaWinApp\\QuanLyMaWinApp\\Views\\EditOrderPage.xaml",
+              "RelativeDocumentMoniker": "QuanLyMaWinApp\\Views\\EditOrderPage.xaml",
+              "ToolTip": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaWinApp\\QuanLyMaWinApp\\Views\\EditOrderPage.xaml",
+              "RelativeToolTip": "QuanLyMaWinApp\\Views\\EditOrderPage.xaml",
+              "ViewState": "AQIAACQAAAAAAAAAAAAAAF4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-26T04:44:38.133Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "EditOrderViewModel.cs",
+              "DocumentMoniker": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaWinApp\\QuanLyMaWinApp\\ViewModels\\EditOrderViewModel.cs",
+              "RelativeDocumentMoniker": "QuanLyMaWinApp\\ViewModels\\EditOrderViewModel.cs",
+              "ToolTip": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaWinApp\\QuanLyMaWinApp\\ViewModels\\EditOrderViewModel.cs",
+              "RelativeToolTip": "QuanLyMaWinApp\\ViewModels\\EditOrderViewModel.cs",
+              "ViewState": "AQIAAF8AAAAAAAAAAAA1wGwAAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-26T04:41:52.655Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OrderDetailModel.cs",
+              "DocumentMoniker": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaWinApp\\QuanLyMaWinApp\\Models\\OrderDetailModel.cs",
+              "RelativeDocumentMoniker": "QuanLyMaWinApp\\Models\\OrderDetailModel.cs",
+              "ToolTip": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaWinApp\\QuanLyMaWinApp\\Models\\OrderDetailModel.cs",
+              "RelativeToolTip": "QuanLyMaWinApp\\Models\\OrderDetailModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-26T04:39:44.932Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "OrderModel.cs",
               "DocumentMoniker": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaWinApp\\QuanLyMaWinApp\\Models\\OrderModel.cs",
               "RelativeDocumentMoniker": "QuanLyMaWinApp\\Models\\OrderModel.cs",
               "ToolTip": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaWinApp\\QuanLyMaWinApp\\Models\\OrderModel.cs",
               "RelativeToolTip": "QuanLyMaWinApp\\Models\\OrderModel.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAAywEEAAAA8AAAA",
+              "ViewState": "AQIAAFEAAAAAAAAAAAAgwFoAAABNAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-23T07:06:45.015Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
+              "Title": "OrderViewModel.cs",
+              "DocumentMoniker": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaWinApp\\QuanLyMaWinApp\\ViewModels\\OrderViewModel.cs",
+              "RelativeDocumentMoniker": "QuanLyMaWinApp\\ViewModels\\OrderViewModel.cs",
+              "ToolTip": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaWinApp\\QuanLyMaWinApp\\ViewModels\\OrderViewModel.cs",
+              "RelativeToolTip": "QuanLyMaWinApp\\ViewModels\\OrderViewModel.cs",
+              "ViewState": "AQIAAGABAAAAAAAAAAAAAH4BAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T07:06:49.009Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "OrderView.xaml",
               "DocumentMoniker": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaWinApp\\QuanLyMaWinApp\\Views\\OrderView.xaml",
               "RelativeDocumentMoniker": "QuanLyMaWinApp\\Views\\OrderView.xaml",
               "ToolTip": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaWinApp\\QuanLyMaWinApp\\Views\\OrderView.xaml",
               "RelativeToolTip": "QuanLyMaWinApp\\Views\\OrderView.xaml",
-              "ViewState": "AQIAAGQAAAAAAAAAAAAwwIkAAAAOAAAA",
+              "ViewState": "AQIAABYAAAAAAAAAAAAwwC0AAAC7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-07-24T16:42:41.698Z",
               "EditorCaption": ""

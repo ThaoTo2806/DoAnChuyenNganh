@@ -418,6 +418,52 @@ create table Orders(
     foreign key (IdUser) references User(idUser)
 );
 
+ALTER TABLE Orders
+MODIFY COLUMN TongTien DOUBLE DEFAULT 0;
+
+ALTER TABLE orders
+MODIFY COLUMN NgayGiao DATE DEFAULT NULL;  -- Nếu bạn muốn đổi thành kiểu DATE
+
+DELIMITER //
+
+CREATE TRIGGER UpdateNgayGiaoOnConfirmed
+BEFORE UPDATE ON Orders
+FOR EACH ROW
+BEGIN
+    IF NEW.DonHangStatus = 'Confirmed' THEN
+        SET NEW.NgayGiao = DATE_ADD(NEW.NgayDat, INTERVAL 7 DAY);
+    END IF;
+END;
+
+//
+
+DELIMITER ;
+
+
+DELIMITER //
+
+CREATE TRIGGER CheckNgayGiaoAfterInsert
+AFTER INSERT ON Orders
+FOR EACH ROW
+BEGIN
+    IF NEW.NgayGiao <= NEW.NgayDat THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: NgayGiao must be greater than NgayDat after insert.';
+    END IF;
+END; //
+
+CREATE TRIGGER CheckNgayGiaoAfterUpdate
+AFTER UPDATE ON Orders
+FOR EACH ROW
+BEGIN
+    IF NEW.NgayGiao <= NEW.NgayDat THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: NgayGiao must be greater than NgayDat after update.';
+    END IF;
+END; //
+
+DELIMITER ;
+
 ALTER TABLE `orders`
 ADD COLUMN note TEXT DEFAULT NULL;
 
@@ -700,6 +746,9 @@ create table OrderDetail(
     foreign key (IdProductVersion) references ProductVersion(ID)
 );
 
+ALTER TABLE OrderDetail DROP FOREIGN KEY orderdetail_ibfk_4;
+ALTER TABLE OrderDetail DROP COLUMN IdProductVersion;
+
 INSERT INTO OrderDetail (IdOrder, IdActiveCode, IdProduct, Amount, priceCode, priceProduct, IdProductVersion) VALUES
 (41, 19, 1, 2, 10.00, 190.50, 1), 
 (41, 41, 2, 1, 5.00, 75.66, 1),   
@@ -730,8 +779,11 @@ END$$
 
 DELIMITER ;
 
+DELIMITER $$
 
-SELECT 
+CREATE PROCEDURE `GetOrderDetailsById` (IN in_order_id INT)
+BEGIN
+    SELECT 
     o.ID AS OrderID,
     u.Account AS AccCus,
     c.Name,
@@ -742,15 +794,17 @@ SELECT
     GROUP_CONCAT(DISTINCT od.Amount) AS SLSP,
     GROUP_CONCAT(DISTINCT p.Price) AS GSP,
     GROUP_CONCAT(DISTINCT v.Version) AS Versions,
-    SUM(v.Price) AS TotalVersionPrice, -- Nếu bạn cần tổng giá phiên bản, nếu không có thể bỏ qua
+    SUM(v.Price) AS TotalVersionPrice, -- Tổng giá phiên bản
+    SUM(p.Price * od.Amount) + SUM(v.Price) + a.Price AS TongTien,
     o.DonHangStatus
 FROM `orders` o
 LEFT JOIN `orderdetail` od ON o.ID = od.IdOrder
 LEFT JOIN `user` u ON o.IdUser = u.idUser
-LEFT JOIN `product` p ON p.ID = od.idProduct
-LEFT JOIN `productversion` v ON od.IdProductVersion = v.ID
+LEFT JOIN `product` p ON p.ID = od.IdProduct
 LEFT JOIN `customer` c ON u.idUser = c.IdUser
-WHERE o.ID = 41
+LEFT JOIN `productversion` v ON p.IdVersion = v.ID
+LEFT JOIN `activationcode` a ON od.IdActiveCode = a.ID
+WHERE o.ID = in_order_id
 GROUP BY 
     o.ID, 
     u.Account, 
@@ -759,3 +813,52 @@ GROUP BY
     u.Phone, 
     u.Address, 
     o.DonHangStatus;
+END$$
+
+DELIMITER ;
+
+
+DELIMITER $$
+
+CREATE TRIGGER UpdateOrderTotalAfterInsert
+AFTER INSERT ON OrderDetail
+FOR EACH ROW
+BEGIN
+    DECLARE totalPrice DOUBLE;
+
+    -- Tính tổng tiền cho đơn hàng tương ứng
+    SELECT 
+        SUM(od.priceProduct * od.Amount) + 
+        IFNULL(SUM(v.Price), 0) + 
+        IFNULL(SUM(a.Price), 0) INTO totalPrice
+    FROM 
+        OrderDetail od
+    LEFT JOIN 
+        product p ON p.ID = od.idProduct   
+    LEFT JOIN 
+        productversion v ON v.ID = p.IdVersion
+    LEFT JOIN 
+        ActivationCode a ON od.IdActiveCode = a.ID
+    WHERE 
+        od.IdOrder = NEW.IdOrder;
+
+    -- Cập nhật giá trị TongTien trong bảng Orders
+    UPDATE Orders
+    SET TongTien = totalPrice
+    WHERE ID = NEW.IdOrder;
+
+    -- Cập nhật SLTong
+    UPDATE Orders
+    SET SLTong = (SELECT SUM(Amount) FROM OrderDetail WHERE IdOrder = NEW.IdOrder)
+    WHERE ID = NEW.IdOrder;
+END$$
+
+DELIMITER ;
+
+
+
+INSERT INTO OrderDetail (IdOrder, IdActiveCode, IdProduct, Amount, priceCode, priceProduct)
+VALUES (55, 19, '1', 3, 89.99, 190.5);
+
+INSERT INTO OrderDetail (IdOrder, IdActiveCode, IdProduct, Amount, priceCode, priceProduct)
+VALUES (55, 20, '4', 2, 89.99, 269.56);

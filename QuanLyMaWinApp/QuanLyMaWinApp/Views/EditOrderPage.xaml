@@ -9,45 +9,84 @@
         <Frame VerticalOptions="Center" HorizontalOptions="Center" Padding="20" BackgroundColor="White" CornerRadius="20" WidthRequest="1000" HeightRequest="600">
             <ScrollView VerticalScrollBarVisibility="Always">
                 <StackLayout Spacing="10">
-                    <Label Text="Order Infomation" 
-                   FontSize="24" 
-                   HorizontalOptions="Center" 
-                   Margin="0,0,0,10" TextColor="Black" FontAttributes="Bold"/>
+                    <Label Text="Order Information" 
+                           FontSize="24" 
+                           HorizontalOptions="Center" 
+                           Margin="0,0,0,10" TextColor="Black" FontAttributes="Bold"/>
 
                     <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
-                        <Label Text="ID Order:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray" Margin="0,5,0,0"/>
-                        <Label Text="{Binding OrderDetails[0].OrderID}" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black" Margin="-60,5,0,0"/>
-                        <Label Text="Customer Name:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray" Margin="0,5,0,0"/>
-                        <Label Text="{Binding OrderDetails[0].UserName}" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black" Margin="-50,5,0,0"/>
+                        <Label Text="Order ID:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray"/>
+                        <Label Text="{Binding OrderDetails.OrderID}" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black"/>
                     </StackLayout>
 
                     <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
-                        <Label Text="Phone:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray" Margin="0,5,0,0"/>
-                        <Label Text="{Binding OrderDetails[0].UserPhone}" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black" Margin="-60,5,0,0"/>
-                        <Label Text="Address:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray" Margin="0,5,0,0"/>
-                        <Label Text="{Binding OrderDetails[0].UserAddress}" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black" Margin="-50,5,0,0"/>
+                        <Label Text="Customer Account:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray"/>
+                        <Label Text="{Binding OrderDetails.AccCus}" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black"/>
                     </StackLayout>
 
                     <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
-                        <Label Text="Product IDs:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray" Margin="0,5,0,0"/>
-                        <Label Text="{Binding ProductIds}" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black" Margin="-300,5,0,0"/>
+                        <Label Text="Customer Name:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray"/>
+                        <Label Text="{Binding OrderDetails.UserName}" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black"/>
                     </StackLayout>
 
                     <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
-                        <Label Text="Quantity:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray" Margin="0,5,0,0"/>
-                        <Label Text="{Binding OrderDetails[0].TotalQuantity}" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black" Margin="-60,5,0,0"/>
-                        <Label Text="ToTal:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray" Margin="0,5,0,0"/>
-                        <Label Text="{Binding OrderDetails[0].TotalPrice, StringFormat='{0:C}'}"  FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black" Margin="-50,5,0,0"/>
+                        <Label Text="Email:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray"/>
+                        <Label Text="{Binding OrderDetails.UserEmail}" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black"/>
                     </StackLayout>
 
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-                        <RadioButton Content="Processing" GroupName="Role" IsChecked="{Binding IsProcess}" TextColor="#0E54A3" Margin="-40,0,0,0"/>
-                        <RadioButton Content="Confirm" GroupName="Role" IsChecked="{Binding IsConfirm}" TextColor="#0E54A3" Margin="120,0,0,0"/>
+                    <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                        <Label Text="Phone:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray"/>
+                        <Label Text="{Binding OrderDetails.UserPhone}" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black"/>
                     </StackLayout>
 
+                    <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                        <Label Text="Address:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray"/>
+                        <Label Text="{Binding OrderDetails.UserAddress}" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black"/>
+                    </StackLayout>
 
-                    <!-- Button Save màu xanh -->
-                    <Button Text="Save" BackgroundColor="#49BE49" Command="{Binding SaveCommand}" CommandParameter="{Binding}" HorizontalOptions="Center"/>
+                    <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                        <Label Text="Products:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray"/>
+                        <Label Text="{Binding OrderDetails.Products}" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                        <Label Text="Quantities:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray"/>
+                        <Label Text="{Binding OrderDetails.SLSP}" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                        <Label Text="Prices:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray"/>
+                        <Label Text="{Binding OrderDetails.GSP}" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                        <Label Text="Versions:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray"/>
+                        <Label Text="{Binding OrderDetails.Versions}" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                        <Label Text="Total Version Price:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray"/>
+                        <Label Text="{Binding OrderDetails.TotalVersionPrice, StringFormat='{0:C}'}" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                        <Label Text="Total Price:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray"/>
+                        <Label Text="{Binding OrderDetails.TotalPrice, StringFormat='{0:C}'}" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                        <Label Text="Order Status:" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Gray"/>
+                        <Label Text="{Binding OrderDetails.OrderStatus}" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="Black"/>
+                    </StackLayout>
+
+                    <!-- RadioButtons for Status -->
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,20,0,0">
+                        <RadioButton Content="Processing" GroupName="StatusGroup" IsChecked="{Binding IsProcess}" TextColor="#0E54A3"/>
+                        <RadioButton Content="Confirm" GroupName="StatusGroup" IsChecked="{Binding IsConfirm}" TextColor="#0E54A3" Margin="20,0,0,0"/>
+                    </StackLayout>
+
+                    <!-- Save Button -->
+                    <Button Text="Save" BackgroundColor="#49BE49" Command="{Binding SaveCommand}" CommandParameter="{Binding}" HorizontalOptions="Center" Margin="0,20,0,0"/>
                 </StackLayout>
             </ScrollView>
         </Frame>

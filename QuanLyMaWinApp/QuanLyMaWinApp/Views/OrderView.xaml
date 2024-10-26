@@ -43,7 +43,7 @@
                                     <DataTemplate>
                                         <StackLayout Orientation="Horizontal" Padding="5" BackgroundColor="#E0E5E6">
                                             <Label Text="{Binding OrderId}" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
-                                            <Label Text="{Binding NgayDat}" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                            <Label Text="{Binding NgayDat, StringFormat='{0:yyyy-MM-dd}'}" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
                                             <Label Text="{Binding DonHangStatus}" TextColor="red" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
                                             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
                                                 <Frame Padding="5" HasShadow="False" BackgroundColor="Transparent">
@@ -111,8 +111,8 @@
                                     <DataTemplate>
                                         <StackLayout Orientation="Horizontal" Padding="5" BackgroundColor="#E0E5E6">
                                             <Label Text="{Binding OrderId}" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
-                                            <Label Text="{Binding NgayDat}" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
-                                            <Label Text="{Binding NgayGiao}" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                                            <Label Text="{Binding NgayDat, StringFormat='{0:yyyy-MM-dd}'}" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                            <Label Text="{Binding NgayGiao, StringFormat='{0:yyyy-MM-dd}'}" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
                                             <Label Text="{Binding DonHangStatus}" TextColor="Green" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
                                         </StackLayout>
                                     </DataTemplate>
