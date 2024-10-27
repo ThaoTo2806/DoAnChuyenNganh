@@ -18,6 +18,7 @@ namespace webapi.Model
         public DbSet<Order1> orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<ProductVersion> ProductVersions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -88,6 +89,16 @@ namespace webapi.Model
             .WithMany()
             .HasForeignKey(p => p.IdCate)
             .OnDelete(DeleteBehavior.Restrict);
+
+            // Cấu hình cho bảng ProductVersion
+            modelBuilder.Entity<ProductVersion>()
+                .ToTable("ProductVersion")
+                .HasKey(u => u.ID);
+
+            modelBuilder.Entity<Product>()
+        .HasOne(p => p.ProductVersion)
+        .WithMany()
+        .HasForeignKey(p => p.IdVersion);
 
             base.OnModelCreating(modelBuilder);
         }

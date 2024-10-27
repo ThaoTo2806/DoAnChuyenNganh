@@ -9,7 +9,7 @@
         public string? Phone { get; set; }
         public string? Address { get; set; }
         public bool? Gender { get; set; }
-        public DateTime? Birth { get; set; }
+        public DateTime Birth { get; set; }
         public int? IdRole { get; set; }
         public bool? IsDeleted { get; set; } = false;
 

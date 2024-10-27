@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<User xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <ID>2</ID>
+<User_Customer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IdUser>2</IdUser>
   <Account>user</Account>
-  <PassWord>1</PassWord>
-  <IdType>false</IdType>
-  <Name>Thao</Name>
-  <Phone>0123456789</Phone>
-  <Image>avt1.png</Image>
-  <Gender>false</Gender>
-  <Address>140 Le Trong Tan</Address>
-  <IsDeleted>false</IsDeleted>
+  <Password>2</Password>
   <Email>ln5966220@gmail.com</Email>
+  <Phone>0123456789</Phone>
+  <Address>140 Le Trong Tan</Address>
+  <Gender>false</Gender>
   <Birth>2003-07-10T00:00:00</Birth>
-</User>
+  <IdRole>2</IdRole>
+  <IsDeletedUser>false</IsDeletedUser>
+  <IdCustomer>2</IdCustomer>
+  <Name>Tran Thi B</Name>
+  <Image>D:\HOCTAP\WPF\QLMaKichHoat\QuanLyMaWinApp\QuanLyMaWinApp\Resources\Images\dotnet_bot.png</Image>
+  <IsDeletedCustomer>false</IsDeletedCustomer>
+</User_Customer>

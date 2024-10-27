@@ -20,34 +20,34 @@ namespace webapi.Controllers
 
         // GET: api/Products
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
+        public async Task<ActionResult<IEnumerable<ProductDetail>>> GetProducts()
         {
-            var allProducts = await _context.Products.ToListAsync();
+            var allProducts = await _context.Products
+                .Include(p => p.ProductVersion) // Bao gồm thông tin từ ProductVersion
+                .ToListAsync();
+
             var notDeletedProducts = allProducts.Where(p => !p.IsDeleted).ToList();
 
-            Console.WriteLine($"Total Products: {allProducts.Count}");
-            Console.WriteLine($"Not Deleted Products: {notDeletedProducts.Count}");
-
-            var products = notDeletedProducts
-                .Select(p => new Product
-                {
-                    ID = p.ID,
-                    Name = p.Name,
-                    IdCate = p.IdCate,
-                    Evaluate = p.Evaluate,
-                    SL = p.SL,
-                    Price = p.Price,
-                    Detail = p.Detail,
-                    Feature = p.Feature,
-                    Specifications = p.Specifications,
-                    Helps = p.Helps,
-                    IdVersion = p.IdVersion,
-                    IsDeleted = p.IsDeleted,
-                    Image = p.Image,
-                    Category = p.Category
-                }).ToList();
-
-            Console.WriteLine($"Final Products: {products.Count}");
+            var products = notDeletedProducts.Select(p => new ProductDetail
+            {
+                ID = p.ID,
+                Name = p.Name,
+                IdCate = p.IdCate,
+                Evaluate = p.Evaluate,
+                SL = p.SL,
+                Price = p.Price,
+                Detail = p.Detail,
+                Feature = p.Feature,
+                Specifications = p.Specifications,
+                Helps = p.Helps,
+                IdVersion = p.IdVersion,
+                IsDeleted = p.IsDeleted,
+                Image = p.Image,
+                // Truy cập thông tin từ ProductVersion
+                Version = p.ProductVersion != null ? p.ProductVersion.Version : null,
+                Description = p.ProductVersion != null ? p.ProductVersion.Description : null,
+                VersionPrice = p.ProductVersion != null ? p.ProductVersion.Price : 0
+            }).ToList();
 
             if (products == null || !products.Any())
             {
@@ -55,7 +55,6 @@ namespace webapi.Controllers
             }
 
             return Ok(products);
-
         }
 
         // PUT: api/Products/SoftDelete1/{id}

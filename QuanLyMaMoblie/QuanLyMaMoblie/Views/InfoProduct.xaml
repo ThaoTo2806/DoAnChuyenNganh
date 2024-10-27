@@ -81,11 +81,15 @@
                                 </Grid>
                             </Frame>
 
-                            <Label Text="{Binding Product.ProductName}" FontSize="28" FontAttributes="Bold" Margin="5,0,0,0" />
+                            <Label Text="{Binding Product.Name}" FontSize="28" FontAttributes="Bold" Margin="5,0,0,0" />
                             <StackLayout Orientation="Horizontal">
+                                <Label Text="Version: " FontSize="25" Margin="5,0,0,0"/>
+                                <Label Text="{Binding Product.Version}" FontSize="25" TextColor="#F83737"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Price: " FontSize="25" Margin="5,0,0,0"/>
                                 <Label Text="$" FontSize="30" TextColor="#F83737" Margin="5,0,0,0"/>
-                                <Label Text="{Binding Product.Price}" FontSize="30" TextColor="#F83737"/>
-                                <Label Text=" -  $30000" FontSize="30" TextColor="#F83737" Margin="5,0,0,0"/>
+                                <Label Text="{Binding Product.TotalPrice}" FontSize="25" TextColor="#F83737"/>
                             </StackLayout>
 
                             <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
@@ -98,6 +102,8 @@
                                     <Frame>
                                         <StackLayout>
                                             <Label Text="{Binding Product.Detail}" FontSize="16"/>
+                                            <Label Text="{Binding Product.Version, StringFormat='Version: {0}'}" FontSize="16" />
+                                            <Label Text="{Binding Product.Description}" FontSize="16" />
                                         </StackLayout>
                                     </Frame>
 

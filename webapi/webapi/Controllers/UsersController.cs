@@ -54,7 +54,7 @@ namespace webapi.Controllers
                     Address = u.Address,
                     Gender = u.Gender ?? false,
                     Birth = u.Birth,
-                    IdRole = u.IdRole ?? 2,
+                    IdRole = u.IdRole ?? 1,
                     IsDeleted = u.IsDeleted ?? false
                 })
                 .FirstOrDefaultAsync();
@@ -149,67 +149,67 @@ namespace webapi.Controllers
         }
 
 
-        //// POST: api/Users/login-regular
-        //[HttpPost("login-regular")]
-        //public async Task<ActionResult<User>> LoginForRegularUser([FromBody] LoginRequestModel loginRequest)
-        //{
-        //    if (loginRequest == null || string.IsNullOrEmpty(loginRequest.Account) || string.IsNullOrEmpty(loginRequest.PassWord))
-        //    {
-        //        return BadRequest("Account and Password are required");
-        //    }
+        // POST: api/Users/login-regular
+        [HttpPost("login-regular")]
+        public async Task<ActionResult<User>> LoginForRegularUser([FromBody] LoginRequestModel loginRequest)
+        {
+            if (loginRequest == null || string.IsNullOrEmpty(loginRequest.Account) || string.IsNullOrEmpty(loginRequest.PassWord))
+            {
+                return BadRequest("Account and Password are required");
+            }
 
-        //    var user = await _context.Users
-        //        .Where(u => u.Account == loginRequest.Account && u.PassWord == loginRequest.PassWord && !(u.IsDeleted ?? false)) // Check if IsDeleted is false
-        //        .Select(u => new User
-        //        {
-        //            ID = u.ID,
-        //            Account = u.Account,
-        //            PassWord = u.PassWord,
-        //            IdType = u.IdType ?? false,
-        //            Name = u.Name,
-        //            Phone = u.Phone,
-        //            Image = u.Image,
-        //            Gender = u.Gender ?? false,
-        //            Address = u.Address,
-        //            IsDeleted = u.IsDeleted ?? false,
-        //            Email = u.Email,
-        //            Birth = u.Birth
-        //        })
-        //        .FirstOrDefaultAsync();
+            var user = await _context.Users.Where(u => u.Account == loginRequest.Account && u.PassWord == loginRequest.PassWord && !(u.IsDeleted ?? false))
+        .Join(_context.Customers, u => u.IdUser, c => c.IdUser, (u, c) => new User_Customer 
+            {
+                IdUser = u.IdUser,
+                Account = u.Account,
+                Password = u.PassWord,
+                Email = u.Email,
+                Phone = u.Phone,
+                Address = u.Address,
+                Gender = u.Gender ?? false,
+                Birth = u.Birth,
+                IdRole = u.IdRole ?? 2,
+                IsDeletedUser = u.IsDeleted ?? false,
+                IdCustomer = c.idCustomer,
+                Name = c.Name,
+                Image = c.Image,
+                IsDeletedCustomer = c.IsDeleted ?? false
+            }
+        )
+        .FirstOrDefaultAsync();
 
-        //    if (user == null)
-        //    {
-        //        return Unauthorized("Invalid credentials or the user is deleted");
-        //    }
+            if (user == null)
+            {
+                return Unauthorized("Invalid credentials or the user is deleted");
+            }
 
-        //    if (user.IdType == false)
-        //    {
-        //        await CreateLog(user.ID);
+            if (user.IdRole == 2)
+            {
+                // Save information to session
+                SetUserSession(user);
 
-        //        // Save information to session
-        //        SetUserSession(user);
+                // Check if the XML file exists
+                var userFromXml = LoadUserFromXml(user.IdUser);
+                if (userFromXml == null)
+                {
+                    // If the XML file does not exist, save user information to the XML file
+                    SaveUserToXml(user);
+                }
+                else
+                {
+                    // If the XML file exists, update the cart from the XML file to the session
+                    var cart = LoadCartFromXml(user.IdUser);
+                    SetCartSession(cart);
+                }
 
-        //        // Check if the XML file exists
-        //        var userFromXml = LoadUserFromXml(user.ID);
-        //        if (userFromXml == null)
-        //        {
-        //            // If the XML file does not exist, save user information to the XML file
-        //            SaveUserToXml(user);
-        //        }
-        //        else
-        //        {
-        //            // If the XML file exists, update the cart from the XML file to the session
-        //            var cart = LoadCartFromXml(user.ID);
-        //            SetCartSession(cart);
-        //        }
-
-        //        return Ok(user); // Successful login
-        //    }
-        //    else
-        //    {
-        //        return Unauthorized("User is not authorized");
-        //    }
-        //}
+                return Ok(user); // Successful login
+            }
+            else
+            {
+                return Unauthorized("User is not authorized");
+            }
+        }
 
         // GET: api/Users/profile
         [HttpGet("profile")]
@@ -503,30 +503,30 @@ namespace webapi.Controllers
             return Ok("User logged out successfully");
         }
 
-        //private void SaveUserToXml(User user)
-        //{
-        //    if (!Directory.Exists(_usersDirectory))
-        //    {
-        //        Directory.CreateDirectory(_usersDirectory);
-        //    }
+        private void SaveUserToXml(User_Customer user)
+        {
+            if (!Directory.Exists(_usersDirectory))
+            {
+                Directory.CreateDirectory(_usersDirectory);
+            }
 
-        //    var userXmlPath = Path.Combine(_usersDirectory, $"{user.ID}.xml");
-        //    var xmlSerializer = new XmlSerializer(typeof(User));
-        //    using (var writer = new StreamWriter(userXmlPath))
-        //    {
-        //        xmlSerializer.Serialize(writer, user);
-        //    }
-        //}
+            var userXmlPath = Path.Combine(_usersDirectory, $"{user.IdUser}.xml");
+            var xmlSerializer = new XmlSerializer(typeof(User_Customer));
+            using (var writer = new StreamWriter(userXmlPath))
+            {
+                xmlSerializer.Serialize(writer, user);
+            }
+        }
 
-        private User LoadUserFromXml(int userId)
+        private User_Customer LoadUserFromXml(int userId)
         {
             var userXmlPath = Path.Combine(_usersDirectory, $"{userId}.xml");
             if (System.IO.File.Exists(userXmlPath))
             {
-                var xmlSerializer = new XmlSerializer(typeof(User));
+                var xmlSerializer = new XmlSerializer(typeof(User_Customer));
                 using (var reader = new StreamReader(userXmlPath))
                 {
-                    return (User)xmlSerializer.Deserialize(reader);
+                    return (User_Customer)xmlSerializer.Deserialize(reader);
                 }
             }
             return null;
@@ -581,12 +581,12 @@ namespace webapi.Controllers
             HttpContext.Session.SetString("Cart", System.Text.Json.JsonSerializer.Serialize(cart));
         }
 
-        //private void SetUserSession(User user)
-        //{
-        //    var userIdBytes = Encoding.UTF8.GetBytes(user.ID.ToString());
-        //    var userIdBase64 = Convert.ToBase64String(userIdBytes);
-        //    HttpContext.Session.SetString("UserID", userIdBase64);
-        //}
+        private void SetUserSession(User_Customer user)
+        {
+            var userIdBytes = Encoding.UTF8.GetBytes(user.IdUser.ToString());
+            var userIdBase64 = Convert.ToBase64String(userIdBytes);
+            HttpContext.Session.SetString("UserID", userIdBase64);
+        }
 
         private Cart GetCartFromSession()
         {

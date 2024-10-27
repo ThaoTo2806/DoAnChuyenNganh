@@ -18,6 +18,7 @@
 
         // Navigation properties
         public Category Category { get; set; }
+        public virtual ProductVersion ProductVersion { get; set; }
     }
 
 }
