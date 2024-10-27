@@ -16,14 +16,14 @@ namespace QuanLyMaWinApp.ViewModels
         private const int PageSize = 5;
         private int _currentPage = 1;
         private bool _isBusy;
-        private List<ProductModel> _allProducts = new List<ProductModel>();
+        private List<ProductDetail> _allProducts = new List<ProductDetail>();
         public bool IsBusy
         {
             get => _isBusy;
             set => SetProperty(ref _isBusy, value);
         }
 
-        public ObservableCollection<ProductModel> Products { get; set; } = new ObservableCollection<ProductModel>();
+        public ObservableCollection<ProductDetail> Products { get; set; } = new ObservableCollection<ProductDetail>();
 
         public ICommand EditCommand { get; }
         public ICommand DeleteCommand { get; }
@@ -51,8 +51,8 @@ namespace QuanLyMaWinApp.ViewModels
 
         public ProductViewModel()
         {
-            EditCommand = new Command<ProductModel>(async (product) => await OnEdit(product));
-            DeleteCommand = new Command<ProductModel>(async (product) => await OnDelete(product));
+            EditCommand = new Command<ProductDetail>(async (product) => await OnEdit(product));
+            DeleteCommand = new Command<ProductDetail>(async (product) => await OnDelete(product));
             AddCommand = new Command(async () => await OnAddAsync());
 
             LoadProductsCommand = new AsyncRelayCommand(LoadProductsAsync);
@@ -181,7 +181,7 @@ namespace QuanLyMaWinApp.ViewModels
                 IsBusy = false;
             }
         }
-        private async Task OnDelete(ProductModel product)
+        private async Task OnDelete(ProductDetail product)
         {
             if (product != null)
             {
@@ -236,7 +236,7 @@ namespace QuanLyMaWinApp.ViewModels
             }
         }
 
-        private async Task OnEdit(ProductModel product)
+        private async Task OnEdit(ProductDetail product)
         {
             try
             {

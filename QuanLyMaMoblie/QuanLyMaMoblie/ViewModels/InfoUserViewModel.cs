@@ -19,12 +19,12 @@ namespace QuanLyMaMoblie.ViewModels
 
         public int ID
         {
-            get => _member?.ID ?? 0; // Trả về 0 nếu _member là null
+            get => _member?.IdUser ?? 0; // Trả về 0 nếu _member là null
             set
             {
-                if (_member != null && _member.ID != value)
+                if (_member != null && _member.IdUser != value)
                 {
-                    _member.ID = value; // Gán giá trị cho thuộc tính ID
+                    _member.IdUser = value; // Gán giá trị cho thuộc tính ID
                     OnPropertyChanged();
                 }
             }

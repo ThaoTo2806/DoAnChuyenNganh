@@ -29,7 +29,7 @@
     <AppXManifest Include="D:\HOCTAP\HK7\DoAn1Chi\DoAnChuyenNganh\QuanLyMaWinApp\QuanLyMaWinApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-10-26T05:39:58.362</Modified>
+      <Modified>2024-10-27T13:28:19.870</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -43,11 +43,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\HOCTAP\HK7\DoAn1Chi\DoAnChuyenNganh\QuanLyMaWinApp\QuanLyMaWinApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\QuanLyMaWinApp.dll">
       <PackagePath>QuanLyMaWinApp.dll</PackagePath>
-      <Modified>2024-10-26T05:39:56.738</Modified>
+      <Modified>2024-10-27T13:28:18.950</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\HOCTAP\HK7\DoAn1Chi\DoAnChuyenNganh\QuanLyMaWinApp\QuanLyMaWinApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>QuanLyMaWinApp.exe</PackagePath>
-      <Modified>2024-10-26T05:39:56.745</Modified>
+      <Modified>2024-10-27T13:28:18.957</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\HOCTAP\HK7\DoAn1Chi\DoAnChuyenNganh\QuanLyMaWinApp\QuanLyMaWinApp\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>

@@ -42,7 +42,7 @@
 
                                 <Image Source="{Binding Profile.Image}" HeightRequest="50" WidthRequest="50" Margin="0,0,0,0"/>
                                 <Label Grid.Column="1" Text="{Binding Profile.Name}" HorizontalOptions="Start" FontSize="Medium" FontAttributes="Bold" TextColor="Black" Margin="20,5,0,0" />
-                                <Label Grid.Column="2" Text="{Binding Profile.Email}" HorizontalOptions="Start" FontSize="Small" TextColor="Black" Margin="-40,30,0,0" />
+                                <Label Grid.Column="2" Text="{Binding Profile.Email}" HorizontalOptions="Start" FontSize="Small" TextColor="Black" Margin="-92,30,0,0" />
 
                                 <Grid.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding NavigateToInfoCommand}" CommandParameter="{Binding .}" />

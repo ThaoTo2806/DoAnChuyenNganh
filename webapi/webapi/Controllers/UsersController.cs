@@ -213,7 +213,7 @@ namespace webapi.Controllers
 
         // GET: api/Users/profile
         [HttpGet("profile")]
-        public ActionResult<User> GetProfile()
+        public ActionResult<User_Customer> GetProfile()
         {
             var userIdBase64 = HttpContext.Session.GetString("UserID");
             if (string.IsNullOrEmpty(userIdBase64))
@@ -292,49 +292,78 @@ namespace webapi.Controllers
         }
 
 
-        //// PUT: api/Users/Update
-        //[HttpPut("Update")]
-        //public async Task<IActionResult> UpdateUserDetails([FromBody] UserUpdateRequest request)
-        //{
-        //    var userIdBase64 = HttpContext.Session.GetString("UserID");
-        //    if (string.IsNullOrEmpty(userIdBase64))
-        //    {
-        //        return Unauthorized("User is not logged in");
-        //    }
+        // PUT: api/Users/Update
+        [HttpPut("Update")]
+        public async Task<IActionResult> UpdateUserDetails([FromBody] UserUpdateRequest request)
+        {
+            var userIdBase64 = HttpContext.Session.GetString("UserID");
+            if (string.IsNullOrEmpty(userIdBase64))
+            {
+                return Unauthorized("User is not logged in");
+            }
 
-        //    var userIdBytes = Convert.FromBase64String(userIdBase64);
-        //    var userIdString = Encoding.UTF8.GetString(userIdBytes);
-        //    var userId = int.Parse(userIdString);
+            var userIdBytes = Convert.FromBase64String(userIdBase64);
+            var userIdString = Encoding.UTF8.GetString(userIdBytes);
+            var userId = int.Parse(userIdString);
 
 
-        //    var user = await _context.Users.FindAsync(userId);
+            var user = await _context.Users.FindAsync(userId);
 
-        //    if (user == null || user.IsDeleted == true)
-        //    {
-        //        return NotFound("User not found or is deleted");
-        //    }
+            if (user == null || user.IsDeleted == true)
+            {
+                return NotFound("User not found or is deleted");
+            }
 
-        //    user.Name = request.Name;
-        //    user.Email = request.Email;
-        //    user.Address = request.Address;
-        //    user.Phone = request.Phone;
-        //    user.Birth = request.Birth;
-        //    user.Gender = request.Gender;
-        //    user.Image = request.Image;
+            var customer = await _context.Customers.FirstOrDefaultAsync(c => c.IdUser == userId);
+            if (customer == null)
+            {
+                return NotFound("Customer associated with user not found");
+            }
 
-        //    try
-        //    {
-        //        _context.Entry(user).State = EntityState.Modified;
-        //        await _context.SaveChangesAsync();
-        //        SaveUserToXml(user);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return StatusCode(500, $"Error: {ex.Message}");
-        //    }
+            // Cập nhật các thuộc tính của User
+            user.Email = request.Email;
+            user.Address = request.Address;
+            user.Phone = request.Phone;
+            user.Birth = request.Birth;
+            user.Gender = request.Gender;
 
-        //    return Ok("User updated successfully");
-        //}
+            // Cập nhật các thuộc tính của Customer
+            customer.Name = request.Name;
+            customer.Image = request.Image;
+
+            try
+            {
+                _context.Entry(user).State = EntityState.Modified;
+                _context.Entry(customer).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                var userCustomer = new User_Customer
+                {
+                    IdUser = user.IdUser,
+                    Account = user.Account,
+                    Password = user.PassWord,
+                    Email = user.Email,
+                    Phone = user.Phone,
+                    Address = user.Address,
+                    Gender = user.Gender ?? false,
+                    Birth = user.Birth,
+                    IdRole = user.IdRole ?? 0,
+                    IsDeletedUser = user.IsDeleted ?? false,
+                    IdCustomer = customer.idCustomer,
+                    Name = customer.Name,
+                    Image = customer.Image,
+                    IsDeletedCustomer = customer.IsDeleted ?? false
+                };
+
+                SaveUserToXml(userCustomer);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error: {ex.Message}");
+            }
+
+            return Ok("User updated successfully");
+        }
 
         [HttpGet("regular-customers")]
         public async Task<ActionResult<IEnumerable<CustomerDto>>> GetRegularCustomers()

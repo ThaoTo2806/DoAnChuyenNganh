@@ -10,10 +10,10 @@ namespace QuanLyMaMoblie.Models
 {
     public class Member
     {
-        public int ID { get; set; }
+        public int IdUser { get; set; }
         public string Account { get; set; }
         public string PassWord { get; set; }
-        public bool? IdType { get; set; } = false;
+        public int IdRole { get; set; } = 2;
         public string Name { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
@@ -59,13 +59,13 @@ namespace QuanLyMaMoblie.Models
                         PropertyNamingPolicy = JsonNamingPolicy.CamelCase
                     });
 
-                    if (user != null && user.IdType == false && user.IsDeleted == false)
+                    if (user != null && user.IdRole == 2 && user.IsDeleted == false)
                     {
                         return true;
                     }
                     else
                     {
-                        Console.WriteLine($"User is either not a regular user or is deleted. IdType: {user?.IdType}, IsDeleted: {user?.IsDeleted}");
+                        Console.WriteLine($"User is either not a regular user or is deleted. IdType: {user?.IdRole}, IsDeleted: {user?.IsDeleted}");
                     }
                 }
                 else

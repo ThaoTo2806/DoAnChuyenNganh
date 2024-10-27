@@ -23,28 +23,22 @@ namespace QuanLyMaWinApp.Models
         public int? IdVersion { get; set; }
         public bool IsDeleted { get; set; }
         public string? Image { get; set; }
-        public string iconEdit { get; set; }
-        public string iconDelete { get; set; }
 
-        public ProductModel()
-        {
-            iconDelete = "delete.png";
-            iconEdit = "edit.png";
-        }
+        public ProductModel() { }
 
         private static readonly HttpClient _httpClient = new HttpClient { BaseAddress = new Uri("http://localhost:5134/") };
 
-        public static async Task<List<ProductModel>> GetProductsAsync()
+        public static async Task<List<ProductDetail>> GetProductsAsync()
         {
             try
             {
-                var response = await _httpClient.GetFromJsonAsync<List<ProductModel>>("api/Products");
-                return response ?? new List<ProductModel>();
+                var response = await _httpClient.GetFromJsonAsync<List<ProductDetail>>("api/Products");
+                return response ?? new List<ProductDetail>();
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"An error occurred while fetching Products: {ex.Message}");
-                return new List<ProductModel>();
+                return new List<ProductDetail>();
             }
         }
 

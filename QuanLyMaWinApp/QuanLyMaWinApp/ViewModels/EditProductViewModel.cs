@@ -14,7 +14,7 @@ namespace QuanLyMaWinApp.ViewModels
 {
     public class EditProductViewModel : ObservableObject
     {
-        private ProductModel _proModel;
+        private ProductDetail _proModel;
         private Dictionary<string, string> _categoryNameToIdMap = new Dictionary<string, string>();
 
         public string ID
@@ -151,7 +151,7 @@ namespace QuanLyMaWinApp.ViewModels
             SaveCommand = new AsyncRelayCommand(SaveExecute);
         }
 
-        public EditProductViewModel(ProductModel proModel) : this()
+        public EditProductViewModel(ProductDetail proModel) : this()
         {
             _proModel = proModel;
             _ = LoadCategoriesAsync(); // Call the asynchronous method

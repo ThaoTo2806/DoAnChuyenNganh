@@ -83,7 +83,7 @@
 
                                 <Label Text="Email:" FontSize="Small" VerticalOptions="Center" />
                                 <Frame Padding="0" Margin="5,5,5,10" WidthRequest="310">
-                                    <Entry Text="{Binding Email}" FontSize="Small" VerticalOptions="Center" Margin="10,0,0,0" TextColor="Gray"/>
+                                    <Entry Text="{Binding Email}" FontSize="Small" VerticalOptions="Center" Margin="5,0,0,0" TextColor="Gray"/>
                                 </Frame>
 
                                 <Label Text="Address:" FontSize="Small" VerticalOptions="Center" />

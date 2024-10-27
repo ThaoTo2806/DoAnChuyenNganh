@@ -5,7 +5,7 @@ using QuanLyMaWinApp.ViewModels;
 
 public partial class EditProductPage : ContentPage
 {
-	public EditProductPage(ProductModel productModel)
+	public EditProductPage(ProductDetail productModel)
 	{
 		InitializeComponent();
         BindingContext = new EditProductViewModel(productModel);
