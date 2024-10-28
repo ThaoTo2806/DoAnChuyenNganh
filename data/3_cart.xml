@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Cart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Items>
+    <CartItem>
+      <ProductId>10</ProductId>
+      <ProductName>Alpha II FT-IR Spectrometer</ProductName>
+      <image>product1.png</image>
+      <Price>196.36</Price>
+      <Quantity>2</Quantity>
+    </CartItem>
+  </Items>
+</Cart>

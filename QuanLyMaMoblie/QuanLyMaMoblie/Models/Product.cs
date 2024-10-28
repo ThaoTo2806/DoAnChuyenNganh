@@ -41,7 +41,7 @@ namespace QuanLyMaMoblie.Models
         {
         }
 
-        private static readonly HttpClient _httpClient = new HttpClient { BaseAddress = new Uri("http://192.168.1.24:5134/") };
+        private static readonly HttpClient _httpClient = new HttpClient { BaseAddress = new Uri("http://192.168.1.23:5134/") };
 
         public static async Task<List<Product>> GetProductsAsync()
         {

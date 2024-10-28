@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<User_Customer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IdUser>3</IdUser>
+  <Account>cay</Account>
+  <Password>1</Password>
+  <Email>letricuong08@gmail.com</Email>
+  <Phone>1111111111</Phone>
+  <Address>17B Tan Tru</Address>
+  <Gender>false</Gender>
+  <Birth>1996-07-25T00:00:00</Birth>
+  <IdRole>2</IdRole>
+  <IsDeletedUser>false</IsDeletedUser>
+  <IdCustomer>1</IdCustomer>
+  <Name>Nguyen Van A</Name>
+  <Image>avt1.png</Image>
+  <IsDeletedCustomer>false</IsDeletedCustomer>
+</User_Customer>

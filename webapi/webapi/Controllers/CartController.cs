@@ -18,7 +18,7 @@ namespace webapi.Controllers
     public class CartController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
-        private readonly string _cartDirectory = @"D:\HOCTAP\WPF\QLMaKichHoat\data";
+        private readonly string _cartDirectory = @"D:\HOCTAP\HK7\DoAn1Chi\DoAnChuyenNganh\data";
 
         public CartController(ApplicationDbContext context)
         {

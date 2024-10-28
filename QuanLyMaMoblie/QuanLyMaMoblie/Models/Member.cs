@@ -33,7 +33,7 @@ namespace QuanLyMaMoblie.Models
 
         public async Task<bool> DangNhapAsync(string account, string password)
         {
-            var url = "http://192.168.1.24:5134/api/Users/login-regular"; // Sử dụng địa chỉ IP của máy tính
+            var url = "http://192.168.1.23:5134/api/Users/login-regular"; // Sử dụng địa chỉ IP của máy tính
 
             var loginRequest = new
             {
@@ -97,7 +97,7 @@ namespace QuanLyMaMoblie.Models
 
         public async Task<bool> RegisterAsync(string name, string email, string account, string password, string phone)
         {
-            var url = "http://192.168.1.24:5134/api/Users/register";
+            var url = "http://192.168.1.23:5134/api/Users/register";
 
             var registerRequest = new
             {
@@ -157,7 +157,7 @@ namespace QuanLyMaMoblie.Models
 
         public async Task<Member> GetProfileAsync()
         {
-            var url = "http://192.168.1.24:5134/api/Users/profile";
+            var url = "http://192.168.1.23:5134/api/Users/profile";
 
             try
             {
@@ -205,7 +205,7 @@ namespace QuanLyMaMoblie.Models
 
         public async Task<bool> LogoutAsync()
         {
-            var url = "http://192.168.1.24:5134/api/Users/logout";
+            var url = "http://192.168.1.23:5134/api/Users/logout";
 
             try
             {
@@ -258,7 +258,7 @@ namespace QuanLyMaMoblie.Models
                 Image = image
             };
 
-            var url = "http://192.168.1.24:5134/api/Users/Update?id={id}";
+            var url = "http://192.168.1.23:5134/api/Users/Update?id={id}";
 
             var jsonContent = JsonSerializer.Serialize(updateUserRequest);
             var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
@@ -298,7 +298,7 @@ namespace QuanLyMaMoblie.Models
 
         public async Task<int> GetTotalQuantity()
         {
-            var url = "http://192.168.1.24:5134/api/Cart/total-quantity";
+            var url = "http://192.168.1.23:5134/api/Cart/total-quantity";
             try
             {
                 Console.WriteLine($"Sending GET request to {url}");
@@ -352,7 +352,7 @@ namespace QuanLyMaMoblie.Models
 
         public async Task<Cart> GetCartAsync()
         {
-            var url = "http://192.168.1.24:5134/api/Cart";
+            var url = "http://192.168.1.23:5134/api/Cart";
 
             try
             {
@@ -395,7 +395,7 @@ namespace QuanLyMaMoblie.Models
 
         public async Task<bool> IncrementQuantityAsync(string productId)
         {
-            var url = "http://192.168.1.24:5134/api/Cart/increment";
+            var url = "http://192.168.1.23:5134/api/Cart/increment";
 
             var request = new
             {
@@ -444,7 +444,7 @@ namespace QuanLyMaMoblie.Models
         }
         public async Task<bool> DecrementQuantityAsync(string productId)
         {
-            var url = "http://192.168.1.24:5134/api/Cart/decrement";
+            var url = "http://192.168.1.23:5134/api/Cart/decrement";
 
             var request = new
             {
@@ -494,7 +494,7 @@ namespace QuanLyMaMoblie.Models
 
         public async Task<bool> RemoveFromCartAsync(string productId)
         {
-            var url = "http://192.168.1.24:5134/api/Cart/remove";
+            var url = "http://192.168.1.23:5134/api/Cart/remove";
 
             var request = new
             {
@@ -543,7 +543,7 @@ namespace QuanLyMaMoblie.Models
         }
         public async Task<bool> AddToCartAsync(string productId, int quantity)
         {
-            var url = "http://192.168.1.24:5134/api/Cart/add";
+            var url = "http://192.168.1.23:5134/api/Cart/add";
 
             var request = new
             {
@@ -593,7 +593,7 @@ namespace QuanLyMaMoblie.Models
         }
         public async Task<OrderInfo> GetOrderInfoAsync()
         {
-            var url = "http://192.168.1.24:5134/api/Orders/order-info"; // Update the URL to match your API endpoint
+            var url = "http://192.168.1.23:5134/api/Orders/order-info"; // Update the URL to match your API endpoint
 
             try
             {
@@ -641,7 +641,7 @@ namespace QuanLyMaMoblie.Models
 
         public async Task<CreateOrderResponse> CreateOrderAsync(string deliveryAddress, string paymentStatus)
         {
-            var url = "http://192.168.1.24:5134/api/Orders/create-order";
+            var url = "http://192.168.1.23:5134/api/Orders/create-order";
 
             // Tạo đối tượng yêu cầu cho việc tạo đơn hàng
             var createOrderRequest = new CreateOrderRequest
@@ -706,7 +706,7 @@ namespace QuanLyMaMoblie.Models
         }
         public async Task<List<Order>> GetOrdersAsync()
         {
-            var url = "http://192.168.1.24:5134/api/Orders";
+            var url = "http://192.168.1.23:5134/api/Orders";
 
             try
             {
@@ -753,7 +753,7 @@ namespace QuanLyMaMoblie.Models
         }
         public async Task<List<ExpiredOrder>> GetExpritedCodeOrdersAsync()
         {
-            var url = "http://192.168.1.24:5134/api/Orders/expired-code-orders";
+            var url = "http://192.168.1.23:5134/api/Orders/expired-code-orders";
 
             try
             {
@@ -800,7 +800,7 @@ namespace QuanLyMaMoblie.Models
         }
         public async Task<UserOrderDetails> GetUserOrderDetailsAsync(int orderId)
         {
-            var url = $"http://192.168.1.24:5134/api/Orders/userorder-details?orderId={orderId}";
+            var url = $"http://192.168.1.23:5134/api/Orders/userorder-details?orderId={orderId}";
 
             try
             {
@@ -848,7 +848,7 @@ namespace QuanLyMaMoblie.Models
                 Console.WriteLine("ActivationRequest cannot be null.");
                 return false;
             }
-            var url = "http://192.168.1.24:5134/api/Orders/request-activation";
+            var url = "http://192.168.1.23:5134/api/Orders/request-activation";
 
             try
             {
@@ -895,7 +895,7 @@ namespace QuanLyMaMoblie.Models
 
         public async Task<bool> ForgotPassAsync(UpdatePasswordRequest request)
         {
-            var url = "http://192.168.1.24:5134/api/Users/update-password";
+            var url = "http://192.168.1.23:5134/api/Users/update-password";
 
             // Chuyển đổi đối tượng request thành JSON
             var jsonContent = JsonSerializer.Serialize(request);
