@@ -76,6 +76,7 @@
                                         </Frame.GestureRecognizers>
                                         <StackLayout>
                                             <Label Text="{Binding FirstProductName}" FontSize="Medium" TextColor="Black" FontAttributes="Bold"/>
+                                            <Label Text="{Binding FirstVersion, StringFormat='Version: {0}'}" FontSize="Medium" TextColor="Black" FontAttributes="Bold"/>
                                             <StackLayout Orientation="Horizontal">
                                                 <Label Text="{Binding InitiatedDate, StringFormat='{0:MM/dd/yyyy}'}" FontSize="Small" TextColor="Gray" FontAttributes="Bold"/>
                                                 <Label Text="  -  " FontSize="Small" TextColor="Gray" FontAttributes="Bold"/>

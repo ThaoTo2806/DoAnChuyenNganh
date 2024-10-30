@@ -47,9 +47,6 @@ namespace QuanLyMaMoblie.ViewModels
         private bool is8Selected;
 
         [ObservableProperty]
-        private bool is15Selected;
-
-        [ObservableProperty]
         private double price;
 
         public ICommand GoBackCommand { get; }
@@ -82,8 +79,7 @@ namespace QuanLyMaMoblie.ViewModels
                 RequestDay = DateTime.Now,
                 Periodic = Is1Selected ? 1 :
                            Is3Selected ? 3 :
-                           Is8Selected ? 8 :
-                           Is15Selected ? 15 : 0,
+                           Is8Selected ? 8 : 0,
                 Total = Price
             };
             try
@@ -144,7 +140,6 @@ namespace QuanLyMaMoblie.ViewModels
                     Price = 89.99;
                     Is3Selected = false;
                     Is8Selected = false;
-                    Is15Selected = false;
                 }
             }
             else if (e.PropertyName == nameof(Is3Selected))
@@ -154,7 +149,6 @@ namespace QuanLyMaMoblie.ViewModels
                     Price = 267.90;
                     Is1Selected = false;
                     Is8Selected = false;
-                    Is15Selected = false;
                 }
             }
             else if (e.PropertyName == nameof(Is8Selected))
@@ -164,17 +158,6 @@ namespace QuanLyMaMoblie.ViewModels
                     Price = 719.00;
                     Is1Selected = false;
                     Is3Selected = false;
-                    Is15Selected = false;
-                }
-            }
-            else if (e.PropertyName == nameof(Is15Selected))
-            {
-                if (Is15Selected)
-                {
-                    Price = 1349.00;
-                    Is1Selected = false;
-                    Is3Selected = false;
-                    Is8Selected = false;
                 }
             }
         }

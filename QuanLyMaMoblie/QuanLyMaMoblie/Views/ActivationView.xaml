@@ -90,10 +90,9 @@
                     <StackLayout Orientation="Horizontal">
                         <Label Text="Period:" FontSize="16" TextColor="Gray"/>
                         <StackLayout Orientation="Horizontal" Spacing="10" Margin="-50,20,0,10">
-                            <RadioButton Content="1 year" GroupName="Periods" IsChecked="{Binding Is1Selected}" FontSize="16" />
-                            <RadioButton Content="3 years" GroupName="Periods" IsChecked="{Binding Is3Selected}" FontSize="16" />
-                            <RadioButton Content="8 years" GroupName="Periods" IsChecked="{Binding Is8Selected}" FontSize="16" />
-                            <RadioButton Content="15 years" GroupName="Periods" IsChecked="{Binding Is15Selected}" FontSize="16" />
+                            <RadioButton Content="6 months" GroupName="Periods" IsChecked="{Binding Is1Selected}" FontSize="16" />
+                            <RadioButton Content="1 year" GroupName="Periods" IsChecked="{Binding Is3Selected}" FontSize="16" />
+                            <RadioButton Content="2 years" GroupName="Periods" IsChecked="{Binding Is8Selected}" FontSize="16" />
                         </StackLayout>
                     </StackLayout>
 

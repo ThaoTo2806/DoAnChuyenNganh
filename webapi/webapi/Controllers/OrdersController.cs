@@ -562,7 +562,7 @@ namespace webapi.Controllers
                                 {
                                     orderDetails.Order = new OrderDetails
                                     {
-                                        OrderId = reader.GetInt32("IDOrder"),
+                                        OrderId = reader.GetInt32("IdOrder"),
                                         UserName = reader.GetString("Name"),
                                         Phone = reader.GetString("Phone"),
                                         DeliveryAddress = reader.GetString("DCGH"),
@@ -584,8 +584,10 @@ namespace webapi.Controllers
                                 {
                                     ProductImage = reader.GetString("ProductImage"),
                                     ProductName = reader.GetString("ProductName"),
-                                    Quantity = reader.GetInt32("SLSP"),
-                                    ProductPrice = reader.GetDecimal("ProductPrice")
+                                    ProductVersion = reader.GetString("ProductVersion"),
+                                    Quantity = reader.GetInt32("Amount"),
+                                    ProductPrice = reader.GetDouble("ProductPrice"),
+                                    VersionPrice = reader.GetDouble("VersionPrice")
                                 });
                             }
 
@@ -642,6 +644,7 @@ namespace webapi.Controllers
                                     OrderID = reader.GetInt32("OrderID"),
                                     FirstImage = reader.GetString("FirstImage"),
                                     FirstProductName = reader.GetString("FirstProductName"),
+                                    FirstVersion = reader.GetString("FirstVersion"),
                                     InitiatedDate = reader.GetDateTime("InitiatedDate"),
                                     ExpiredDate = reader.GetDateTime("ExpiredDate"),
                                     CStatus = reader.GetString("CStatus")

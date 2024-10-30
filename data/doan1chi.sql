@@ -592,6 +592,20 @@ create table ActivationCode(
 ALTER TABLE ActivationCode
 MODIFY COLUMN Status ENUM('Active', 'Expired') DEFAULT 'Active';
 
+DELIMITER $$
+
+CREATE TRIGGER CheckExpirationDate
+BEFORE UPDATE ON ActivationCode
+FOR EACH ROW
+BEGIN
+    IF NEW.NgayHetHan = NEW.NgayKhoiTao THEN
+        SET NEW.Status = 'Expired';
+    END IF;
+END$$
+
+DELIMITER ;
+
+
 DELIMITER //
 
 CREATE TRIGGER UpdatePriceBeforeInsert
@@ -1015,8 +1029,83 @@ BEGIN
         o.ID DESC;
 END$$
 
+DELIMITER $$
+CREATE PROCEDURE `GetOrderDetails` (IN `idorder` INT)   BEGIN
+    SELECT
+        od.IdOrder,
+        p.image AS ProductImage,
+        p.Name AS ProductName,
+        od.Amount,
+        p.Price AS ProductPrice,
+        pv.Version AS ProductVersion,
+        pv.Price AS VersionPrice,
+        c.Name,
+        u.Phone,
+        o.DCGH,
+        o.NgayDat,
+        o.NgayGiao,
+        o.SLTong,
+        o.TongTien,
+        o.ThanhToanStatus,
+        o.DonHangStatus,
+        CASE
+            WHEN o.DonHangStatus IN ('Confirmed', 'Delivered') THEN ac.ActiCode
+            ELSE NULL
+        END AS ActiCode,
+        CASE
+            WHEN o.DonHangStatus IN ('Confirmed', 'Delivered') THEN ac.DinhKy
+            ELSE 1
+        END AS DinhKy,
+        CASE
+            WHEN o.DonHangStatus IN ('Confirmed', 'Delivered') THEN ac.Price
+            ELSE 89.99
+        END AS ActivationPrice,
+        CASE
+            WHEN o.DonHangStatus IN ('Confirmed', 'Delivered') THEN ac.NgayKhoiTao
+            ELSE NULL
+        END AS NgayKhoiTao,
+        CASE
+            WHEN o.DonHangStatus IN ('Confirmed', 'Delivered') THEN ac.NgayHetHan
+            ELSE NULL
+        END AS NgayHetHan
+    FROM
+        orders o
+        JOIN orderdetail od ON o.ID = od.IdOrder
+        JOIN product p ON od.idProduct = p.ID
+        JOIN user u ON o.IdUser = u.idUser
+        JOIN customer c ON u.idUser = c.IdUser
+        LEFT JOIN productversion pv ON p.IdVersion = pv.ID
+        LEFT JOIN activationcode ac ON od.IdActiveCode = ac.ID
+    WHERE
+        o.ID = idorder;
+END$$
 DELIMITER ;
 
+DELIMITER $$
+CREATE PROCEDURE `GetExpiredCodeByUserId` (IN `userId` INT)   BEGIN
+    SELECT
+    o.ID AS OrderID,
+    p.image AS FirstImage,
+    p.Name AS FirstProductName,
+    pv.Version AS FirstVersion,
+    a.NgayKhoiTao AS InitiatedDate,
+    a.NgayHetHan AS ExpiredDate,
+    a.Status AS CStatus
+FROM
+    orders o
+    JOIN orderdetail od ON o.ID = od.IdOrder
+    JOIN activationcode a ON od.IdActiveCode = a.ID
+    JOIN product p ON od.idProduct = p.ID
+    JOIN productversion pv ON p.IdVersion = pv.ID
+WHERE
+    o.IdUser = userId
+    AND a.Status = 'Expired'
+ORDER BY
+    o.ID;
+
+END$$
+
+DELIMITER ;
 
 INSERT INTO OrderDetail (IdOrder, IdActiveCode, IdProduct, Amount, priceCode, priceProduct)
 VALUES (55, 19, '1', 3, 89.99, 190.5);

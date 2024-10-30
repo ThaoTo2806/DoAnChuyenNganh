@@ -7,8 +7,20 @@
       "RelativeMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|solutionrelative:quanlymamoblie\\models\\member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|d:\\hoctap\\hk7\\doan1chi\\doanchuyennganh\\quanlymamoblie\\quanlymamoblie\\viewmodels\\allordersviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|solutionrelative:quanlymamoblie\\viewmodels\\allordersviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|d:\\hoctap\\hk7\\doan1chi\\doanchuyennganh\\quanlymamoblie\\quanlymamoblie\\viewmodels\\activationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|solutionrelative:quanlymamoblie\\viewmodels\\activationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|d:\\hoctap\\hk7\\doan1chi\\doanchuyennganh\\quanlymamoblie\\quanlymamoblie\\views\\activationview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|solutionrelative:quanlymamoblie\\views\\activationview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|d:\\hoctap\\hk7\\doan1chi\\doanchuyennganh\\quanlymamoblie\\quanlymamoblie\\viewmodels\\mailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|solutionrelative:quanlymamoblie\\viewmodels\\mailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|d:\\hoctap\\hk7\\doan1chi\\doanchuyennganh\\quanlymamoblie\\quanlymamoblie\\views\\mailview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|solutionrelative:quanlymamoblie\\views\\mailview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|d:\\hoctap\\hk7\\doan1chi\\doanchuyennganh\\quanlymamoblie\\quanlymamoblie\\views\\allordersview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -34,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Bookmark",
@@ -74,28 +86,67 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ActivationViewModel.cs",
+              "DocumentMoniker": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\ViewModels\\ActivationViewModel.cs",
+              "RelativeDocumentMoniker": "QuanLyMaMoblie\\ViewModels\\ActivationViewModel.cs",
+              "ToolTip": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\ViewModels\\ActivationViewModel.cs",
+              "RelativeToolTip": "QuanLyMaMoblie\\ViewModels\\ActivationViewModel.cs",
+              "ViewState": "AQIAADsAAAAAAAAAAAAYwFcAAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T08:06:28.238Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "ActivationView.xaml",
+              "DocumentMoniker": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\Views\\ActivationView.xaml",
+              "RelativeDocumentMoniker": "QuanLyMaMoblie\\Views\\ActivationView.xaml",
+              "ToolTip": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\Views\\ActivationView.xaml",
+              "RelativeToolTip": "QuanLyMaMoblie\\Views\\ActivationView.xaml",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAAAF8AAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-30T08:05:21.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "AllOrdersView.xaml",
               "DocumentMoniker": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\Views\\AllOrdersView.xaml",
               "RelativeDocumentMoniker": "QuanLyMaMoblie\\Views\\AllOrdersView.xaml",
               "ToolTip": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\Views\\AllOrdersView.xaml",
               "RelativeToolTip": "QuanLyMaMoblie\\Views\\AllOrdersView.xaml",
-              "ViewState": "AQIAADwAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAAAFQAAABOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-30T06:43:07.545Z",
+              "WhenOpened": "2024-10-30T08:02:46.673Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AllOrdersViewModel.cs",
-              "DocumentMoniker": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\ViewModels\\AllOrdersViewModel.cs",
-              "RelativeDocumentMoniker": "QuanLyMaMoblie\\ViewModels\\AllOrdersViewModel.cs",
-              "ToolTip": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\ViewModels\\AllOrdersViewModel.cs",
-              "RelativeToolTip": "QuanLyMaMoblie\\ViewModels\\AllOrdersViewModel.cs",
-              "ViewState": "AQIAADgAAAAAAAAAAAAnwE4AAAA5AAAA",
+              "DocumentIndex": 3,
+              "Title": "MailViewModel.cs",
+              "DocumentMoniker": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\ViewModels\\MailViewModel.cs",
+              "RelativeDocumentMoniker": "QuanLyMaMoblie\\ViewModels\\MailViewModel.cs",
+              "ToolTip": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\ViewModels\\MailViewModel.cs",
+              "RelativeToolTip": "QuanLyMaMoblie\\ViewModels\\MailViewModel.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAArwEUAAABMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T06:42:45.056Z",
+              "WhenOpened": "2024-10-30T07:21:26.316Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MailView.xaml",
+              "DocumentMoniker": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\Views\\MailView.xaml",
+              "RelativeDocumentMoniker": "QuanLyMaMoblie\\Views\\MailView.xaml",
+              "ToolTip": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\Views\\MailView.xaml",
+              "RelativeToolTip": "QuanLyMaMoblie\\Views\\MailView.xaml",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAAAE4AAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-30T07:21:05.786Z",
               "EditorCaption": ""
             },
             {
@@ -106,14 +157,14 @@
               "RelativeDocumentMoniker": "QuanLyMaMoblie\\Models\\Member.cs",
               "ToolTip": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\Models\\Member.cs",
               "RelativeToolTip": "QuanLyMaMoblie\\Models\\Member.cs",
-              "ViewState": "AQIAALECAAAAAAAAAIAzwMQCAAA6AAAA",
+              "ViewState": "AQIAADsDAAAAAAAAAAAhwFIDAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-27T06:25:39.827Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "IndexViewModel.cs",
               "DocumentMoniker": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\ViewModels\\IndexViewModel.cs",
               "RelativeDocumentMoniker": "QuanLyMaMoblie\\ViewModels\\IndexViewModel.cs",
@@ -126,7 +177,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Product.cs",
               "DocumentMoniker": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\Models\\Product.cs",
               "RelativeDocumentMoniker": "QuanLyMaMoblie\\Models\\Product.cs",
@@ -138,7 +189,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "InfoProductViewModel.cs",
               "DocumentMoniker": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\ViewModels\\InfoProductViewModel.cs",
               "RelativeDocumentMoniker": "QuanLyMaMoblie\\ViewModels\\InfoProductViewModel.cs",

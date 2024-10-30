@@ -49,9 +49,6 @@
         <member name="P:QuanLyMaMoblie.ViewModels.ActivationViewModel.Is8Selected">
             <inheritdoc cref="F:QuanLyMaMoblie.ViewModels.ActivationViewModel.is8Selected"/>
         </member>
-        <member name="P:QuanLyMaMoblie.ViewModels.ActivationViewModel.Is15Selected">
-            <inheritdoc cref="F:QuanLyMaMoblie.ViewModels.ActivationViewModel.is15Selected"/>
-        </member>
         <member name="P:QuanLyMaMoblie.ViewModels.ActivationViewModel.Price">
             <inheritdoc cref="F:QuanLyMaMoblie.ViewModels.ActivationViewModel.price"/>
         </member>

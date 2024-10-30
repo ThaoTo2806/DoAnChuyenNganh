@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QuanLyMaMoblie")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+91bd92e73cd84015a1a6d152b0a1f0d2a06d060a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+4e0b51286a023120fb12d09d57665fc103542274")]
 [assembly: System.Reflection.AssemblyProductAttribute("QuanLyMaMoblie")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QuanLyMaMoblie")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

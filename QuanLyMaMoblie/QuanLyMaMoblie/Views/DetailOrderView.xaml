@@ -119,6 +119,14 @@
                                                 <StackLayout Margin="10,0,0,0">
                                                     <Label Text="{Binding ProductName}" FontSize="Medium"/>
                                                     <StackLayout Orientation="Horizontal" Margin="0">
+                                                        <Label Text="Version: " FontSize="Small"/>
+                                                        <Label Text="{Binding ProductVersion}" FontSize="Small" TextColor="Gray"/>
+                                                    </StackLayout>
+                                                    <StackLayout Orientation="Horizontal" Margin="0">
+                                                        <Label Text="Version Price: " FontSize="Small"/>
+                                                        <Label Text="{Binding VersionPrice, StringFormat='{0:F2}'}" FontSize="Small" TextColor="Gray"/>
+                                                    </StackLayout>
+                                                    <StackLayout Orientation="Horizontal" Margin="0">
                                                         <Label Text="Quantity: " FontSize="Small"/>
                                                         <Label Text="{Binding Quantity}" FontSize="Small" TextColor="Gray"/>
                                                     </StackLayout>
