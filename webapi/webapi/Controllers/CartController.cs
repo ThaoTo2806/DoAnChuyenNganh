@@ -106,6 +106,7 @@ namespace webapi.Controllers
                 var userId = int.Parse(userIdString);
 
                 var product = await _context.Products.FindAsync(request.ProductId);
+                var version = await _context.ProductVersions.FindAsync(product.IdVersion);
 
                 if (product == null || product.IsDeleted)
                 {
@@ -127,7 +128,9 @@ namespace webapi.Controllers
                         ProductName = product.Name,
                         image = product.Image,
                         Price = product.Price,
-                        Quantity = request.Quantity
+                        Quantity = request.Quantity,
+                        tenVersion = version.Version,
+                        giaVersion = version.Price
                     });
                 }
 

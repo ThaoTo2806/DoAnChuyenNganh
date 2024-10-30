@@ -153,7 +153,9 @@ namespace webapi.Controllers
                         var productData = cart.Items.Select(item => new
                         {
                             IdProduct = item.ProductId,
-                            Quantity = item.Quantity
+                            Amount = item.Quantity,
+                            priceCode = 89.99,
+                            priceProduct = item.Price
                         }).ToArray();
 
                         // Gọi stored procedure CreateActiveCode
@@ -162,7 +164,7 @@ namespace webapi.Controllers
                             createActiveCodeCommand.CommandType = System.Data.CommandType.StoredProcedure;
 
                             // Tham số đầu vào cho stored procedure
-                            int dinhKyValue = 1; // Thay đổi giá trị này theo nhu cầu (Change this value as needed)
+                            int dinhKyValue = 6; // Thay đổi giá trị này theo nhu cầu (Change this value as needed)
                             createActiveCodeCommand.Parameters.AddWithValue("@p_DinhKy", dinhKyValue);
 
                             // Các tham số OUT cho stored procedure
@@ -171,7 +173,6 @@ namespace webapi.Controllers
                             createActiveCodeCommand.Parameters.AddWithValue("@p_Status", DBNull.Value).Direction = System.Data.ParameterDirection.Output;
                             createActiveCodeCommand.Parameters.AddWithValue("@p_NgayKhoiTao", DBNull.Value).Direction = System.Data.ParameterDirection.Output;
                             createActiveCodeCommand.Parameters.AddWithValue("@p_NgayHetHan", DBNull.Value).Direction = System.Data.ParameterDirection.Output;
-                            createActiveCodeCommand.Parameters.AddWithValue("@p_NgayCapNhat", DBNull.Value).Direction = System.Data.ParameterDirection.Output;
                             createActiveCodeCommand.Parameters.AddWithValue("@p_Price", DBNull.Value).Direction = System.Data.ParameterDirection.Output;
 
                             // Thực hiện stored procedure
@@ -182,7 +183,6 @@ namespace webapi.Controllers
                             status = createActiveCodeCommand.Parameters["@p_Status"].Value.ToString();
                             creationDate = Convert.ToDateTime(createActiveCodeCommand.Parameters["@p_NgayKhoiTao"].Value);
                             expiryDate = Convert.ToDateTime(createActiveCodeCommand.Parameters["@p_NgayHetHan"].Value);
-                            updateDate = Convert.ToDateTime(createActiveCodeCommand.Parameters["@p_NgayCapNhat"].Value);
                             price = Convert.ToDecimal(createActiveCodeCommand.Parameters["@p_Price"].Value);
                         }
 
@@ -255,26 +255,19 @@ namespace webapi.Controllers
                     return NotFound("User information not found");
                 }
 
-                User user;
+                User_Customer user;
                 try
                 {
-                    var xmlSerializer = new XmlSerializer(typeof(User));
+                    var xmlSerializer = new XmlSerializer(typeof(User_Customer));
                     using (var reader = new StreamReader(userXmlPath))
                     {
-                        user = (User)xmlSerializer.Deserialize(reader);
+                        user = (User_Customer)xmlSerializer.Deserialize(reader);
                     }
                 }
                 catch (Exception ex)
                 {
                     _logger.LogError(ex, $"Error loading user information from XML: {ex.Message}");
                     return StatusCode(StatusCodes.Status500InternalServerError, $"Error loading user information from XML: {ex.Message}");
-                }
-
-                // Tìm kiếm Customer liên kết với User trong cơ sở dữ liệu
-                var customer = await _context.Customers.FirstOrDefaultAsync(c => c.IdUser == userId);
-                if (customer == null || customer.IsDeleted == true)
-                {
-                    return NotFound("Customer associated with user not found or is deleted");
                 }
 
                 // Load cart từ file XML
@@ -290,12 +283,12 @@ namespace webapi.Controllers
 
                 var orderInformation = new OrderInformation
                 {
-                    Name = customer.Name,
+                    Name = user.Name,
                     Phone = user.Phone,
                     Address = user.Address,
                     CartItems = cart.Items,
                     TotalPrice = totalPrice,
-                    ActivationCodeInfo = $"Periodic: 1 year, Price: $89.99 x {cart.TotalQuantity}"
+                    ActivationCodeInfo = $"Periodic: 6 months, Price: $89.99 x {cart.TotalQuantity}"
                 };
 
                 return Ok(orderInformation);

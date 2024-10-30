@@ -1,19 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Cart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Items>
-    <CartItem>
-      <ProductId>12</ProductId>
-      <ProductName>Nexera X2 HPLC System</ProductName>
-      <image>product1.png</image>
-      <Price>769.45</Price>
-      <Quantity>2</Quantity>
-    </CartItem>
-    <CartItem>
-      <ProductId>13</ProductId>
-      <ProductName>InfinityLab LC Series</ProductName>
-      <image>product1.png</image>
-      <Price>963.47</Price>
-      <Quantity>2</Quantity>
-    </CartItem>
-  </Items>
+  <Items />
 </Cart>

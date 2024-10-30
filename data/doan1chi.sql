@@ -795,7 +795,7 @@ BEGIN
     GROUP_CONCAT(DISTINCT p.Price) AS GSP,
     GROUP_CONCAT(DISTINCT v.Version) AS Versions,
     SUM(v.Price) AS TotalVersionPrice, -- Tổng giá phiên bản
-    SUM(p.Price * od.Amount) + SUM(v.Price) + a.Price AS TongTien,
+    o.TongTien AS TongTien,
     o.DonHangStatus
 FROM `orders` o
 LEFT JOIN `orderdetail` od ON o.ID = od.IdOrder
@@ -816,7 +816,6 @@ GROUP BY
 END$$
 
 DELIMITER ;
-
 
 DELIMITER $$
 
@@ -855,6 +854,168 @@ END$$
 
 DELIMITER ;
 
+DELIMITER $$
+
+CREATE PROCEDURE `CreateOrder` (
+    IN `p_IdUser` INT, 
+    IN `p_DCGH` VARCHAR(255), 
+    IN `p_ThanhToanStatus` VARCHAR(10), 
+    IN `p_TotalQuantity` INT, 
+    IN `p_TotalPrice` DECIMAL(10,2), 
+    OUT `p_OrderId` INT
+) 
+BEGIN
+    DECLARE v_DonHangStatus VARCHAR(10);
+
+    -- Set the order status based on the payment status
+    IF p_ThanhToanStatus = 'Napas' THEN
+        SET v_DonHangStatus = 'Confirmed';
+    ELSEIF p_ThanhToanStatus = 'Credit' THEN
+        SET v_DonHangStatus = 'Processing';
+    END IF;
+
+    INSERT INTO Orders (IdUser, DCGH, NgayDat, NgayGiao, ThanhToanStatus, DonHangStatus, SLTong, TongTien)
+    VALUES (p_IdUser, p_DCGH, CURDATE(), DATE_ADD(CURDATE(), INTERVAL 7 DAY), p_ThanhToanStatus, v_DonHangStatus, p_TotalQuantity, p_TotalPrice);
+
+    SET p_OrderId = LAST_INSERT_ID();
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CreateActiveCode` (
+    IN `p_DinhKy` INT, 
+    OUT `p_ActiCodeID` INT, 
+    OUT `p_ActiCode` VARCHAR(12), 
+    OUT `p_Status` VARCHAR(10), 
+    OUT `p_NgayKhoiTao` DATE, 
+    OUT `p_NgayHetHan` DATE,  
+    OUT `p_Price` DECIMAL(10,2)
+) 
+BEGIN
+    DECLARE v_ActiCode VARCHAR(12);
+    DECLARE v_Status VARCHAR(10) DEFAULT 'Active';
+    DECLARE v_NgayKhoiTao DATE;
+    DECLARE v_NgayHetHan DATE;
+    DECLARE v_Price DECIMAL(10, 2);
+    DECLARE v_ActiCodeID INT;
+
+    -- Tạo mã kích hoạt ngẫu nhiên 12 ký tự
+    SET v_ActiCode = SUBSTRING(MD5(RAND()), 1, 12);
+    
+    -- Ngày khởi tạo là ngày hiện tại
+    SET v_NgayKhoiTao = CURDATE();
+    
+    -- Tính toán Ngày hết hạn và giá dựa trên Định kỳ
+    IF p_DinhKy = 6 THEN
+        SET v_NgayHetHan = DATE_ADD(v_NgayKhoiTao, INTERVAL 6 MONTH);
+        SET v_Price = 89.99;
+    ELSEIF p_DinhKy = 12 THEN
+        SET v_NgayHetHan = DATE_ADD(v_NgayKhoiTao, INTERVAL 1 YEAR);
+        SET v_Price = 267.90;
+    ELSEIF p_DinhKy = 24 THEN
+        SET v_NgayHetHan = DATE_ADD(v_NgayKhoiTao, INTERVAL 2 YEAR);
+        SET v_Price = 719.00;
+    ELSE
+        -- Nếu Định kỳ không hợp lệ, gán giá trị mặc định
+        SET v_NgayHetHan = NULL;
+        SET v_Price = 0.00;
+    END IF;
+
+    -- Chèn bản ghi vào bảng activationcode
+    INSERT INTO activationcode (ActiCode, Status, NgayKhoiTao, NgayHetHan, DinhKy, Price)
+    VALUES (v_ActiCode, v_Status, v_NgayKhoiTao, v_NgayHetHan, CAST(p_DinhKy AS CHAR), v_Price);
+
+    -- Lấy ID của bản ghi vừa chèn
+    SET v_ActiCodeID = LAST_INSERT_ID();
+
+    -- Cập nhật các tham số đầu ra
+    SET p_ActiCodeID = v_ActiCodeID;
+    SET p_ActiCode = v_ActiCode;
+    SET p_Status = v_Status;
+    SET p_NgayKhoiTao = v_NgayKhoiTao;
+    SET p_NgayHetHan = v_NgayHetHan;
+    SET p_Price = v_Price;
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE PROCEDURE `CreateOrderDetail` (IN `p_OrderId` INT, IN `v_ActiCode` INT, IN `p_ProductData` JSON) 
+BEGIN
+    DECLARE v_IdProduct VARCHAR(255);
+    DECLARE v_Quantity INT;
+    DECLARE v_priceCode DOUBLE;
+    DECLARE v_priceProduct DOUBLE;
+    DECLARE v_ProductSL INT;
+
+    DECLARE idx INT DEFAULT 0;
+    DECLARE arrLength INT;
+
+    -- Lấy độ dài của mảng JSON
+    SET arrLength = JSON_LENGTH(p_ProductData);
+    
+    read_loop: LOOP
+        -- Thoát khỏi vòng lặp nếu đã đọc đủ các sản phẩm
+        IF idx >= arrLength THEN
+            LEAVE read_loop;
+        END IF;
+
+        -- Trích xuất ID sản phẩm và số lượng từ mảng JSON
+        SET v_IdProduct = JSON_UNQUOTE(JSON_EXTRACT(p_ProductData, CONCAT('$[', idx, '].IdProduct')));
+        SET v_Quantity = JSON_EXTRACT(p_ProductData, CONCAT('$[', idx, '].Amount'));
+        SET v_priceCode = JSON_UNQUOTE(JSON_EXTRACT(p_ProductData, CONCAT('$[', idx, '].priceCode')));
+        SET v_priceProduct = JSON_UNQUOTE(JSON_EXTRACT(p_ProductData, CONCAT('$[', idx, '].priceProduct'))); 
+
+        -- Chèn chi tiết đơn hàng
+        INSERT INTO OrderDetail (IdOrder, IdActiveCode, idProduct, Amount, priceCode, priceProduct)
+        VALUES (p_OrderId, v_ActiCode, v_IdProduct, v_Quantity, v_priceCode, v_priceProduct);
+
+        -- Cập nhật số lượng tồn kho (SL) trong bảng Product
+        -- Lấy số lượng tồn kho hiện tại
+        SELECT SL INTO v_ProductSL FROM Product WHERE ID = v_IdProduct;
+		
+        -- Cập nhật số lượng tồn kho
+        UPDATE Product
+        SET SL = SL - v_Quantity
+        WHERE ID = v_IdProduct;
+
+        SET idx = idx + 1;
+    END LOOP;
+
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetOrderDetailsByUserId` (IN `userId` INT)
+BEGIN
+    SELECT
+        o.ID AS OrderID,
+        p.image AS FirstImage,
+        p.Name AS FirstProductName,
+        o.NgayDat AS OrderDate,
+        o.NgayGiao AS DeliveryDate,
+        o.DonHangStatus AS OrderStatus
+    FROM
+        orders o
+        JOIN orderdetail od ON o.ID = od.IdOrder
+        JOIN product p ON od.idProduct = p.ID
+    WHERE
+        o.IdUser = userId
+        AND od.ID = (
+            SELECT MIN(od2.ID)
+            FROM orderdetail od2
+            WHERE od2.IdOrder = o.ID
+        )
+    ORDER BY
+        o.ID DESC;
+END$$
+
+DELIMITER ;
 
 
 INSERT INTO OrderDetail (IdOrder, IdActiveCode, IdProduct, Amount, priceCode, priceProduct)

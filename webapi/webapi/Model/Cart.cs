@@ -7,7 +7,9 @@
         public string image {  get; set; }
         public double Price { get; set; }
         public int Quantity { get; set; }
-        public double TotalPrice => Price * Quantity;
+        public string tenVersion { get; set; }
+        public double giaVersion { get; set; }
+        public double TotalPrice => ((Price * Quantity) + (giaVersion * Quantity));
     }
 
     public class Cart

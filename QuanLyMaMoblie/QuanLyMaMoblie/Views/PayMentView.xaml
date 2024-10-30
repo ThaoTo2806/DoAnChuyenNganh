@@ -68,6 +68,8 @@
                                         <StackLayout>
                                             <Label Text="{Binding ProductName}" FontSize="16" Margin="10,0,0,0"/>
                                             <Label Text="{Binding Price, StringFormat='Price: {0:C}'}" FontSize="16" Margin="10,0,0,0"/>
+                                            <Label Text="{Binding tenVersion, StringFormat='Version: {0}'}" FontSize="16" Margin="10,0,0,0"/>
+                                            <Label Text="{Binding giaVersion, StringFormat='Price: {0:C}'}" FontSize="16" Margin="10,0,0,0"/>
                                             <Label Text="{Binding Quantity, StringFormat='Quantity: {0}'}" FontSize="16" Margin="10,0,0,0"/>
                                         </StackLayout>
                                     </StackLayout>

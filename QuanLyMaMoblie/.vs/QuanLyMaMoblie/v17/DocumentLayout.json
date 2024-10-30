@@ -7,27 +7,23 @@
       "RelativeMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|solutionrelative:quanlymamoblie\\models\\member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|d:\\hoctap\\hk7\\doan1chi\\doanchuyennganh\\quanlymamoblie\\quanlymamoblie\\viewmodels\\cartviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|solutionrelative:quanlymamoblie\\viewmodels\\cartviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|d:\\hoctap\\hk7\\doan1chi\\doanchuyennganh\\quanlymamoblie\\quanlymamoblie\\viewmodels\\allordersviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|solutionrelative:quanlymamoblie\\viewmodels\\allordersviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|d:\\hoctap\\hk7\\doan1chi\\doanchuyennganh\\quanlymamoblie\\quanlymamoblie\\views\\paymentview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|solutionrelative:quanlymamoblie\\views\\paymentview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|d:\\hoctap\\hk7\\doan1chi\\doanchuyennganh\\quanlymamoblie\\quanlymamoblie\\views\\cartview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|solutionrelative:quanlymamoblie\\views\\cartview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|d:\\hoctap\\hk7\\doan1chi\\doanchuyennganh\\quanlymamoblie\\quanlymamoblie\\views\\allordersview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|solutionrelative:quanlymamoblie\\views\\allordersview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|d:\\hoctap\\hk7\\doan1chi\\doanchuyennganh\\quanlymamoblie\\quanlymamoblie\\viewmodels\\indexviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|solutionrelative:quanlymamoblie\\viewmodels\\indexviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|d:\\hoctap\\hk7\\doan1chi\\doanchuyennganh\\quanlymamoblie\\quanlymamoblie\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\quanlymamoblie\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|solutionrelative:quanlymamoblie\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|d:\\hoctap\\hk7\\doan1chi\\doanchuyennganh\\quanlymamoblie\\quanlymamoblie\\viewmodels\\infoproductviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\quanlymamoblie\\viewmodels\\infoproductviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2860A7EE-B65E-45A8-A69C-ED14D246176F}|QuanLyMaMoblie\\QuanLyMaMoblie.csproj|solutionrelative:quanlymamoblie\\viewmodels\\infoproductviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -38,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 15,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -79,79 +75,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "PayMentView.xaml",
-              "DocumentMoniker": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\Views\\PayMentView.xaml",
-              "RelativeDocumentMoniker": "QuanLyMaMoblie\\Views\\PayMentView.xaml",
-              "ToolTip": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\Views\\PayMentView.xaml",
-              "RelativeToolTip": "QuanLyMaMoblie\\Views\\PayMentView.xaml",
-              "ViewState": "AQIAAD8AAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "AllOrdersView.xaml",
+              "DocumentMoniker": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\Views\\AllOrdersView.xaml",
+              "RelativeDocumentMoniker": "QuanLyMaMoblie\\Views\\AllOrdersView.xaml",
+              "ToolTip": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\Views\\AllOrdersView.xaml",
+              "RelativeToolTip": "QuanLyMaMoblie\\Views\\AllOrdersView.xaml",
+              "ViewState": "AQIAADwAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-28T15:19:40.499Z",
+              "WhenOpened": "2024-10-30T06:43:07.545Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CartViewModel.cs",
-              "DocumentMoniker": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\ViewModels\\CartViewModel.cs",
-              "RelativeDocumentMoniker": "QuanLyMaMoblie\\ViewModels\\CartViewModel.cs",
-              "ToolTip": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\ViewModels\\CartViewModel.cs",
-              "RelativeToolTip": "QuanLyMaMoblie\\ViewModels\\CartViewModel.cs",
-              "ViewState": "AQIAAEgAAAAAAAAAAAAqwFwAAABXAAAA",
+              "Title": "AllOrdersViewModel.cs",
+              "DocumentMoniker": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\ViewModels\\AllOrdersViewModel.cs",
+              "RelativeDocumentMoniker": "QuanLyMaMoblie\\ViewModels\\AllOrdersViewModel.cs",
+              "ToolTip": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\ViewModels\\AllOrdersViewModel.cs",
+              "RelativeToolTip": "QuanLyMaMoblie\\ViewModels\\AllOrdersViewModel.cs",
+              "ViewState": "AQIAADgAAAAAAAAAAAAnwE4AAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T15:10:23.483Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CartView.xaml",
-              "DocumentMoniker": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\Views\\CartView.xaml",
-              "RelativeDocumentMoniker": "QuanLyMaMoblie\\Views\\CartView.xaml",
-              "ToolTip": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\Views\\CartView.xaml",
-              "RelativeToolTip": "QuanLyMaMoblie\\Views\\CartView.xaml",
-              "ViewState": "AQIAAHUAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-28T15:10:07.61Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IndexViewModel.cs",
-              "DocumentMoniker": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\ViewModels\\IndexViewModel.cs",
-              "RelativeDocumentMoniker": "QuanLyMaMoblie\\ViewModels\\IndexViewModel.cs",
-              "ToolTip": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\ViewModels\\IndexViewModel.cs",
-              "RelativeToolTip": "QuanLyMaMoblie\\ViewModels\\IndexViewModel.cs",
-              "ViewState": "AQIAAHIAAAAAAAAAAAAAAIYAAABUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T15:09:41.167Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Product.cs",
-              "DocumentMoniker": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\Models\\Product.cs",
-              "RelativeDocumentMoniker": "QuanLyMaMoblie\\Models\\Product.cs",
-              "ToolTip": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\Models\\Product.cs",
-              "RelativeToolTip": "QuanLyMaMoblie\\Models\\Product.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAkwCsAAAB0AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T14:53:42.562Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "InfoProductViewModel.cs",
-              "DocumentMoniker": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\ViewModels\\InfoProductViewModel.cs",
-              "RelativeDocumentMoniker": "QuanLyMaMoblie\\ViewModels\\InfoProductViewModel.cs",
-              "ToolTip": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\ViewModels\\InfoProductViewModel.cs",
-              "RelativeToolTip": "QuanLyMaMoblie\\ViewModels\\InfoProductViewModel.cs",
-              "ViewState": "AQIAAJkAAAAAAAAAAAAAAJsAAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T14:53:00.147Z",
+              "WhenOpened": "2024-10-30T06:42:45.056Z",
               "EditorCaption": ""
             },
             {
@@ -162,10 +106,47 @@
               "RelativeDocumentMoniker": "QuanLyMaMoblie\\Models\\Member.cs",
               "ToolTip": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\Models\\Member.cs",
               "RelativeToolTip": "QuanLyMaMoblie\\Models\\Member.cs",
-              "ViewState": "AQIAAEECAAAAAAAAAAAAAFECAAA2AAAA",
+              "ViewState": "AQIAALECAAAAAAAAAIAzwMQCAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-27T06:25:39.827Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IndexViewModel.cs",
+              "DocumentMoniker": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\ViewModels\\IndexViewModel.cs",
+              "RelativeDocumentMoniker": "QuanLyMaMoblie\\ViewModels\\IndexViewModel.cs",
+              "ToolTip": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\ViewModels\\IndexViewModel.cs",
+              "RelativeToolTip": "QuanLyMaMoblie\\ViewModels\\IndexViewModel.cs",
+              "ViewState": "AQIAAFUAAAAAAAAAAAAywIYAAABUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T15:09:41.167Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Product.cs",
+              "DocumentMoniker": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "QuanLyMaMoblie\\Models\\Product.cs",
+              "ToolTip": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\Models\\Product.cs",
+              "RelativeToolTip": "QuanLyMaMoblie\\Models\\Product.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAA3wCsAAAB0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T14:53:42.562Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "InfoProductViewModel.cs",
+              "DocumentMoniker": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\ViewModels\\InfoProductViewModel.cs",
+              "RelativeDocumentMoniker": "QuanLyMaMoblie\\ViewModels\\InfoProductViewModel.cs",
+              "ToolTip": "D:\\HOCTAP\\HK7\\DoAn1Chi\\DoAnChuyenNganh\\QuanLyMaMoblie\\QuanLyMaMoblie\\ViewModels\\InfoProductViewModel.cs",
+              "RelativeToolTip": "QuanLyMaMoblie\\ViewModels\\InfoProductViewModel.cs",
+              "ViewState": "AQIAAJkAAAAAAAAAAAAAAJsAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T14:53:00.147Z"
             }
           ]
         }

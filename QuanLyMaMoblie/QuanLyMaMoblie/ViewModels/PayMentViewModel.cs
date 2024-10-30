@@ -107,14 +107,15 @@ namespace QuanLyMaMoblie.ViewModels
                 var deliveryAddress = Address;
 
                 var success = await _member.CreateOrderAsync(deliveryAddress, PaymentStatus);
-                if (success!=null)
+
+                if (success != null)
                 {
-                    //await Application.Current.MainPage.DisplayAlert("Success", "Order placed successfully!", "OK");
+                    await Application.Current.MainPage.DisplayAlert("Success", "Bạn đã đặt hàng thành công!", "OK");
                     await Application.Current.MainPage.Navigation.PushAsync(new IndexView());
                 }
                 else
                 {
-                   // await Application.Current.MainPage.DisplayAlert("Error", "Failed to place order. Please try again.", "OK");
+                    await Application.Current.MainPage.DisplayAlert("Error", "Đơn hàng giao dịch thất bại. Vui lòng thử lại.", "OK");
                 }
             }
             catch (Exception ex)
